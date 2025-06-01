@@ -9,36 +9,25 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # Grant write permission for the contents scope
 
     steps:
       - name: Checkout  Git Repository
         uses: actions/checkout@v4
 
-      - name: Check for frontend changes
-        id: changes
-        run: |
-          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^frontend/'; then
-            echo "frontend_changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "frontend_changed=false" >> $GITHUB_OUTPUT
-          fi
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '20.x' # Use a recent Node.js version
 
       - name: Install Dependencies and Build
-        if: steps.changes.outputs.frontend_changed == 'true'
         run: |
           cd frontend
           npm ci
           npm run build
 
       - name: Deploy to GitHub Pages
-        if: steps.changes.outputs.frontend_changed == 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/build
+          publish_dir: ./frontend/build # The directory containing the build output relative to the repository root 

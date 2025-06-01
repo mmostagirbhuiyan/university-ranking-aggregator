@@ -38,9 +38,10 @@ async function scrapeARWURankings(limit) {
                     mapValues: ({ header, index, value }) => value.trim() // Trim whitespace from values
                 }))
                 .on('data', (row) => {
-                    if (rankings.length >= limit) {
-                        return; // Stop processing if limit is reached
-                    }
+                    // Removed limit check to process all data from the CSV
+                    // if (rankings.length >= limit) {
+                    //     return; // Stop processing if limit is reached
+                    // }
                     // Use the exact header names to access data
                     const rank = parseInt(row['# World Rank'], 10);
                     const name = row[' Institution'] ? row[' Institution'].trim() : '';
@@ -72,18 +73,3 @@ async function scrapeARWURankings(limit) {
 module.exports = {
     scrapeARWURankings
 };
-
-// --- Local Test Execution ---
-// This block will run when the script is executed directly.
-if (require.main === module) {
-    const testLimit = 250; // Scrape more universities for local test
-    console.log(`Running local test for ARWU scraper (limit: ${testLimit})...`);
-    scrapeARWURankings(testLimit)
-        .then(data => {
-            console.log('-- ARWU Scraped Data (Filtered) --', data);
-             console.log(`Total universities scraped in test: ${data.length}`);
-        })
-        .catch(error => {
-             console.error('-- ARWU Scraper Test Failed --', error);
-        });
-} 

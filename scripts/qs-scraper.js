@@ -35,21 +35,33 @@ async function scrapeQSRankings(limit) {
         // Based on previous run's log, rank is at index 1 and name is at index 3 in the data rows.
 
         // Iterate starting from the second element (index 1) of jsonData
-        for (let i = 1; i < Math.min(limit + 1, jsonData.length); i++) { // limit + 1 because we skip the header row
+        // Iterate through all data in jsonData, ignoring the 'limit' parameter here
+        for (let i = 1; i < jsonData.length; i++) {
             const row = jsonData[i];
             
             // *** IMPORTANT: Verify these column indices against the actual column positions in your Excel file after skipping headers ***
-            const rank = row[1]; // Assuming rank is in the 2nd column (index 1)
+            const rawRank = row[1];
             const name = row[3]; // Assuming institution name is in the 4th column (index 3)
 
-            // Add to rankings if both name and a valid rank are found and name is a string
-            // Handle potential non-numeric rank values like ranges (e.g., '101-150') by skipping for now.
+            let rank = null;
+
+            // Try to parse rank as integer
+            if (typeof rawRank === 'number') {
+                rank = Math.floor(rawRank);
+            } else if (typeof rawRank === 'string') {
+                // Handle rank ranges like '101-150' or '501+'
+                const match = rawRank.match(/^(\d+)/); // Extract leading digits
+                if (match && match[1]) {
+                    rank = parseInt(match[1], 10);
+                }
+            }
+
+            // Add to rankings if name is a string and a valid rank (number) was extracted
             if (typeof name === 'string' && typeof rank === 'number' && !isNaN(rank)) {
-                 // Ensure rank is an integer
-                rankings.push({ name: name.trim(), rank: Math.floor(rank) });
+                 rankings.push({ name: name.trim(), rank: rank }); // Use the parsed integer rank
             } else {
-                // Log the row index in the original Excel file for easier debugging (+4 because range starts from 4th row)
-                console.warn(`Skipping row ${i + 3} due to missing or invalid data: Row data:`, row);
+                // Log the row index and the full row data for debugging skipped entries
+                console.warn(`Skipping row ${i + 3} due to missing or invalid data: Raw Rank: ${rawRank}, Raw Name: ${name}. Full row:`, row);
             }
         }
         // --- End of data extraction logic --- //
@@ -69,18 +81,3 @@ async function scrapeQSRankings(limit) {
 module.exports = {
     scrapeQSRankings
 };
-
-// --- Local Test Execution ---
-// This block will run when the script is executed directly.
-if (require.main === module) {
-    const testLimit = 20; // Read top 20 for local test
-    console.log(`Running local test for QS scraper (limit: ${testLimit})...`);
-    scrapeQSRankings(testLimit)
-        .then(data => {
-            console.log('-- QS Scraped Data (Read from Excel) --', data);
-             console.log(`Total universities read in test: ${data.length}`);
-        })
-        .catch(error => {
-            console.error('-- QS Scraper Test Failed --', error);
-        });
-} 

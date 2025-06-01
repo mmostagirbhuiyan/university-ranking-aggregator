@@ -231,7 +231,7 @@ const universityNameMap = {
     "The University of Tokyo": "University of Tokyo",
     "Northwestern University": "Northwestern University",
     "École Polytechnique Fédérale de Lausanne": "Swiss Federal Institute of Technology Lausanne (EPFL)", // Mapping to EPFL standardized name
-    "New York University": "New York University",
+    "New York University": "New York University (NYU)",
     "University of California, San Diego": "University of California - San Diego",
     "University of Hong Kong": "University of Hong Kong",
     "Fudan University": "Fudan University",
@@ -326,11 +326,6 @@ const universityNameMap = {
     "Abu Dhabi University": "Abu Dhabi University",
     "Ulm University": "Ulm University",
     "Universitat Autònoma de Barcelona (UAB)": "Universitat Autònoma de Barcelona",
-    // Add NYU variations
-    "New York University (NYU)": "New York University",
-    "NYU": "New York University",
-    "New York University, New York": "New York University",
-    "New York University, NY": "New York University",
 };
 
 /**
@@ -352,8 +347,7 @@ function standardizeUniversityName(name) {
  * Main function to process data from each source file and aggregate rankings.
  * @param {number} limit - The number of top universities to process from each source.
  */
-async function main(limit = 200) {
-    console.log(`Starting ranking data processing and aggregation for top ${limit} universities.`);
+async function main(limit = 400) {
 
     try {
         // --- 1. Read data from each source file using their respective logic ---
@@ -369,7 +363,7 @@ async function main(limit = 200) {
                  console.warn('Skipping QS entry due to missing or invalid data:', uni);
                  return null; // Skip invalid entries
              }
-         }).filter(uni => uni !== null).sort((a, b) => a.rank - b.rank).slice(0, limit);
+         }).filter(uni => uni !== null).sort((a, b) => a.rank - b.rank);
         console.log(`Processed ${qsRankings.length} universities from QS.`);
 
         console.log('Processing THE rankings...');
@@ -379,8 +373,8 @@ async function main(limit = 200) {
          const theRankings = theRankingsRaw.map(uni => {
              // Attempt to parse rank as integer. THE ranks can be strings like '175' or '=176'.
              // Extract numeric part from rank string if present, then parse.
-             const rankMatch = typeof uni.rank === 'string' ? uni.rank.match(/\d+/) : null;
-             const rank = rankMatch ? parseInt(rankMatch[0], 10) : NaN;
+             const rankMatch = typeof uni.rank === 'string' ? uni.rank.match(/\d+/): null;
+             const rank = rankMatch? parseInt(rankMatch[0], 10) : NaN;
 
              const standardizedName = standardizeUniversityName(uni.name);
 
@@ -390,10 +384,10 @@ async function main(limit = 200) {
              if (uni.name && !isNaN(rank) && typeof rank === 'number') { // Ensure name exists and rank is a valid number
                   return { name: standardizedName, rank: rank }; // Use the parsed integer rank
              } else {
-                 console.warn('Skipping THE entry due to missing or invalid data:', uni);
+                 console.warn('Skipping THE entry due to missing or invalid data:', uni, 'Raw data:', uni);
                  return null; // Skip invalid entries
              }
-         }).filter(uni => uni !== null).sort((a, b) => a.rank - b.rank).slice(0, limit);
+         }).filter(uni => uni !== null).sort((a, b) => a.rank - b.rank);
          console.log(`Processed ${theRankings.length} universities from THE.`);
 
         console.log('Processing ARWU rankings...');
@@ -411,7 +405,7 @@ async function main(limit = 200) {
                  console.warn('Skipping ARWU entry due to missing or invalid data or range rank:', uni);
                  return null; // Skip invalid entries or range ranks for now
              }
-         }).filter(uni => uni !== null).sort((a, b) => a.rank - b.rank).slice(0, limit);
+         }).filter(uni => uni !== null).sort((a, b) => a.rank - b.rank);
          console.log(`Processed ${arwuRankings.length} universities from ARWU.`);
 
         console.log('Reading US News rankings from file...');
@@ -437,7 +431,7 @@ async function main(limit = 200) {
                     // Filter to the top 'limit' universities if necessary, matching the behavior of scrapers
                     // Assuming the CSV is already sorted by rank, or we can sort here
                     results.sort((a, b) => a.rank - b.rank);
-                    resolve(results.slice(0, limit));
+                    resolve(results);
                 })
                 .on('error', (err) => {
                     console.error('Error reading US News CSV file:', err);

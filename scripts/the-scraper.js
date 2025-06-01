@@ -21,19 +21,33 @@ async function scrapeTHERankings(limit) {
     let universities = [];
 
     try {
-        console.log(`Reading data from local JSON file ${LOCAL_THE_DATA_PATH}...`);
+        console.log(`Reading data from local JSON file ${THE_FILE_PATH}...`);
         // Read the JSON file
-        const jsonData = await fs.readFile(LOCAL_THE_DATA_PATH, 'utf8');
+        const jsonData = await fs.readFile(THE_FILE_PATH, 'utf8');
         // Parse the JSON data
         const data = JSON.parse(jsonData);
-        // Assuming the data is in the 'data' field of the JSON structure
-        universities = data; // Assign to the outer scope variable, assuming data is a direct array
+
+        console.log(`Parsed JSON data array length: ${data.length}`);
+
+        // Assuming the data is a direct array at the top level
+        universities = data; // Assign the parsed data directly (should be an array)
 
         if (!universities || !Array.isArray(universities)) {
-            throw new Error('Invalid JSON data format in local file.');
+            throw new Error('Invalid JSON data format in local file: Expected a top-level array.');
         }
 
-        console.log(`Successfully read ${universities.length} universities from local JSON file.`);
+        // Manually count valid university entries after reading
+        let validUniversityCount = 0;
+        console.log('Valid universities read from THE:');
+        for (const uni of universities) {
+            // Perform a basic check for a required field like 'name' to consider it a valid entry
+            if (uni && typeof uni.name === 'string') {
+                validUniversityCount++;
+                console.log(`  ${validUniversityCount}: ${uni.name}`);
+            }
+        }
+
+        console.log(`Successfully read and validated ${validUniversityCount} universities from local JSON file.`);
 
     } catch (error) {
         console.error(`Error reading THE rankings local JSON file: ${error.message}`);
@@ -41,15 +55,11 @@ async function scrapeTHERankings(limit) {
         throw error;
     }
 
-    // Return the potentially limited data based on the requested limit
-    return universities.slice(0, limit);
+    // Return the full data read from the file, ignoring the 'limit' parameter here
+    return universities;
 }
 
 // Export function for use in other scripts
 module.exports = {
     scrapeTHERankings
 };
-
-// --- Local Test Execution ---
-// This block will run when the script is executed directly.
-// Removed local test execution block as it is no longer needed with local file reading. 

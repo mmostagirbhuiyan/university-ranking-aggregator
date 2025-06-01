@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/university-ranking-aggregator/static/css/main.27dfea79.css",
+    "main.js": "/university-ranking-aggregator/static/js/main.225e0fa6.js",
+    "static/js/453.8ab44547.chunk.js": "/university-ranking-aggregator/static/js/453.8ab44547.chunk.js",
+    "index.html": "/university-ranking-aggregator/index.html",
+    "main.27dfea79.css.map": "/university-ranking-aggregator/static/css/main.27dfea79.css.map",
+    "main.225e0fa6.js.map": "/university-ranking-aggregator/static/js/main.225e0fa6.js.map",
+    "453.8ab44547.chunk.js.map": "/university-ranking-aggregator/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27dfea79.css",
+    "static/js/main.225e0fa6.js"
+  ]
+}

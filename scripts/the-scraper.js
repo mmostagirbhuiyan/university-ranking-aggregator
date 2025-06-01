@@ -3,60 +3,81 @@
 const fs = require('fs').promises; // Import the file system module
 // const cheerio = require('cheerio'); // Removed cheerio dependency
 const path = require('path');
+const csv = require('csv-parser'); // Import the csv-parser library
+const { createReadStream } = require('fs'); // Import createReadStream
+const readline = require('readline'); // Import readline for line-by-line reading
 
 // Updated URL to fetch JSON data directly
 // const THE_RANKINGS_URL = 'https://www.timeshighereducation.com/sites/default/files/the_data_rankings/world_university_rankings_2025_0__ba2fbd3409733a83fb62c3ee4219487c.json'; // Removed URL
 
-// Define the path for the local JSON file
-const LOCAL_THE_DATA_PATH = 'frontend/public/data/the_rankings.json';
-const THE_JSON_FILE = 'the_rankings.json';
-const THE_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', THE_JSON_FILE);
+// Define the path for the local CSV file
+const THE_CSV_FILE = 'the_rankings.csv';
+const THE_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', THE_CSV_FILE);
 
 /**
- * Reads the Times Higher Education World University Rankings from a local JSON file.
- * @param {number} limit - The maximum number of universities to read.
- * @returns {Promise<Object[]>} A promise that resolves with an array of university objects, or rejects on error.
+ * Reads the Times Higher Education World University Rankings from a local CSV file using csv-parser.
+ * @returns {Promise<Object[]>} A promise that resolves with an array of university objects.
  */
-async function scrapeTHERankings(limit) {
-    let universities = [];
+async function scrapeTHERankings() {
+    const results = [];
 
     try {
-        console.log(`Reading data from local JSON file ${THE_FILE_PATH}...`);
-        // Read the JSON file
-        const jsonData = await fs.readFile(THE_FILE_PATH, 'utf8');
-        // Parse the JSON data
-        const data = JSON.parse(jsonData);
+        console.log(`Reading THE rankings from local CSV file ${THE_FILE_PATH}...`);
 
-        console.log(`Parsed JSON data array length: ${data.length}`);
+        await new Promise((resolve, reject) => {
+            createReadStream(THE_FILE_PATH)
+                .pipe(csv({
+                    // Explicitly define headers as found in the CSV file
+                    headers: ['#    World Rank', 'Institution', 'Country', ''], 
+                    skipLines: 5, // Skip the initial comment and header lines
+                    mapValues: ({ header, index, value }) => value.trim() // Trim whitespace from values
+                }))
+                .on('data', (row) => {
+                    // TEMPORARY LOG: Inspect the raw row and the rank value
+                    console.log('THE Scraper - Raw row data:', row);
+                    console.log('THE Scraper - Raw rank value:', row['#    World Rank']);
 
-        // Assuming the data is a direct array at the top level
-        universities = data; // Assign the parsed data directly (should be an array)
+                    const rankString = row['#    World Rank']; // Get the raw rank string
+                    let rank;
 
-        if (!universities || !Array.isArray(universities)) {
-            throw new Error('Invalid JSON data format in local file: Expected a top-level array.');
-        }
+                    // Handle range ranks (e.g., '201-250') by taking the lower bound
+                    if (typeof rankString === 'string' && rankString.includes('-')) {
+                        rank = parseInt(rankString.split('-')[0].trim(), 10);
+                    } else if (typeof rankString === 'string') {
+                        // If it's a single rank string, parse it
+                        rank = parseInt(rankString.trim(), 10);
+                    } else {
+                        // If not a string, treat as invalid (will be filtered by isNaN)
+                        rank = NaN;
+                    }
 
-        // Manually count valid university entries after reading
-        let validUniversityCount = 0;
-        console.log('Valid universities read from THE:');
-        for (const uni of universities) {
-            // Perform a basic check for a required field like 'name' to consider it a valid entry
-            if (uni && typeof uni.name === 'string') {
-                validUniversityCount++;
-                console.log(`  ${validUniversityCount}: ${uni.name}`);
-            }
-        }
+                    const name = row['Institution'] ? row['Institution'].trim() : '';
 
-        console.log(`Successfully read and validated ${validUniversityCount} universities from local JSON file.`);
+                    if (name && !isNaN(rank)) {
+                        results.push({
+                            name: name,        // Use 'name' property as expected by scrape-rankings.js
+                            rank: rank,        // Include the parsed rank
+                            source: 'the'
+                        });
+                    }
+                })
+                .on('end', () => {
+                    console.log(`Successfully parsed ${results.length} universities from ${THE_FILE_PATH}.`);
+                    resolve();
+                })
+                .on('error', (error) => {
+                    console.error(`Error reading or parsing THE CSV: ${error.message}`);
+                    reject(error); // Reject the promise on error
+                });
+        });
 
     } catch (error) {
-        console.error(`Error reading THE rankings local JSON file: ${error.message}`);
+        console.error(`Error processing THE CSV: ${error.message}`);
         // Re-throw the error so the main script can catch it
         throw error;
     }
 
-    // Return the full data read from the file, ignoring the 'limit' parameter here
-    return universities;
+    return results;
 }
 
 // Export function for use in other scripts

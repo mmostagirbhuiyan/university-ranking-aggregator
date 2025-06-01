@@ -27,14 +27,28 @@ Make sure you have Node.js and npm installed.
 To update the aggregated rankings:
 
 1. Obtain updated ranking data files (e.g., CSV or similar formats for QS, THE, ARWU, US News).
-2. Place the updated files in the `data/` directory, ensuring they are named appropriately (e.g., `qs_rankings.xlsx`, `the_rankings.xlsx`, `arwu_rankings.csv`, `usnews_rankings.csv`). You might need to adjust the script (`scripts/scrape-rankings.js`) if the format or filenames change significantly.
-3. Run the data processing and aggregation script from the project root directory:
+2. Place the updated files in the `frontend/public/data/` directory, ensuring they are named appropriately (e.g., `qs_rankings.xlsx`, `the_rankings.csv`, `arwu_rankings.csv`, `usnews_rankings.csv`). Note the specific file extensions used by the current scripts.
+
+3. **Generate University Name Mapping (Data Sanitation)**
+   Before aggregating, run the matching script to generate or update the university name mapping. This script uses fuzzy matching to identify variations of the same university name across different sources and suggests a standardized name.
+
+   ```bash
+   node scripts/match-universities.js
+   ```
+
+   This will generate `frontend/public/data/suggested-university-mapping.json`. This file contains suggested mappings between original names from each source and a standardized name. It is crucial to **manually review and edit** this file to correct any incorrect matches or add missing ones.
+
+4. **Review and Refine Mapping**
+   Open `frontend/public/data/suggested-university-mapping.json` and carefully check the suggested mappings. Edit the `suggestedStandardizedName` for any entries that are incorrectly grouped or standardized. You can also add new entries to the `manualMapping` section at the beginning of the file for specific cases you want to hardcode.
+
+5. **Run Aggregation Script**
+   After you are satisfied with the university name mapping, run the main scraping and aggregation script from the project root directory:
 
    ```bash
    node scripts/scrape-rankings.js
    ```
 
-   This will read the updated data, process it, and save the new aggregated rankings to `frontend/src/data/aggregated-rankings.json`.
+   This script now reads the mapping from `frontend/public/data/suggested-university-mapping.json` to standardize university names before consolidating and aggregating the rankings. It will then save the new aggregated rankings to `frontend/public/data/aggregated-rankings.json`.
 
 ## Running the Frontend
 

@@ -155,7 +155,7 @@ async function main() {
 
         // --- Fuzzy Matching and Grouping ---
         const universityGroups = {};
-        const similarityThreshold = 0.8; // Adjusted threshold (0 to 1)
+        const similarityThreshold = 0.85; // Adjusted threshold (0 to 1)
 
         console.log('Starting fuzzy matching...');
 

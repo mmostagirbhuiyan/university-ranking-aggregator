@@ -360,6 +360,26 @@
     "aggregatedRank": 18
   },
   {
+    "name": "New York University",
+    "aggregatedScore": 1677.5,
+    "originalRankings": {
+      "qs": {
+        "rank": 43
+      },
+      "the": {
+        "rank": 33
+      },
+      "arwu": {
+        "rank": 31
+      },
+      "usnews": {
+        "rank": 32
+      }
+    },
+    "appearances": 4,
+    "aggregatedRank": 19
+  },
+  {
     "name": "Duke University",
     "aggregatedScore": 1674,
     "originalRankings": {
@@ -377,7 +397,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 19
+    "aggregatedRank": 20
   },
   {
     "name": "University of British Columbia",
@@ -397,7 +417,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 20
+    "aggregatedRank": 21
   },
   {
     "name": "University of Tokyo",
@@ -417,7 +437,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 21
+    "aggregatedRank": 22
   },
   {
     "name": "Zhejiang University",
@@ -437,7 +457,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 22
+    "aggregatedRank": 23
   },
   {
     "name": "Shanghai Jiao Tong University",
@@ -457,7 +477,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 23
+    "aggregatedRank": 24
   },
   {
     "name": "McGill University",
@@ -477,7 +497,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 24
+    "aggregatedRank": 25
   },
   {
     "name": "Fudan University",
@@ -497,7 +517,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 25
+    "aggregatedRank": 26
   },
   {
     "name": "Monash University",
@@ -517,7 +537,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 26
+    "aggregatedRank": 27
   },
   {
     "name": "University of Queensland",
@@ -537,7 +557,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 27
+    "aggregatedRank": 28
   },
   {
     "name": "Chinese University of Hong Kong",
@@ -557,7 +577,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 28
+    "aggregatedRank": 29
   },
   {
     "name": "Catholic University of Leuven",
@@ -577,7 +597,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 29
+    "aggregatedRank": 30
   },
   {
     "name": "University of Amsterdam",
@@ -597,7 +617,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 30
+    "aggregatedRank": 31
   },
   {
     "name": "University of Copenhagen",
@@ -617,7 +637,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 31
+    "aggregatedRank": 32
   },
   {
     "name": "Carnegie Mellon University",
@@ -637,7 +657,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 32
+    "aggregatedRank": 33
   },
   {
     "name": "Kyoto University",
@@ -657,7 +677,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 33
+    "aggregatedRank": 34
   },
   {
     "name": "City University of Hong Kong",
@@ -677,7 +697,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 34
+    "aggregatedRank": 35
   },
   {
     "name": "University of Bristol",
@@ -697,7 +717,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 35
+    "aggregatedRank": 36
   },
   {
     "name": "University of Glasgow",
@@ -717,7 +737,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 36
+    "aggregatedRank": 37
   },
   {
     "name": "University of Southern California",
@@ -737,7 +757,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 37
+    "aggregatedRank": 38
   },
   {
     "name": "Boston University",
@@ -757,7 +777,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 38
+    "aggregatedRank": 39
   },
   {
     "name": "Hong Kong Polytechnic University",
@@ -777,7 +797,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 39
+    "aggregatedRank": 40
   },
   {
     "name": "Georgia Institute of Technology",
@@ -797,7 +817,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 40
+    "aggregatedRank": 41
   },
   {
     "name": "University of Groningen",
@@ -817,7 +837,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 41
+    "aggregatedRank": 42
   },
   {
     "name": "Pennsylvania State University",
@@ -837,7 +857,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 42
+    "aggregatedRank": 43
   },
   {
     "name": "Nanjing University",
@@ -857,7 +877,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 43
+    "aggregatedRank": 44
   },
   {
     "name": "Brown University",
@@ -877,7 +897,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 44
+    "aggregatedRank": 45
   },
   {
     "name": "Lund University",
@@ -897,7 +917,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 45
+    "aggregatedRank": 46
   },
   {
     "name": "University of Oslo",
@@ -917,7 +937,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 46
+    "aggregatedRank": 47
   },
   {
     "name": "University of Western Australia",
@@ -937,7 +957,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 47
+    "aggregatedRank": 48
   },
   {
     "name": "University of Birmingham",
@@ -957,7 +977,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 48
+    "aggregatedRank": 49
   },
   {
     "name": "University of Helsinki",
@@ -977,7 +997,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 49
+    "aggregatedRank": 50
   },
   {
     "name": "Erasmus University Rotterdam",
@@ -997,7 +1017,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 50
+    "aggregatedRank": 51
   },
   {
     "name": "Delft University of Technology",
@@ -1017,7 +1037,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 51
+    "aggregatedRank": 52
   },
   {
     "name": "Aarhus University",
@@ -1037,7 +1057,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 52
+    "aggregatedRank": 53
   },
   {
     "name": "Emory University",
@@ -1057,7 +1077,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 53
+    "aggregatedRank": 54
   },
   {
     "name": "University of Alberta",
@@ -1077,7 +1097,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 54
+    "aggregatedRank": 55
   },
   {
     "name": "University of Southampton",
@@ -1097,7 +1117,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 55
+    "aggregatedRank": 56
   },
   {
     "name": "Uppsala University",
@@ -1117,7 +1137,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 56
+    "aggregatedRank": 57
   },
   {
     "name": "University of Bern",
@@ -1137,7 +1157,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 57
+    "aggregatedRank": 58
   },
   {
     "name": "University of Nottingham",
@@ -1157,7 +1177,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 58
+    "aggregatedRank": 59
   },
   {
     "name": "University of Leeds",
@@ -1177,7 +1197,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 59
+    "aggregatedRank": 60
   },
   {
     "name": "University of Geneva",
@@ -1197,7 +1217,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 60
+    "aggregatedRank": 61
   },
   {
     "name": "University of Basel",
@@ -1217,7 +1237,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 61
+    "aggregatedRank": 62
   },
   {
     "name": "McMaster University",
@@ -1237,7 +1257,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 62
+    "aggregatedRank": 63
   },
   {
     "name": "Wuhan University",
@@ -1257,7 +1277,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 63
+    "aggregatedRank": 64
   },
   {
     "name": "Michigan State University",
@@ -1277,7 +1297,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 64
+    "aggregatedRank": 65
   },
   {
     "name": "University of Liverpool",
@@ -1297,7 +1317,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 65
+    "aggregatedRank": 66
   },
   {
     "name": "Technical University of Denmark",
@@ -1317,7 +1337,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 66
+    "aggregatedRank": 67
   },
   {
     "name": "Stockholm University",
@@ -1337,7 +1357,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 67
+    "aggregatedRank": 68
   },
   {
     "name": "University of Waterloo",
@@ -1357,7 +1377,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 68
+    "aggregatedRank": 69
   },
   {
     "name": "Tongji University",
@@ -1377,7 +1397,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 69
+    "aggregatedRank": 70
   },
   {
     "name": "Technical University of Munich",
@@ -1394,7 +1414,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 70
+    "aggregatedRank": 71
   },
   {
     "name": "Leiden University",
@@ -1411,7 +1431,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 71
+    "aggregatedRank": 72
   },
   {
     "name": "University of Technology Sydney (UTS)",
@@ -1428,7 +1448,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 72
+    "aggregatedRank": 73
   },
   {
     "name": "Wageningen University & Research",
@@ -1445,7 +1465,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 73
+    "aggregatedRank": 74
   },
   {
     "name": "Ghent University",
@@ -1462,7 +1482,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 74
+    "aggregatedRank": 75
   },
   {
     "name": "University of Cape Town",
@@ -1479,7 +1499,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 75
+    "aggregatedRank": 76
   },
   {
     "name": "Macquarie University",
@@ -1493,23 +1513,6 @@
       },
       "usnews": {
         "rank": 192
-      }
-    },
-    "appearances": 3,
-    "aggregatedRank": 76
-  },
-  {
-    "name": "New York University",
-    "aggregatedScore": 1115.340625,
-    "originalRankings": {
-      "the": {
-        "rank": 33
-      },
-      "arwu": {
-        "rank": 31
-      },
-      "usnews": {
-        "rank": 32
       }
     },
     "appearances": 3,
@@ -4458,17 +4461,6 @@
     "aggregatedRank": 303
   },
   {
-    "name": "New York University (NYU)",
-    "aggregatedScore": 144.8125,
-    "originalRankings": {
-      "qs": {
-        "rank": 43
-      }
-    },
-    "appearances": 1,
-    "aggregatedRank": 304
-  },
-  {
     "name": "The London School of Economics and Political Science (LSE)",
     "aggregatedScore": 143.71875,
     "originalRankings": {
@@ -4477,7 +4469,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 305
+    "aggregatedRank": 304
   },
   {
     "name": "KAIST - Korea Advanced Institute of Science & Technology",
@@ -4488,7 +4480,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 306
+    "aggregatedRank": 305
   },
   {
     "name": "Yonsei University",
@@ -4499,7 +4491,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 307
+    "aggregatedRank": 306
   },
   {
     "name": "Ludwig-Maximilians-Universität München",
@@ -4510,7 +4502,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 308
+    "aggregatedRank": 307
   },
   {
     "name": "Universiti Malaya (UM)",
@@ -4521,7 +4513,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 309
+    "aggregatedRank": 308
   },
   {
     "name": "The University of Auckland",
@@ -4532,7 +4524,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 310
+    "aggregatedRank": 309
   },
   {
     "name": "The University of Warwick",
@@ -4543,7 +4535,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 311
+    "aggregatedRank": 310
   },
   {
     "name": "Universidad de Buenos Aires (UBA)",
@@ -4554,7 +4546,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 312
+    "aggregatedRank": 311
   },
   {
     "name": "University of California, San Diego (UCSD)",
@@ -4565,7 +4557,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 313
+    "aggregatedRank": 312
   },
   {
     "name": "The University of Adelaide",
@@ -4576,7 +4568,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 314
+    "aggregatedRank": 313
   },
   {
     "name": "Ruprecht-Karls-Universität Heidelberg",
@@ -4587,7 +4579,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 315
+    "aggregatedRank": 314
   },
   {
     "name": "Tokyo Institute of Technology (Tokyo Tech)",
@@ -4598,7 +4590,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 316
+    "aggregatedRank": 315
   },
   {
     "name": "Trinity College Dublin, The University of Dublin",
@@ -4609,7 +4601,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 317
+    "aggregatedRank": 316
   },
   {
     "name": "Universidade de São Paulo",
@@ -4620,7 +4612,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 318
+    "aggregatedRank": 317
   },
   {
     "name": "Pontificia Universidad Católica de Chile (UC)",
@@ -4631,7 +4623,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 319
+    "aggregatedRank": 318
   },
   {
     "name": "Universidad Nacional Autónoma de México (UNAM)",
@@ -4642,7 +4634,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 320
+    "aggregatedRank": 319
   },
   {
     "name": "Freie Universitaet Berlin",
@@ -4653,7 +4645,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 321
+    "aggregatedRank": 320
   },
   {
     "name": "Pohang University of Science And Technology (POSTECH)",
@@ -4664,7 +4656,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 322
+    "aggregatedRank": 321
   },
   {
     "name": "King Fahd University of Petroleum & Minerals",
@@ -4675,7 +4667,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 323
+    "aggregatedRank": 322
   },
   {
     "name": "KIT, Karlsruhe Institute of Technology",
@@ -4686,7 +4678,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 324
+    "aggregatedRank": 323
   },
   {
     "name": "The University of Sheffield",
@@ -4697,7 +4689,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 325
+    "aggregatedRank": 324
   },
   {
     "name": "Politecnico di Milano",
@@ -4708,7 +4700,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 326
+    "aggregatedRank": 325
   },
   {
     "name": "Indian Institute of Technology Bombay (IITB)",
@@ -4719,7 +4711,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 327
+    "aggregatedRank": 326
   },
   {
     "name": "Western University",
@@ -4730,7 +4722,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 328
+    "aggregatedRank": 327
   },
   {
     "name": "Qatar University",
@@ -4741,7 +4733,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 329
+    "aggregatedRank": 328
   },
   {
     "name": "RMIT University",
@@ -4752,7 +4744,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 330
+    "aggregatedRank": 329
   },
   {
     "name": "Sungkyunkwan University(SKKU)",
@@ -4763,7 +4755,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 331
+    "aggregatedRank": 330
   },
   {
     "name": "Humboldt-Universität zu Berlin",
@@ -4774,7 +4766,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 332
+    "aggregatedRank": 331
   },
   {
     "name": "University College Dublin",
@@ -4785,7 +4777,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 333
+    "aggregatedRank": 332
   },
   {
     "name": "Alma Mater Studiorum - University of Bologna",
@@ -4796,7 +4788,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 334
+    "aggregatedRank": 333
   },
   {
     "name": "Universiti Kebangsaan Malaysia (UKM)",
@@ -4807,7 +4799,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 335
+    "aggregatedRank": 334
   },
   {
     "name": "Chalmers University of Technology",
@@ -4818,7 +4810,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 336
+    "aggregatedRank": 335
   },
   {
     "name": "Universidad de Chile",
@@ -4829,7 +4821,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 337
+    "aggregatedRank": 336
   },
   {
     "name": "Universiti Sains Malaysia (USM)",
@@ -4840,7 +4832,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 338
+    "aggregatedRank": 337
   },
   {
     "name": "Technische Universität Berlin (TU Berlin)",
@@ -4851,7 +4843,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 339
+    "aggregatedRank": 338
   },
   {
     "name": "Universiti Putra Malaysia (UPM)",
@@ -4862,7 +4854,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 340
+    "aggregatedRank": 339
   },
   {
     "name": "King Abdulaziz University (KAU)",
@@ -4873,7 +4865,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 341
+    "aggregatedRank": 340
   },
   {
     "name": "Indian Institute of Technology Delhi (IITD)",
@@ -4884,7 +4876,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 342
+    "aggregatedRank": 341
   },
   {
     "name": "University of Bath",
@@ -4895,7 +4887,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 343
+    "aggregatedRank": 342
   },
   {
     "name": "University of North Carolina, Chapel Hill",
@@ -4906,7 +4898,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 344
+    "aggregatedRank": 343
   },
   {
     "name": "Hanyang University",
@@ -4917,7 +4909,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 345
+    "aggregatedRank": 344
   },
   {
     "name": "Al-Farabi Kazakh National University",
@@ -4928,7 +4920,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 346
+    "aggregatedRank": 345
   },
   {
     "name": "Complutense University of Madrid",
@@ -4939,7 +4931,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 347
+    "aggregatedRank": 346
   },
   {
     "name": "Universitat de Barcelona",
@@ -4950,7 +4942,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 348
+    "aggregatedRank": 347
   },
   {
     "name": "Kyushu University",
@@ -4961,7 +4953,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 349
+    "aggregatedRank": 348
   },
   {
     "name": "University of Wollongong",
@@ -4972,7 +4964,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 350
+    "aggregatedRank": 349
   },
   {
     "name": "The University of Exeter",
@@ -4983,7 +4975,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 351
+    "aggregatedRank": 350
   },
   {
     "name": "University of Reading",
@@ -4994,7 +4986,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 352
+    "aggregatedRank": 351
   },
   {
     "name": "Hokkaido University",
@@ -5005,7 +4997,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 353
+    "aggregatedRank": 352
   },
   {
     "name": "University of California, Santa Barbara (UCSB)",
@@ -5016,7 +5008,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 354
+    "aggregatedRank": 353
   },
   {
     "name": "The University of Newcastle, Australia (UON)",
@@ -5027,7 +5019,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 355
+    "aggregatedRank": 354
   },
   {
     "name": "Universidad de los Andes",
@@ -5038,7 +5030,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 356
+    "aggregatedRank": 355
   },
   {
     "name": "Universiti Teknologi Malaysia",
@@ -5049,7 +5041,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 357
+    "aggregatedRank": 356
   },
   {
     "name": "Waseda University",
@@ -5060,7 +5052,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 358
+    "aggregatedRank": 357
   },
   {
     "name": "Hamad Bin Khalifa University",
@@ -5071,7 +5063,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 359
+    "aggregatedRank": 358
   },
   {
     "name": "Tecnológico de Monterrey",
@@ -5082,7 +5074,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 360
+    "aggregatedRank": 359
   },
   {
     "name": "École Normale Supérieure de Lyon",
@@ -5093,7 +5085,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 361
+    "aggregatedRank": 360
   },
   {
     "name": "Keio University",
@@ -5104,7 +5096,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 362
+    "aggregatedRank": 361
   },
   {
     "name": "Technische Universität Wien",
@@ -5115,7 +5107,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 363
+    "aggregatedRank": 362
   },
   {
     "name": "Universität Hamburg",
@@ -5126,7 +5118,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 364
+    "aggregatedRank": 363
   },
   {
     "name": "Queen's University at Kingston",
@@ -5137,7 +5129,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 365
+    "aggregatedRank": 364
   },
   {
     "name": "Universidad Autónoma de Madrid",
@@ -5148,7 +5140,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 366
+    "aggregatedRank": 365
   },
   {
     "name": "Massachusetts Institute of Technology - MIT",
@@ -5159,7 +5151,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 367
+    "aggregatedRank": 366
   },
   {
     "name": "California Institute of Technology - Caltech",
@@ -5170,7 +5162,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 368
+    "aggregatedRank": 367
   },
   {
     "name": "Universit� Paris-Saclay",
@@ -5181,7 +5173,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 369
+    "aggregatedRank": 368
   },
   {
     "name": "University of California - San Francisco",
@@ -5192,7 +5184,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 370
+    "aggregatedRank": 369
   },
   {
     "name": "Swiss Federal Institute of Technology Zurich - ETHZ",
@@ -5203,7 +5195,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 371
+    "aggregatedRank": 370
   },
   {
     "name": "University of Michigan - Ann Arbor",
@@ -5214,7 +5206,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 372
+    "aggregatedRank": 371
   },
   {
     "name": "University of M�nchen",
@@ -5225,7 +5217,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 373
+    "aggregatedRank": 372
   },
   {
     "name": "Technical University of M�nchen",
@@ -5236,7 +5228,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 374
+    "aggregatedRank": 373
   },
   {
     "name": "University of Minnesota - Twin Cities",
@@ -5247,7 +5239,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 375
+    "aggregatedRank": 374
   },
   {
     "name": "University of Heidelberg",
@@ -5258,7 +5250,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 376
+    "aggregatedRank": 375
   },
   {
     "name": "University of Texas Southwestern Medical Center at Dallas",
@@ -5269,7 +5261,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 377
+    "aggregatedRank": 376
   },
   {
     "name": "Swiss Federal Institute of Technology Lausanne - EPFL",
@@ -5280,7 +5272,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 378
+    "aggregatedRank": 377
   },
   {
     "name": "University of Maryland at College Park",
@@ -5291,7 +5283,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 379
+    "aggregatedRank": 378
   },
   {
     "name": "Paris Cit� University",
@@ -5302,7 +5294,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 380
+    "aggregatedRank": 379
   },
   {
     "name": "University of California - Santa Barbara",
@@ -5313,7 +5305,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 381
+    "aggregatedRank": 380
   },
   {
     "name": "University of Colorado at Boulder",
@@ -5324,7 +5316,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 382
+    "aggregatedRank": 381
   },
   {
     "name": "Sun Yat-Sen University",
@@ -5335,7 +5327,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 383
+    "aggregatedRank": 382
   },
   {
     "name": "University of New South Wales",
@@ -5346,7 +5338,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 384
+    "aggregatedRank": 383
   },
   {
     "name": "Hebrew University of Jerusalem",
@@ -5357,7 +5349,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 385
+    "aggregatedRank": 384
   },
   {
     "name": "Technion - Israel Institute of Technology",
@@ -5368,7 +5360,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 386
+    "aggregatedRank": 385
   },
   {
     "name": "University of Texas MD Anderson Cancer Center",
@@ -5379,7 +5371,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 387
+    "aggregatedRank": 386
   },
   {
     "name": "University of Gent",
@@ -5390,7 +5382,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 388
+    "aggregatedRank": 387
   },
   {
     "name": "Sichuan University",
@@ -5401,7 +5393,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 389
+    "aggregatedRank": 388
   },
   {
     "name": "Universit� Libre de Bruxelles",
@@ -5412,7 +5404,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 390
+    "aggregatedRank": 389
   },
   {
     "name": "University of Sao Paulo",
@@ -5423,7 +5415,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 391
+    "aggregatedRank": 390
   },
   {
     "name": "Jilin University",
@@ -5434,7 +5426,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 392
+    "aggregatedRank": 391
   },
   {
     "name": "Shandong University",
@@ -5445,7 +5437,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 393
+    "aggregatedRank": 392
   },
   {
     "name": "Southeast University",
@@ -5456,7 +5448,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 394
+    "aggregatedRank": 393
   },
   {
     "name": "University of Rome - La Sapienza",
@@ -5467,7 +5459,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 395
+    "aggregatedRank": 394
   },
   {
     "name": "Radboud University of Nijmegen",
@@ -5478,7 +5470,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 396
+    "aggregatedRank": 395
   },
   {
     "name": "University of Leiden",
@@ -5489,7 +5481,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 397
+    "aggregatedRank": 396
   },
   {
     "name": "Moscow State University",
@@ -5500,7 +5492,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 398
+    "aggregatedRank": 397
   },
   {
     "name": "G�teborg University",
@@ -5511,7 +5503,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 399
+    "aggregatedRank": 398
   },
   {
     "name": "University of California - Davis",
@@ -5522,7 +5514,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 400
+    "aggregatedRank": 399
   },
   {
     "name": "Mayo Medical School",
@@ -5533,7 +5525,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 401
+    "aggregatedRank": 400
   },
   {
     "name": "Rutgers - The State University of New Jersey",
@@ -5544,7 +5536,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 402
+    "aggregatedRank": 401
   },
   {
     "name": "University of Strasbourg",
@@ -5555,7 +5547,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 403
+    "aggregatedRank": 402
   },
   {
     "name": "Aix-Marseille University",
@@ -5566,7 +5558,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 404
+    "aggregatedRank": 403
   },
   {
     "name": "Northwestern Polytechnical University",
@@ -5577,7 +5569,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 405
+    "aggregatedRank": 404
   },
   {
     "name": "Grenoble Alpes University",
@@ -5588,7 +5580,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 406
+    "aggregatedRank": 405
   },
   {
     "name": "Southern University of Science and Technology",
@@ -5599,7 +5591,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 407
+    "aggregatedRank": 406
   },
   {
     "name": "Beihang University",
@@ -5610,7 +5602,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 408
+    "aggregatedRank": 407
   },
   {
     "name": "Chongqing University",
@@ -5621,7 +5613,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 409
+    "aggregatedRank": 408
   },
   {
     "name": "University of Electronic Science and Technology of China",
@@ -5632,7 +5624,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 410
+    "aggregatedRank": 409
   },
   {
     "name": "Zhengzhou University",
@@ -5643,7 +5635,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 411
+    "aggregatedRank": 410
   },
   {
     "name": "University of T�bingen",
@@ -5654,7 +5646,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 412
+    "aggregatedRank": 411
   },
   {
     "name": "University of G�ttingen",
@@ -5665,7 +5657,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 413
+    "aggregatedRank": 412
   },
   {
     "name": "University of Frankfurt am Main",
@@ -5676,7 +5668,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 414
+    "aggregatedRank": 413
   },
   {
     "name": "University of Mainz",
@@ -5687,7 +5679,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 415
+    "aggregatedRank": 414
   },
   {
     "name": "University of M�nster",
@@ -5698,7 +5690,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 416
+    "aggregatedRank": 415
   },
   {
     "name": "University of Pisa",
@@ -5709,7 +5701,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 417
+    "aggregatedRank": 416
   },
   {
     "name": "VU University Amsterdam",
@@ -5720,7 +5712,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 418
+    "aggregatedRank": 417
   },
   {
     "name": "Wageningen University & Research Center",
@@ -5731,7 +5723,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 419
+    "aggregatedRank": 418
   },
   {
     "name": "Norwegian University of Science and Technology",
@@ -5742,7 +5734,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 420
+    "aggregatedRank": 419
   },
   {
     "name": "University of California - Santa Cruz",
@@ -5753,7 +5745,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 421
+    "aggregatedRank": 420
   },
   {
     "name": "Indiana University at Bloomington",
@@ -5764,7 +5756,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 422
+    "aggregatedRank": 421
   },
   {
     "name": "Sungkyunkwan University",
@@ -5775,7 +5767,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 423
+    "aggregatedRank": 422
   },
   {
     "name": "Soochow University",
@@ -5786,7 +5778,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 424
+    "aggregatedRank": 423
   },
   {
     "name": "University of Montpellier",
@@ -5797,6 +5789,6 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 425
+    "aggregatedRank": 424
   }
 ]

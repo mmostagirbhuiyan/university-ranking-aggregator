@@ -78,9 +78,7 @@ async function readTheRankings(limit) {
             source: 'the'
         }));
     console.log(`Successfully read ${processedRankings.length} universities from THE.`);
-    
-    // Remove temporary log
-    // console.log('Match Universities - Raw THE data:', rankings);
+
     
     return processedRankings;
 }

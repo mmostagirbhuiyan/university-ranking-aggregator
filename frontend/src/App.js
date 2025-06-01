@@ -1,456 +1,494 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import AggregatedRankings from './components/AggregatedRankings';
-import { TextField, Button, Typography, Box, Container, IconButton } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import GetAppIcon from '@mui/icons-material/GetApp';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-// Function to create MUI theme based on current mode, providing explicit colors
-const getAppTheme = (mode) => {
-  // Define color palettes for light and dark modes
-  const lightPalette = {
-    primary: {
-      main: '#5A67D8',
-    },
-    secondary: {
-      main: '#4299E1',
-    },
-    text: {
-      primary: '#2D3748',
-      secondary: '#718096',
-    },
-    background: {
-      default: '#f5f7fa', // Body background approximation
-      paper: '#ffffff', // Container background
-      alt: '#f8f9fa', // Alt background for sections
-    },
-    status: { // Custom status colors
-       loading: {
-           main: '#2B6CB0',
-           light: '#EBF8FF',
-           dark: '#BEE3F8',
-       },
-       success: {
-           main: '#38A169',
-           light: '#F0FFF4',
-           dark: '#68D391',
-       },
-       error: {
-           main: '#E53E3E',
-           light: '#FED7D7',
-           dark: '#FC8181',
-       },
-    },
-    medal: { // Custom medal colors
-       gold: {
-           main: '#B7950B',
-           light: '#FCF4A1',
-           dark: '#F6E05E',
-       },
-       silver: {
-           main: '#718096',
-           light: '#E2E4E6',
-           dark: '#CBD5E0',
-       },
-       bronze: {
-           main: '#805AD5',
-           light: '#E9D8FD',
-           dark: '#D6BCFA',
-       },
-    }
-  };
-
-  const darkPalette = {
-    primary: {
-      main: '#63b3ed',
-    },
-    secondary: {
-      main: '#9f7aea',
-    },
-    text: {
-      primary: '#e2e8f0',
-      secondary: '#a0aec0',
-    },
-    background: {
-      default: '#1a202c', // Body background
-      paper: '#2d3748', // Container background
-      alt: '#4a5568', // Alt background for sections
-    },
-    status: { // Custom status colors
-       loading: {
-           main: '#A0AEC0', // Using secondary text color
-           light: '#2a4365',
-           dark: '#4299E1',
-       },
-       success: {
-           main: '#C6F6D5',
-           light: '#2F855A',
-           dark: '#68D391',
-       },
-       error: {
-           main: '#FED7D7', // Using error light color
-           light: '#C53030',
-           dark: '#FC8181',
-       },
-    },
-     medal: { // Custom medal colors (Adjusted for dark background)
-        gold: {
-            main: '#FEFCBF',
-            light: '#B7950B',
-            dark: '#F6E05E',
-        },
-        silver: {
-            main: '#E2E8F0',
-            light: '#718096',
-            dark: '#CBD5E0',
-        },
-        bronze: {
-            main: '#E9D8FD',
-            light: '#805AD5',
-            dark: '#D6BCFA',
-        },
-    }
-  };
-
-  // Select the palette based on the current mode
-  const palette = mode === 'light' ? lightPalette : darkPalette;
-
-  return createTheme({
-    palette: {
-      mode,
-      ...palette, // Spread the selected palette colors
-       // Define shades for main colors if needed, MUI does this automatically
-    },
-    typography: {
-        fontFamily: 'Poppins, sans-serif',
-        // Define typography variants to match App.css where necessary
-        h1: {
-            fontSize: '2em',
-            fontWeight: 700,
-            textAlign: 'center',
-            marginBottom: '10px',
-             // Color is handled by CSS variable in App.css for smooth transition
-        },
-         h3: {
-            // Existing h3 styles from App.js Typography variant
-             fontSize: '1.6em',
-             fontWeight: 700,
-             textAlign: 'center',
-             marginBottom: '20px',
-              // Color is handled by CSS variable in App.css
-         },
-        subtitle1: {
-             fontSize: '0.9em',
-             fontWeight: 400,
-             textAlign: 'center',
-             // Color is handled by CSS variable in App.css
-             marginBottom: '50px',
-        },
-        // Add other typography variants used in App.js or AggregatedRankings.js
-    },
-     components: {
-          MuiButton: {
-              styleOverrides: {
-                  root: {
-                       // Removing styles that are now handled by the MUI theme palette and default button styles
-                       // fontFamily: 'Poppins, sans-serif',
-                       // fontWeight: 500,
-                       // textTransform: 'none',
-                       // borderRadius: '20px', // Keep custom border radius
-                       // padding: '10px 25px', // Keep custom padding
-                       // boxShadow: 'none', // Keep custom shadow handling
-                       // transition is handled by CSS
-                  },
-                   contained: {
-                       borderRadius: '20px', // Apply pill shape to contained buttons
-                       padding: '10px 25px', // Apply custom padding
-                       // MUI handles background-color and color based on palette.primary/secondary
-                   },
-              },
-          },
-          MuiTextField: {
-              styleOverrides: {
-                  root: {
-                      fontSize: '0.9em',
-                       // Color is handled by MUI theme text.primary/secondary
-                  }
-              }
-          },
-           MuiContainer: {
-                styleOverrides: {
-                    root: {
-                        marginBottom: '4rem', // Use rem for consistent spacing
-                        padding: '4rem', // Use rem
-                         // Background, border-radius, box-shadow, backdrop-filter are handled by CSS class for theme transition
-                         // bgcolor is handled by CSS variable in App.js component usage now
-                    }
-                }
-           },
-            MuiBox: {
-               styleOverrides: {
-                   root: {
-                       // Remove flex properties from here if using a separate Box for layout
-                   }
-               }
-            }
-     },
-      // Define custom colors here if needed outside palette
-      // customColors: {
-      //   qs: '#4299E1',
-      //   the: '#F6AD55',
-      //   arwu: '#63B3ED',
-      //   usn: '#9F7AEA',
-      // }
-  });
-};
+import React, { useState, useEffect, useMemo } from 'react';
+import { Search, TrendingUp, Star, Globe, BookOpen, Award, ChevronDown, ChevronUp } from 'lucide-react';
 
 function App() {
+  const [universities, setUniversities] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [isMethodologyExpanded, setIsMethodologyExpanded] = useState(false);
-  const [isReferencesExpanded, setIsReferencesExpanded] = useState(false);
-  const [aggregatedData, setAggregatedData] = useState([]);
-  const [themeMode, setThemeMode] = useState('light');
+  const [sortBy, setSortBy] = useState('aggregatedRank');
+  const [expandedCard, setExpandedCard] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const universitiesPerPage = 50;
+  const [showMethodology, setShowMethodology] = useState(false);
 
-  // Use getAppTheme to create the theme object whenever themeMode changes
-  const theme = getAppTheme(themeMode);
-
-  // Effect to set initial theme from local storage and listen for system preference changes
   useEffect(() => {
-    const savedTheme = localStorage.getItem('themeMode');
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme) {
-      setThemeMode(savedTheme);
-    } else if (prefersDarkMode) {
-      setThemeMode('dark');
-    }
-
-    // Apply the theme class to the body
-    // No longer need to add light-mode class here, as dark-mode handles override
-    if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
-         document.body.classList.add('dark-mode');
-    }
-
-    // Listen for system theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => {
-        if (!localStorage.getItem('themeMode')) { // Only react to system changes if no explicit preference is saved
-            setThemeMode(e.matches ? 'dark' : 'light');
+    const loadRankings = async () => {
+      try {
+        const response = await fetch(process.env.PUBLIC_URL + '/data/aggregated-rankings.json');
+        if (!response.ok) {
+          throw new Error('Failed to load rankings data');
         }
-    };
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => mediaQuery.removeEventListener('change', handleChange);
-
-  }, []); // Empty dependency array ensures this runs only once on mount
-
-  // Effect to update the body class and local storage when themeMode changes
-  useEffect(() => {
-    // Toggle the dark-mode class on the body
-    if (themeMode === 'dark') {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
-    }
-    localStorage.setItem('themeMode', themeMode);
-  }, [themeMode]); // Rerun effect when themeMode state changes
-
-
-  const loadRankings = async () => {
-    console.log('Loading aggregated rankings data...');
-    try {
-      const response = await fetch(`${process.env.PUBLIC_URL}/data/aggregated-rankings.json`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        setUniversities(data);
+      } catch (error) {
+        console.error('Error loading rankings:', error);
+        // You might want to show an error message to the user here
+      } finally {
+        setIsLoading(false);
       }
-      const data = await response.json();
-      setAggregatedData(data);
-      console.log('Aggregated rankings data loaded successfully.');
-    } catch (error) {
-      console.error('Error loading aggregated rankings data:', error);
-    }
-  };
+    };
 
-  useEffect(() => {
     loadRankings();
   }, []);
 
-  const exportResults = (format) => {
-    console.log(`Exporting as ${format}...`);
+  const filteredAndSortedUniversities = useMemo(() => {
+    const normalize = str => str.toLowerCase().replace(/\s+/g, '');
+    const term = normalize(searchTerm.trim());
+    let filtered = term
+      ? universities.filter(uni => normalize(uni.name).includes(term))
+      : universities;
 
-    if (!aggregatedData || aggregatedData.length === 0) {
-        alert("No data to export.");
-        return;
+    return filtered.sort((a, b) => {
+      if (sortBy === 'name') return a.name.localeCompare(b.name);
+      if (sortBy === 'aggregatedScore') return b.aggregatedScore - a.aggregatedScore;
+      if (sortBy === 'aggregatedRank') return a.aggregatedRank - b.aggregatedRank;
+      if (sortBy === 'appearances') return b.appearances - a.appearances;
+      
+      // Sort by specific ranking source
+      if (a.originalRankings[sortBy] && b.originalRankings[sortBy]) {
+        return a.originalRankings[sortBy].rank - b.originalRankings[sortBy].rank;
+      }
+      return 0;
+    });
+  }, [universities, searchTerm, sortBy]);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredAndSortedUniversities.length / universitiesPerPage);
+  const paginatedUniversities = filteredAndSortedUniversities.slice(
+    (currentPage - 1) * universitiesPerPage,
+    currentPage * universitiesPerPage
+  );
+
+  // Pagination window logic
+  const getPaginationWindow = () => {
+    const windowSize = 5;
+    const pages = [];
+    if (totalPages <= windowSize + 2) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      const start = Math.max(2, currentPage - Math.floor(windowSize / 2));
+      const end = Math.min(totalPages - 1, currentPage + Math.floor(windowSize / 2));
+      pages.push(1);
+      if (start > 2) pages.push('ellipsis-prev');
+      for (let i = start; i <= end; i++) pages.push(i);
+      if (end < totalPages - 1) pages.push('ellipsis-next');
+      pages.push(totalPages);
     }
+    return pages;
+  };
+  const paginationWindow = getPaginationWindow();
 
-    if (format === 'csv') {
-        const headers = ["Aggregated Rank", "University Name", "QS Rank", "THE Rank", "ARWU Rank", "USN Rank", "Appearances", "Aggregated Score"];
-        const rows = aggregatedData.map(uni => {
-            return [
-                uni.aggregatedRank,
-                `"${uni.name.replace(/"/g, '""')}"`,
-                uni.originalRankings.qs?.rank || '-',
-                uni.originalRankings.the?.rank || '-',
-                uni.originalRankings.arwu?.rank || '-',
-                uni.originalRankings.usnews?.rank || '-',
-                uni.appearances,
-                uni.aggregatedScore.toFixed(2)
-            ].join(',');
-        });
+  // Reset to page 1 when search or sort changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, sortBy]);
 
-        const csvContent = [headers.join(','), ...rows].join('\n');
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.setAttribute('download', 'aggregated_rankings.csv');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-    } else if (format === 'json') {
-        const jsonContent = JSON.stringify(aggregatedData, null, 2);
-        const blob = new Blob([jsonContent], { type: 'application/json;charset=utf-8;' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.setAttribute('download', 'aggregated_rankings.json');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+  const getRankingBadgeColor = (rank) => {
+    if (rank <= 3) return 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white';
+    if (rank <= 10) return 'bg-gradient-to-r from-blue-500 to-purple-600 text-white';
+    if (rank <= 25) return 'bg-gradient-to-r from-green-500 to-teal-500 text-white';
+    return 'bg-gradient-to-r from-gray-400 to-gray-600 text-white';
   };
 
-  const toggleThemeMode = () => {
-    setThemeMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'));
+  const getScoreBadgeColor = (score) => {
+    if (score >= 1710) return 'bg-gradient-to-r from-pink-500 to-rose-500 text-white';
+    if (score >= 1700) return 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white';
+    if (score >= 1650) return 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white';
+    return 'bg-gradient-to-r from-green-500 to-emerald-500 text-white';
   };
+
+  const getBestRanking = (originalRankings) => {
+    const ranks = Object.values(originalRankings).map(r => r.rank);
+    return Math.min(...ranks);
+  };
+
+  const getWorstRanking = (originalRankings) => {
+    const ranks = Object.values(originalRankings).map(r => r.rank);
+    return Math.max(...ranks);
+  };
+
+  const getRankingConsistency = (originalRankings) => {
+    const ranks = Object.values(originalRankings).map(r => r.rank);
+    const avg = ranks.reduce((a, b) => a + b, 0) / ranks.length;
+    const variance = ranks.reduce((acc, rank) => acc + Math.pow(rank - avg, 2), 0) / ranks.length;
+    return Math.sqrt(variance);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h2 className="text-2xl font-bold text-white mb-2">Loading Universities</h2>
+          <p className="text-purple-200">Aggregating global rankings...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <ThemeProvider theme={theme}>
-        <div className={`App ${themeMode}-mode`}>
-            <Container maxWidth={800} sx={{
-                 mb: '4rem', 
-                 px: '2rem',
-                 pt: 0,
-                 pb: '2rem',
-            }}>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
-                    <IconButton onClick={toggleThemeMode} color="inherit">
-                        {themeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                    </IconButton>
-                </Box>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-3xl animate-bounce"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-400/10 rounded-full blur-3xl animate-pulse"></div>
+        </div>
+        
+        <div className="relative container mx-auto px-6 py-16">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-6 py-2 mb-6 text-base md:text-lg" style={{ fontSize: '95%' }}>
+              <Globe className="w-5 h-5 text-blue-400" />
+              <span className="text-white font-medium">Global University Rankings</span>
+            </div>
+            
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg">
+                <BookOpen className="w-8 h-8 text-white" />
+              </div>
+              <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 leading-tight">
+                UniRank
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                  Global
+                </span>
+              </h1>
+            </div>
+            
+            <p className="text-xl text-purple-200 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '95%' }}>
+              Your comprehensive guide to global university rankings, aggregating data from QS, Times Higher Education, ARWU, and US News
+            </p>
+          </div>
 
-                <Typography variant="h3" component="h1" gutterBottom sx={{
-                     background: 'none', 
-                     WebkitBackgroundClip: 'unset',
-                     WebkitTextFillColor: 'unset',
-                }}>
-                  🎓 University Ranking Aggregator
-                </Typography>
-                <Typography variant="subtitle1" paragraph>
-                  Comprehensive aggregation using multiple credible sources and advanced statistical methodology
-                </Typography>
-
-                <div id="methodology-section" className="methodology">
-                  <h2>Our Methodology <button onClick={() => setIsMethodologyExpanded(!isMethodologyExpanded)}>{isMethodologyExpanded ? '▲' : '▼'}</button></h2>
-                  <h3>Advanced Borda Count with Penalized Absence</h3>
-                  <p>
-                    Our aggregation method is based on an advanced form of the Borda Count with Penalized Absence.
-                    This approach is more sophisticated than simple averaging methods like the one used by ARWU.
-                    It is based on established research in rank aggregation theory.
-                  </p>
-
-                  {isMethodologyExpanded && (
-                    <>
-                      <div className="methodology-section-block">
-                        <h3>Why This Methodology is Superior:</h3>
-                        <ul>
-                          <li><strong>Borda Count:</strong> Each ranking position contributes proportionally to the final score, providing a nuanced view compared to methods that only consider top tiers.</li>
-                          <li><strong>Penalized Absence:</strong> Universities missing from some sources are not simply ignored. Instead, we calculate penalties based on their likely rank in those sources, providing a more accurate overall score.</li>
-                          <li><strong>Confidence Weighting:</strong> Universities appearing in more credible sources receive higher confidence scores, reflecting the robustness of their ranking data.</li>
-                          <li><strong>Weighted Sources:</strong> Each ranking source can be assigned a different importance weight based on its perceived credibility or relevance.</li>
-                        </ul>
-                      </div>
-
-                      <div className="methodology-section-block">
-                        <h3>Data Sources (Top 4 Most Credible):</h3>
-                        <ul>
-                          <li><strong>QS World University Rankings:</strong> One of the most globally recognized rankings.</li>
-                          <li><strong>Times Higher Education:</strong> Known for its strong focus on research and teaching metrics.</li>
-                          <li><strong>Academic Ranking of World Universities (ARWU):</strong> Also known as Shanghai Rankings, heavily focused on research output and academic staff achievements.</li>
-                          <li><strong>US News Global Universities:</strong> Provides comprehensive global coverage and a broad set of indicators.</li>
-                        </ul>
-                      </div>
-
-                      <div className="methodology-section-block">
-                        <h3>Advanced Statistical Features:</h3>
-                        <ul>
-                          <li><strong>Normalization:</strong> Accounts for different ranking scales and methodologies used by individual sources.</li>
-                          <li><strong>Confidence Scoring:</strong> Weights universities appearing in multiple sources higher.</li>
-                          <li><strong>Outlier Detection:</strong> Implements penalties for inconsistent rankings across sources.</li>
-                          <li><strong>Export Options:</strong> Provides data in convenient formats like CSV and JSON with metadata.</li>
-                        </ul>
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                <div id="references-section">
-                  <h2>References <button onClick={() => setIsReferencesExpanded(!isReferencesExpanded)}>{isReferencesExpanded ? '▲' : '▼'}</button></h2>
-                  {isReferencesExpanded && (
-                    <ul>
-                      <li>Fox, N. B., & Bruyns, B. (2024). <em>An Evaluation of Borda Count Variations Using Ranked Choice Voting Data</em>. arXiv preprint arXiv:2501.00618.</li>
-                    </ul>
-                  )}
-                </div>
-
-                <div id="status"></div>
-
-                <Box sx={{
-                  display: 'flex',
-                  mb: 2,
-                  width: '100%',
-                }}>
-                  <TextField
-                    label="Search University"
-                    variant="outlined"
-                    size="small"
+          {/* Search and Filter Section */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search universities..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    InputProps={{
-                      startAdornment: (
-                        <SearchIcon sx={{ mr: 1 }} />
-                      ),
-                    }}
-                    sx={{ width: '100%', minWidth: 0 }}
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
                   />
-                </Box>
-
-                <AggregatedRankings searchTerm={searchTerm} rankingsData={aggregatedData} />
-
-                <Box sx={{ textAlign: 'center', mt: 4, display: 'flex', justifyContent: 'center' }}>
-                  <Button
-                    variant="contained"
-                    color="success"
-                    startIcon={<GetAppIcon />}
-                    onClick={() => exportResults('csv')}
-                    sx={{ mr: 2 }}
+                </div>
+                
+                <div className="relative">
+                  <TrendingUp className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
                   >
-                    Export CSV
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    startIcon={<GetAppIcon />}
-                    onClick={() => exportResults('json')}
-                  >
-                    Export JSON
-                  </Button>
-                </Box>
-            </Container>
+                    <option value="aggregatedRank" className="bg-gray-800">Aggregated Rank</option>
+                    <option value="aggregatedScore" className="bg-gray-800">Aggregated Score</option>
+                    <option value="qs" className="bg-gray-800">QS Ranking</option>
+                    <option value="the" className="bg-gray-800">THE Ranking</option>
+                    <option value="arwu" className="bg-gray-800">ARWU Ranking</option>
+                    <option value="usnews" className="bg-gray-800">US News Ranking</option>
+                    <option value="name" className="bg-gray-800">Name (A-Z)</option>
+                    <option value="appearances" className="bg-gray-800">Appearances</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <span className="text-purple-200">
+                  Found {filteredAndSortedUniversities.length} universities
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-    </ThemeProvider>
+      </div>
+
+      {/* University Cards */}
+      <div className="container mx-auto px-6 pb-20">
+        <div className="grid gap-8">
+          {paginatedUniversities.map((university, index) => (
+            <div
+              key={index}
+              className="group bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+              style={{
+                animationDelay: `${index * 100}ms`
+              }}
+            >
+              <div className="p-8">
+                <div className="flex flex-wrap items-start gap-6">
+                  {/* Ranking Badge */}
+                  <div className={`${getRankingBadgeColor(university.aggregatedRank)} rounded-2xl px-6 py-3 shadow-lg`}>
+                    <div className="text-center">
+                      <div className="text-3xl font-black">#{university.aggregatedRank}</div>
+                      <div className="text-xs opacity-90">OVERALL</div>
+                    </div>
+                  </div>
+                  
+                  {/* Score Badge */}
+                  <div className={`${getScoreBadgeColor(university.aggregatedScore)} rounded-2xl px-6 py-3 shadow-lg`}>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold">{university.aggregatedScore.toFixed(1)}</div>
+                      <div className="text-xs opacity-90">SCORE</div>
+                    </div>
+                  </div>
+                  
+                  {/* University Info */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
+                          {university.name}
+                        </h3>
+                        <div className="flex items-center gap-4 text-purple-200 mb-3">
+                          <div className="flex items-center gap-1">
+                            <Star className="w-4 h-4" />
+                            <span>{university.appearances} rankings</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Award className="w-4 h-4" />
+                            <span>Best: #{getBestRanking(university.originalRankings)}</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button
+                        onClick={() => setExpandedCard(expandedCard === index ? null : index)}
+                        className="text-white/60 hover:text-white transition-colors"
+                      >
+                        {expandedCard === index ? <ChevronUp /> : <ChevronDown />}
+                      </button>
+                    </div>
+                    
+                    {/* Rankings Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                      {Object.entries(university.originalRankings).map(([source, data]) => (
+                        <div key={source} className="bg-white/10 rounded-xl p-3 text-center border border-white/10">
+                          <div className="text-lg font-bold text-white">#{data.rank}</div>
+                          <div className="text-xs text-purple-200 uppercase tracking-wide">
+                            {source === 'qs' ? 'QS World' : 
+                             source === 'the' ? 'THE' :
+                             source === 'arwu' ? 'ARWU' : 
+                             source === 'usnews' ? 'US News' : source}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Expanded Content */}
+                {expandedCard === index && (
+                  <div className="mt-8 pt-8 border-t border-white/20 animate-in slide-in-from-top duration-300">
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                          <TrendingUp className="w-5 h-5" />
+                          Ranking Analysis
+                        </h4>
+                        
+                        <div className="space-y-4">
+                          <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                            <div className="flex justify-between items-center mb-2">
+                              <span className="text-purple-200">Best Ranking</span>
+                              <span className="text-green-400 font-bold">#{getBestRanking(university.originalRankings)}</span>
+                            </div>
+                            <div className="flex justify-between items-center mb-2">
+                              <span className="text-purple-200">Worst Ranking</span>
+                              <span className="text-orange-400 font-bold">#{getWorstRanking(university.originalRankings)}</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-purple-200">Consistency</span>
+                              <span className="text-blue-400 font-bold">
+                                {getRankingConsistency(university.originalRankings) < 2 ? 'Very High' :
+                                 getRankingConsistency(university.originalRankings) < 5 ? 'High' :
+                                 getRankingConsistency(university.originalRankings) < 10 ? 'Medium' : 'Variable'}
+                              </span>
+                            </div>
+                          </div>
+                          
+                          <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                            <h5 className="text-white font-semibold mb-3">Ranking Sources</h5>
+                            <div className="space-y-2 text-sm">
+                              <div className="flex justify-between">
+                                <span className="text-purple-200">QS World University Rankings</span>
+                                <span className="text-white">Global</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-purple-200">Times Higher Education</span>
+                                <span className="text-white">Global</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-purple-200">ARWU (Shanghai)</span>
+                                <span className="text-white">Global</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-purple-200">US News Global</span>
+                                <span className="text-white">Global</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                          <Award className="w-5 h-5" />
+                          Performance Metrics
+                        </h4>
+                        
+                        <div className="grid grid-cols-2 gap-4 mb-6">
+                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
+                            <div className="text-2xl font-bold text-yellow-400 mb-1">
+                              {university.aggregatedScore.toFixed(2)}
+                            </div>
+                            <div className="text-xs text-purple-200">Aggregated Score</div>
+                          </div>
+                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
+                            <div className="text-2xl font-bold text-green-400 mb-1">
+                              {university.appearances}
+                            </div>
+                            <div className="text-xs text-purple-200">Rankings Featured</div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                          <h5 className="text-white font-semibold mb-3">Ranking Distribution</h5>
+                          <div className="space-y-3">
+                            {Object.entries(university.originalRankings).map(([source, data]) => {
+                              const percentage = Math.max(10, 100 - (data.rank - 1) * 2);
+                              return (
+                                <div key={source} className="space-y-1">
+                                  <div className="flex justify-between text-sm">
+                                    <span className="text-purple-200 uppercase">{source}</span>
+                                    <span className="text-white font-semibold">#{data.rank}</span>
+                                  </div>
+                                  <div className="w-full bg-white/10 rounded-full h-2">
+                                    <div 
+                                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-1000"
+                                      style={{ width: `${percentage}%` }}
+                                    />
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-12 gap-2 flex-wrap">
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition"
+            >
+              Previous
+            </button>
+            {paginationWindow.map((page, idx) =>
+              page === 'ellipsis-prev' || page === 'ellipsis-next' ? (
+                <span key={page + idx} className="px-3 py-2 text-white/60">...</span>
+              ) : (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-4 py-2 rounded-lg border border-white/20 mx-1 ${
+                    page === currentPage
+                      ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold shadow-lg'
+                      : 'bg-white/10 text-white hover:bg-white/20 transition'
+                  }`}
+                  disabled={page === currentPage}
+                >
+                  {page}
+                </button>
+              )
+            )}
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition"
+            >
+              Next
+            </button>
+          </div>
+        )}
+        
+        {filteredAndSortedUniversities.length === 0 && (
+          <div className="text-center py-20">
+            <div className="text-6xl mb-4">🎓</div>
+            <h3 className="text-2xl font-bold text-white mb-2">No universities found</h3>
+            <p className="text-purple-200">Try adjusting your search or filter criteria</p>
+          </div>
+        )}
+      </div>
+      
+      {/* Footer */}
+      <footer className="border-t border-white/10 bg-black/20 backdrop-blur-md">
+        <div className="container mx-auto px-6 py-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center transform rotate-12">
+                <BookOpen className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-white font-semibold text-lg">UniRank Global</span>
+            </div>
+            <p className="text-purple-200 mb-6">
+              Aggregating university rankings from QS, Times Higher Education, ARWU, and US News
+            </p>
+            {/* Methodology Collapsible Section */}
+            <div className="max-w-2xl mx-auto">
+              <button
+                onClick={() => setShowMethodology((v) => !v)}
+                className="w-full flex items-center justify-between px-6 py-3 bg-white/10 border border-white/20 rounded-xl text-white font-semibold text-lg hover:bg-white/20 transition mb-2"
+                aria-expanded={showMethodology}
+              >
+                <span>Our Methodology</span>
+                <span className="ml-2">{showMethodology ? '▲' : '▼'}</span>
+              </button>
+              {showMethodology && (
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left text-purple-100 text-base animate-in mt-2">
+                  <div className="mb-4">
+                    <span className="block text-white font-bold mb-2">Advanced Borda Count with Penalized Absence</span>
+                    <span>
+                      Our aggregation uses an advanced Borda Count with Penalized Absence, based on research in rank aggregation theory.
+                    </span>
+                  </div>
+                  <ul className="list-disc list-inside mb-4 space-y-1">
+                    <li><b>Borda Count:</b> Each ranking position contributes proportionally to the final score.</li>
+                    <li><b>Penalized Absence:</b> Missing universities are penalized based on likely rank, not ignored.</li>
+                    <li><b>Confidence Weighting:</b> More credible sources and universities appearing in more sources are weighted higher.</li>
+                    <li><b>Weighted Sources:</b> Each ranking source can be assigned a different importance.</li>
+                  </ul>
+                  <div className="mb-4">
+                    <span className="block text-white font-semibold mb-1">Data Sources:</span>
+                    <span>QS, Times Higher Education (THE), ARWU, US News Global Universities</span>
+                  </div>
+                  <ul className="list-disc list-inside mb-4 space-y-1">
+                    <li>Normalization for different scales</li>
+                    <li>Confidence scoring</li>
+                    <li>Outlier detection</li>
+                    <li>Export options (CSV, JSON)</li>
+                  </ul>
+                  <div className="mt-4">
+                    <span className="block text-white font-semibold mb-1">References:</span>
+                    <span>Fox, N. B., & Bruyns, B. (2024). An Evaluation of Borda Count Variations Using Ranked Choice Voting Data. arXiv:2501.00618.</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
 

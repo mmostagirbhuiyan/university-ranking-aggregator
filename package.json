@@ -4,8 +4,7 @@
   "description": "A web application to aggregate university rankings from multiple sources.",
   "main": "scripts/scrape-rankings.js",
   "scripts": {
-    "start": "node scripts/scrape-rankings.js",
-    "scrape": "node scripts/scrape-rankings.js"
+    "start": "node scripts/matchUniversities.js && node scripts/aggregateRankings.js"
   },
   "keywords": [
     "university",

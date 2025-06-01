@@ -217,9 +217,9 @@ function App() {
               }}
             >
               <div className="p-8">
-                <div className="flex flex-wrap items-start gap-6">
+                <div className="flex flex-wrap md:flex-nowrap items-start gap-6">
                   {/* Ranking Badge */}
-                  <div className={`${getRankingBadgeColor(university.aggregatedRank)} rounded-2xl px-6 py-3 shadow-lg`}>
+                  <div className={`${getRankingBadgeColor(university.aggregatedRank)} rounded-2xl px-6 py-3 shadow-lg mb-4 md:mb-0 w-full md:w-auto`}>
                     <div className="text-center">
                       <div className="text-3xl font-black">#{university.aggregatedRank}</div>
                       <div className="text-xs opacity-90">OVERALL</div>
@@ -227,7 +227,7 @@ function App() {
                   </div>
                   
                   {/* Score Badge */}
-                  <div className={`${getScoreBadgeColor(university.aggregatedScore)} rounded-2xl px-6 py-3 shadow-lg`}>
+                  <div className={`${getScoreBadgeColor(university.aggregatedScore)} rounded-2xl px-6 py-3 shadow-lg mb-4 md:mb-0 w-full md:w-auto`}>
                     <div className="text-center">
                       <div className="text-2xl font-bold">{university.aggregatedScore.toFixed(1)}</div>
                       <div className="text-xs opacity-90">SCORE</div>
@@ -235,13 +235,13 @@ function App() {
                   </div>
                   
                   {/* University Info */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
+                  <div className="flex-1 min-w-0 w-full">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
+                      <div className="w-full">
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors break-words">
                           {university.name}
                         </h3>
-                        <div className="flex items-center gap-4 text-purple-200 mb-3">
+                        <div className="flex flex-wrap items-center gap-4 text-purple-200 mb-3 text-sm md:text-base">
                           <div className="flex items-center gap-1">
                             <Star className="w-4 h-4" />
                             <span>{university.appearances} rankings</span>
@@ -252,10 +252,9 @@ function App() {
                           </div>
                         </div>
                       </div>
-                      
                       <button
                         onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="text-white/60 hover:text-white transition-colors"
+                        className="text-white/60 hover:text-white transition-colors self-end"
                       >
                         {expandedCard === index ? <ChevronUp /> : <ChevronDown />}
                       </button>
@@ -264,7 +263,7 @@ function App() {
                     {/* Rankings Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                       {Object.entries(university.originalRankings).map(([source, data]) => (
-                        <div key={source} className="bg-white/10 rounded-xl p-3 text-center border border-white/10">
+                        <div key={source} className="bg-white/10 rounded-xl p-3 text-center border border-white/10 text-xs md:text-base">
                           <div className="text-lg font-bold text-white">#{data.rank}</div>
                           <div className="text-xs text-purple-200 uppercase tracking-wide">
                             {source === 'qs' ? 'QS World' : 

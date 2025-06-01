@@ -3,7 +3,7 @@ const XLSX = require('xlsx');
 const path = require('path');
 
 const QS_EXCEL_FILE = 'qs_rankings.xlsx';
-const QS_FILE_PATH = path.join(__dirname, '..', 'data', QS_EXCEL_FILE);
+const QS_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', QS_EXCEL_FILE);
 
 /**
  * Reads QS World University Rankings from a local Excel file.

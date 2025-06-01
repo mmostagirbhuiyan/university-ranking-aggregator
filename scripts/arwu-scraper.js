@@ -3,13 +3,15 @@ const axios = require('axios');
 const fs = require('fs'); // Import the file system module
 const cheerio = require('cheerio');
 const csv = require('csv-parser'); // Import the csv-parser library
+const path = require('path');
 
 // Updated URL to universityrankings.ch - This is no longer used for fetching, but kept for reference
 // Updated URL to universityrankings.ch
 const ARWU_RANKINGS_URL = 'https://www.universityrankings.ch/results/Shanghai/2024';
 
 // Define the path for the local CSV file
-const LOCAL_ARWU_DATA_PATH = 'data/arwu_rankings.csv';
+const ARWU_CSV_FILE = 'arwu_rankings.csv';
+const ARWU_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', ARWU_CSV_FILE);
 
 // Define the path for the local HTML file
 const LOCAL_ARWU_DATA_PATH_HTML = 'Shanghai Ranking 2024 - Results _ UniversityRankings.ch.html';
@@ -24,11 +26,11 @@ async function scrapeARWURankings(limit) {
     const rankings = [];
 
     try {
-        console.log(`Reading ARWU rankings from local CSV file ${LOCAL_ARWU_DATA_PATH}...`);
+        console.log(`Reading ARWU rankings from local CSV file ${ARWU_FILE_PATH}...`);
 
         // --- Start of parsing logic with csv-parser ---
         await new Promise((resolve, reject) => {
-            fs.createReadStream(LOCAL_ARWU_DATA_PATH)
+            fs.createReadStream(ARWU_FILE_PATH)
                 .pipe(csv({
                     // Explicitly define headers as found in the CSV file (line 5)
                     headers: ['# World Rank', ' Institution', ' Country'], 
@@ -48,7 +50,7 @@ async function scrapeARWURankings(limit) {
                     }
                 })
                 .on('end', () => {
-                    console.log(`Successfully parsed ${rankings.length} universities from ${LOCAL_ARWU_DATA_PATH}.`);
+                    console.log(`Successfully parsed ${rankings.length} universities from ${ARWU_FILE_PATH}.`);
                     resolve();
                 })
                 .on('error', (error) => {

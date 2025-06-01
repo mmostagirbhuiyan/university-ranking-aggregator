@@ -325,7 +325,12 @@ const universityNameMap = {
     "Korea University": "Korea University",
     "Abu Dhabi University": "Abu Dhabi University",
     "Ulm University": "Ulm University",
-    "Universitat Autònoma de Barcelona (UAB)": "Universitat Autònoma de Barcelona"
+    "Universitat Autònoma de Barcelona (UAB)": "Universitat Autònoma de Barcelona",
+    // Add NYU variations
+    "New York University (NYU)": "New York University",
+    "NYU": "New York University",
+    "New York University, New York": "New York University",
+    "New York University, NY": "New York University",
 };
 
 /**
@@ -413,7 +418,7 @@ async function main(limit = 200) {
         // Keep existing logic for US News CSV as it was manually provided
         const usnewsRankings = await new Promise((resolve, reject) => {
             const results = [];
-            createReadStream(path.join(__dirname, '..', 'data', 'usnews_rankings.csv'))
+            createReadStream(path.join(__dirname, '..', 'frontend', 'public', 'data', 'usnews_rankings.csv'))
                 .pipe(csv())
                  .on('headers', (headers) => {
                      console.log('US News CSV Headers detected:', headers);
@@ -472,7 +477,7 @@ async function main(limit = 200) {
         console.log('Ranking aggregation complete.');
 
         // --- 4. Save results to JSON file ---
-        const outputFilePath = path.join(__dirname, '..', 'data', 'aggregated-rankings.json');
+        const outputFilePath = path.join(__dirname, '..', 'frontend', 'public', 'data', 'aggregated-rankings.json');
         await fs.writeFile(outputFilePath, JSON.stringify(aggregatedResults, null, 2));
         console.log(`Aggregated rankings saved to ${outputFilePath}`);
 

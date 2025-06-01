@@ -2,12 +2,15 @@
 // const axios = require('axios'); // Removed axios dependency
 const fs = require('fs').promises; // Import the file system module
 // const cheerio = require('cheerio'); // Removed cheerio dependency
+const path = require('path');
 
 // Updated URL to fetch JSON data directly
 // const THE_RANKINGS_URL = 'https://www.timeshighereducation.com/sites/default/files/the_data_rankings/world_university_rankings_2025_0__ba2fbd3409733a83fb62c3ee4219487c.json'; // Removed URL
 
 // Define the path for the local JSON file
-const LOCAL_THE_DATA_PATH = 'data/the_rankings.json';
+const LOCAL_THE_DATA_PATH = 'frontend/public/data/the_rankings.json';
+const THE_JSON_FILE = 'the_rankings.json';
+const THE_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', THE_JSON_FILE);
 
 /**
  * Reads the Times Higher Education World University Rankings from a local JSON file.

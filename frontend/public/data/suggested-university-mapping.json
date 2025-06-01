@@ -50,6 +50,11 @@
     "suggestedStandardizedName": "Massachusetts Institute of Technology - MIT"
   },
   {
+    "originalName": "Massachusetts Institute of Technology",
+    "source": "usnews",
+    "suggestedStandardizedName": "Massachusetts Institute of Technology - MIT"
+  },
+  {
     "originalName": "Massachusetts Institute of Technology (MIT)",
     "source": "qs",
     "suggestedStandardizedName": "Massachusetts Institute of Technology - MIT"
@@ -15675,41 +15680,6 @@
     "suggestedStandardizedName": "Siksha 'O' Anusandhan (Deemed to be University)"
   },
   {
-    "originalName": "Technology (MIT)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "& Technology",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (QUT)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (RMIT)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (NTNU)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (POSTECH)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "& Technology (UNIST)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
     "originalName": "California Institute of Technology",
     "source": "usnews",
     "suggestedStandardizedName": "California Institute of Technology (Caltech)"
@@ -15818,6 +15788,36 @@
     "originalName": "Jordan University of Science & Technology",
     "source": "qs",
     "suggestedStandardizedName": "Jordan University of Science & Technology"
+  },
+  {
+    "originalName": "& Technology",
+    "source": "usnews",
+    "suggestedStandardizedName": "Technology (POSTECH)"
+  },
+  {
+    "originalName": "Technology (QUT)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Technology (POSTECH)"
+  },
+  {
+    "originalName": "Technology (RMIT)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Technology (POSTECH)"
+  },
+  {
+    "originalName": "Technology (NTNU)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Technology (POSTECH)"
+  },
+  {
+    "originalName": "Technology (POSTECH)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Technology (POSTECH)"
+  },
+  {
+    "originalName": "& Technology (UNIST)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Technology (POSTECH)"
   },
   {
     "originalName": "Ghent University",

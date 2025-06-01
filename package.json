@@ -18,9 +18,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@chakra-ui/react": "^3.19.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
     "csv-parser": "^3.0.0",
+    "framer-motion": "^12.15.0",
     "puppeteer": "^22.6.5",
     "string-similarity": "^4.0.4",
     "xlsx": "^0.18.5"

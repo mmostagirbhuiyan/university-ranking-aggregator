@@ -140,14 +140,24 @@
     "suggestedStandardizedName": "Princeton University"
   },
   {
-    "originalName": "California Institute of Technology - Caltech",
+    "originalName": "California Institute of Technology (Caltech)",
     "source": "arwu",
-    "suggestedStandardizedName": "California Institute of Technology - Caltech"
+    "suggestedStandardizedName": "California Institute of Technology (Caltech)"
   },
   {
-    "originalName": "California Institute of Technology - Caltech",
+    "originalName": "California Institute of Technology (Caltech)",
     "source": "the",
-    "suggestedStandardizedName": "California Institute of Technology - Caltech"
+    "suggestedStandardizedName": "California Institute of Technology (Caltech)"
+  },
+  {
+    "originalName": "California Institute of Technology",
+    "source": "usnews",
+    "suggestedStandardizedName": "California Institute of Technology (Caltech)"
+  },
+  {
+    "originalName": "California Institute of Technology (Caltech)",
+    "source": "qs",
+    "suggestedStandardizedName": "California Institute of Technology (Caltech)"
   },
   {
     "originalName": "Columbia University",
@@ -15378,16 +15388,6 @@
     "originalName": "University of Michigan",
     "source": "usnews",
     "suggestedStandardizedName": "University of Michigan"
-  },
-  {
-    "originalName": "California Institute of Technology",
-    "source": "usnews",
-    "suggestedStandardizedName": "California Institute of Technology (Caltech)"
-  },
-  {
-    "originalName": "California Institute of Technology (Caltech)",
-    "source": "qs",
-    "suggestedStandardizedName": "California Institute of Technology (Caltech)"
   },
   {
     "originalName": "Washington University (WUSTL)",

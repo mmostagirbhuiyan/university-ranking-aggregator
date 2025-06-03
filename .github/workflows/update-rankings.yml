@@ -5,10 +5,6 @@ on:
   # Manual trigger
   workflow_dispatch:
   
-  # Scheduled run (monthly on the 1st at 2 AM UTC)
-  schedule:
-    - cron: '0 2 1 * *'
-  
   # Trigger when data files are updated
   push:
     paths:
@@ -19,6 +15,8 @@ on:
 jobs:
   update-rankings:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push changes back to repo
     
     steps:
     - name: Checkout repository

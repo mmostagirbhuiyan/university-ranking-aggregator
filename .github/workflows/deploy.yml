@@ -5,6 +5,15 @@ on:
     branches:
       - main
 
+    paths-ignore:
+      - 'frontend/public/data/*.xlsx'
+      - 'frontend/public/data/*.csv'
+      - 'frontend/public/data/suggested-university-mapping.json'
+      # Optionally exclude other non-deployment files
+      - 'README.md'
+      - 'docs/**'
+      - '.github/workflows/update-rankings.yml'
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

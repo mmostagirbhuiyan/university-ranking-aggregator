@@ -1,0 +1,161 @@
+# .github/workflows/update-rankings.yml
+
+name: Update University Rankings
+
+on:
+
+# Manual trigger
+
+workflow_dispatch:
+
+# Scheduled run (monthly on the 1st at 2 AM UTC)
+
+schedule:
+- cron: ‘0 2 1 * *’
+
+# Trigger when data files are updated
+
+push:
+paths:
+- ‘frontend/public/data/*.xlsx’
+- ’frontend/public/data/*.csv’
+- ‘frontend/public/data/suggested-university-mapping.json’
+
+jobs:
+update-rankings:
+runs-on: ubuntu-latest
+
+```
+steps:
+- name: Checkout repository
+  uses: actions/checkout@v4
+  with:
+    token: ${{ secrets.GITHUB_TOKEN }}
+
+- name: Setup Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: '20.x'
+    cache: 'npm'
+
+- name: Install dependencies
+  run: npm install
+
+- name: Verify data files
+  run: |
+    echo "📊 Checking for ranking data files..."
+    ls -la frontend/public/data/
+    
+    # Check if required data files exist
+    files_exist=true
+    for file in "qs_rankings.xlsx" "the_rankings.csv" "arwu_rankings.csv" "usnews_rankings.csv"; do
+      if [ ! -f "frontend/public/data/$file" ]; then
+        echo "⚠️  Warning: $file not found"
+        files_exist=false
+      else
+        echo "✅ Found: $file"
+      fi
+    done
+    
+    if [ "$files_exist" = false ]; then
+      echo "❌ Some data files are missing. Please add all ranking files to frontend/public/data/"
+      exit 1
+    fi
+
+- name: Generate university name mapping
+  run: |
+    echo "🔄 Generating university name mapping..."
+    node scripts/match-universities.js
+    echo "✅ University mapping generated"
+
+- name: Run rankings aggregation
+  run: |
+    echo "📈 Running rankings aggregation..."
+    node scripts/scrape-rankings.js
+    echo "✅ Rankings aggregation completed"
+
+- name: Validate output
+  run: |
+    echo "🔍 Validating generated files..."
+    
+    if [ ! -f "frontend/public/data/aggregated-rankings.json" ]; then
+      echo "❌ aggregated-rankings.json not generated"
+      exit 1
+    fi
+    
+    # Validate JSON structure
+    if ! jq empty frontend/public/data/aggregated-rankings.json 2>/dev/null; then
+      echo "❌ Generated JSON is invalid"
+      exit 1
+    fi
+    
+    # Show some stats
+    file_size=$(stat -c%s frontend/public/data/aggregated-rankings.json)
+    uni_count=$(jq '. | length' frontend/public/data/aggregated-rankings.json 2>/dev/null || echo "unknown")
+    
+    echo "✅ Validation passed"
+    echo "📄 File size: ${file_size} bytes"
+    echo "🎓 Universities processed: ${uni_count}"
+
+- name: Commit and push updates
+  run: |
+    git config --local user.email "action@github.com"
+    git config --local user.name "GitHub Action Bot"
+    
+    # Add the generated/updated files
+    git add frontend/public/data/aggregated-rankings.json
+    git add frontend/public/data/suggested-university-mapping.json
+    
+    # Check if there are changes to commit
+    if git diff --staged --quiet; then
+      echo "ℹ️  No changes detected - rankings are up to date"
+    else
+      # Get some stats for commit message
+      uni_count=$(jq '. | length' frontend/public/data/aggregated-rankings.json 2>/dev/null || echo "N/A")
+      
+      git commit -m "🤖 Auto-update university rankings
+```
+
+📊 Updated aggregated rankings with ${uni_count} universities
+🔄 Refreshed university name mappings
+⏰ Generated: $(date -u ‘+%Y-%m-%d %H:%M:%S UTC’)
+
+This update will trigger automatic deployment.”
+
+```
+      git push
+      echo "✅ Rankings data pushed to repository"
+      echo "🚀 Deployment workflow will start automatically"
+    fi
+
+- name: Create summary
+  run: |
+    echo "## 📊 Rankings Update Summary" >> $GITHUB_STEP_SUMMARY
+    echo "" >> $GITHUB_STEP_SUMMARY
+    echo "**⏰ Completed:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+    echo "" >> $GITHUB_STEP_SUMMARY
+    
+    if [ -f "frontend/public/data/aggregated-rankings.json" ]; then
+      uni_count=$(jq '. | length' frontend/public/data/aggregated-rankings.json 2>/dev/null || echo "unknown")
+      file_size=$(stat -c%s frontend/public/data/aggregated-rankings.json)
+      
+      echo "✅ **Status:** Successfully updated rankings" >> $GITHUB_STEP_SUMMARY
+      echo "🎓 **Universities processed:** $uni_count" >> $GITHUB_STEP_SUMMARY
+      echo "📄 **Output file size:** ${file_size} bytes" >> $GITHUB_STEP_SUMMARY
+    else
+      echo "❌ **Status:** Failed to update rankings" >> $GITHUB_STEP_SUMMARY
+    fi
+    
+    echo "" >> $GITHUB_STEP_SUMMARY
+    echo "### 📁 Source Data Files:" >> $GITHUB_STEP_SUMMARY
+    for file in frontend/public/data/*.xlsx frontend/public/data/*.csv; do
+      if [ -f "$file" ]; then
+        filename=$(basename "$file")
+        size=$(stat -c%s "$file" 2>/dev/null || echo "unknown")
+        echo "- **$filename**: ${size} bytes" >> $GITHUB_STEP_SUMMARY
+      fi
+    done
+    
+    echo "" >> $GITHUB_STEP_SUMMARY
+    echo "🚀 **Next Step:** Deployment workflow will automatically start to publish updates"
+```

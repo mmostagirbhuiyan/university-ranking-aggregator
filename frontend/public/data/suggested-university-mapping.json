@@ -805,6 +805,11 @@
     "suggestedStandardizedName": "University of Munich"
   },
   {
+    "originalName": "University of Munich",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Munich"
+  },
+  {
     "originalName": "Karolinska Institute",
     "source": "arwu",
     "suggestedStandardizedName": "Karolinska Institutet"
@@ -16078,11 +16083,6 @@
     "originalName": "The London School of Economics and Political Science (LSE)",
     "source": "qs",
     "suggestedStandardizedName": "The London School of Economics and Political Science (LSE)"
-  },
-  {
-    "originalName": "Ludwig-Maximilians-Universität München",
-    "source": "qs",
-    "suggestedStandardizedName": "Ludwig-Maximilians-Universität München"
   },
   {
     "originalName": "Universidad de Buenos Aires (UBA)",

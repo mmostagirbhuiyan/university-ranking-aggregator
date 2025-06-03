@@ -891,6 +891,11 @@
   },
   {
     "originalName": "Technical University of Munich",
+    "source": "the",
+    "suggestedStandardizedName": "Technical University of Munich"
+  },
+  {
+    "originalName": "Technical University of Munich",
     "source": "usnews",
     "suggestedStandardizedName": "Technical University of Munich"
   },
@@ -13173,11 +13178,6 @@
     "originalName": "Jazan University",
     "source": "the",
     "suggestedStandardizedName": "Jazan University"
-  },
-  {
-    "originalName": "Technical University of M�nchen",
-    "source": "the",
-    "suggestedStandardizedName": "Technical University of M�nchen"
   },
   {
     "originalName": "University of M�nchen",

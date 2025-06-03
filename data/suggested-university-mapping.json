@@ -555,6 +555,11 @@
     "suggestedStandardizedName": "University of Michigan - Ann Arbor"
   },
   {
+    "originalName": "University of Michigan - Ann Arbor",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Michigan - Ann Arbor"
+  },
+  {
     "originalName": "University of Michigan-Ann Arbor",
     "source": "qs",
     "suggestedStandardizedName": "University of Michigan - Ann Arbor"
@@ -5157,6 +5162,11 @@
   {
     "originalName": "Ulsan National Institute of Science and Technology",
     "source": "the",
+    "suggestedStandardizedName": "Ulsan National Institute of Science and Technology (UNIST)"
+  },
+  {
+    "originalName": "Ulsan National Institute of Science and Technology (UNIST)",
+    "source": "usnews",
     "suggestedStandardizedName": "Ulsan National Institute of Science and Technology (UNIST)"
   },
   {
@@ -15390,11 +15400,6 @@
     "suggestedStandardizedName": "Siksha O Anusandhan"
   },
   {
-    "originalName": "University of Michigan",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Michigan"
-  },
-  {
     "originalName": "Washington University (WUSTL)",
     "source": "usnews",
     "suggestedStandardizedName": "Washington University (WUSTL)"
@@ -15506,11 +15511,6 @@
   },
   {
     "originalName": "Technology (POSTECH)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "& Technology (UNIST)",
     "source": "usnews",
     "suggestedStandardizedName": "Technology (POSTECH)"
   },

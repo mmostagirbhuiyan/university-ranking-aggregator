@@ -3790,6 +3790,16 @@
     "suggestedStandardizedName": "Queen's University"
   },
   {
+    "originalName": "Queen's University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Queen's University"
+  },
+  {
+    "originalName": "Queen's University",
+    "source": "qs",
+    "suggestedStandardizedName": "Queen's University"
+  },
+  {
     "originalName": "University of Manitoba",
     "source": "arwu",
     "suggestedStandardizedName": "University of Manitoba"
@@ -15865,11 +15875,6 @@
     "suggestedStandardizedName": "Technology & Design"
   },
   {
-    "originalName": "Queens University - Canada",
-    "source": "usnews",
-    "suggestedStandardizedName": "Queens University - Canada"
-  },
-  {
     "originalName": "Islamic Azad University",
     "source": "usnews",
     "suggestedStandardizedName": "Islamic Azad University"
@@ -16228,11 +16233,6 @@
     "originalName": "Universität Hamburg",
     "source": "qs",
     "suggestedStandardizedName": "Universität Hamburg"
-  },
-  {
-    "originalName": "Queen's University at Kingston",
-    "source": "qs",
-    "suggestedStandardizedName": "Queen's University at Kingston"
   },
   {
     "originalName": "Universidad Autónoma de Madrid",

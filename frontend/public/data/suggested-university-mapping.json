@@ -7735,6 +7735,11 @@
     "suggestedStandardizedName": "State University of New York at Buffalo"
   },
   {
+    "originalName": "State University of New York at Buffalo",
+    "source": "usnews",
+    "suggestedStandardizedName": "State University of New York at Buffalo"
+  },
+  {
     "originalName": "University of Oregon",
     "source": "arwu",
     "suggestedStandardizedName": "University of Oregon"
@@ -15803,11 +15808,6 @@
     "originalName": "Leipzig University",
     "source": "usnews",
     "suggestedStandardizedName": "Leipzig University"
-  },
-  {
-    "originalName": "(SUNY) Buffalo",
-    "source": "usnews",
-    "suggestedStandardizedName": "(SUNY) Buffalo"
   },
   {
     "originalName": "Qatar University",

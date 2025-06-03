@@ -22,7 +22,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PAT_TOKEN }}
     
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -40,7 +40,7 @@ jobs:
         
         # Check if required data files exist
         files_exist=true
-        for file in "qs_rankings.csv" "the_rankings.csv" "arwu_rankings.csv" "usnews_rankings.csv"; do
+        for file in "qs_rankings.xlsx" "the_rankings.csv" "arwu_rankings.csv" "usnews_rankings.csv"; do
           if [ ! -f "frontend/public/data/$file" ]; then
             echo "⚠️  Warning: $file not found"
             files_exist=false
@@ -106,7 +106,10 @@ jobs:
           uni_count=$(jq '. | length' frontend/public/data/aggregated-rankings.json 2>/dev/null || echo "N/A")
           
           git commit -m "🤖 Auto-update university rankings
-         📊 Updated aggregated rankings with ${uni_count} universities 🔄 Refreshed university name mappings ⏰ Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC') This update will trigger automatic deployment."
+          📊 Updated aggregated rankings with ${uni_count} universities
+          🔄 Refreshed university name mappings
+          ⏰ Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          This update will trigger automatic deployment."
           
           git push
           echo "✅ Rankings data pushed to repository"

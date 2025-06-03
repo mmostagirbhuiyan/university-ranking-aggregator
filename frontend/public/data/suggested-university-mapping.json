@@ -7740,6 +7740,11 @@
     "suggestedStandardizedName": "State University of New York at Buffalo"
   },
   {
+    "originalName": "State University of New York at Buffalo",
+    "source": "qs",
+    "suggestedStandardizedName": "State University of New York at Buffalo"
+  },
+  {
     "originalName": "University of Oregon",
     "source": "arwu",
     "suggestedStandardizedName": "University of Oregon"
@@ -16588,11 +16593,6 @@
     "originalName": "Universitat Ramon Llull",
     "source": "qs",
     "suggestedStandardizedName": "Universitat Ramon Llull"
-  },
-  {
-    "originalName": "University at Buffalo SUNY",
-    "source": "qs",
-    "suggestedStandardizedName": "University at Buffalo SUNY"
   },
   {
     "originalName": "Essex, University of",

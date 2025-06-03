@@ -801,6 +801,11 @@
   },
   {
     "originalName": "University of Munich",
+    "source": "the",
+    "suggestedStandardizedName": "University of Munich"
+  },
+  {
+    "originalName": "University of Munich",
     "source": "usnews",
     "suggestedStandardizedName": "University of Munich"
   },
@@ -13183,11 +13188,6 @@
     "originalName": "Jazan University",
     "source": "the",
     "suggestedStandardizedName": "Jazan University"
-  },
-  {
-    "originalName": "University of M�nchen",
-    "source": "the",
-    "suggestedStandardizedName": "University of M�nchen"
   },
   {
     "originalName": "Humboldt University of Berlin",

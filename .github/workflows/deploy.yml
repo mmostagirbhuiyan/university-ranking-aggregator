@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - main
+    # Exclude paths that trigger the rankings workflow
+    paths-ignore:
+      - 'frontend/public/data/*.xlsx'
+      - 'frontend/public/data/*.csv'
+      # Optionally exclude other non-deployment files
+      - 'README.md'
+      - 'docs/**'
+      - '.github/workflows/update-rankings.yml'
 
 # Set permissions for GitHub Pages deployment
 permissions:

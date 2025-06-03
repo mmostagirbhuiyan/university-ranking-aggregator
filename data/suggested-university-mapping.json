@@ -3381,6 +3381,11 @@
   },
   {
     "originalName": "Arizona State University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Arizona State University"
+  },
+  {
+    "originalName": "Arizona State University",
     "source": "qs",
     "suggestedStandardizedName": "Arizona State University"
   },
@@ -15573,11 +15578,6 @@
     "originalName": "Universite de Montreal",
     "source": "usnews",
     "suggestedStandardizedName": "Universite de Montreal"
-  },
-  {
-    "originalName": "Arizona State University-Tempe",
-    "source": "usnews",
-    "suggestedStandardizedName": "Arizona State University-Tempe"
   },
   {
     "originalName": "Maastricht University",

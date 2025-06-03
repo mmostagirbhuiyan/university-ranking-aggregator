@@ -42,7 +42,7 @@ jobs:
         
         # Check if required data files exist
         files_exist=true
-        for file in "qs_rankings.xlsx" "the_rankings.csv" "arwu_rankings.csv" "usnews_rankings.csv"; do
+        for file in "qs_rankings.csv" "the_rankings.csv" "arwu_rankings.csv" "usnews_rankings.csv"; do
           if [ ! -f "frontend/public/data/$file" ]; then
             echo "⚠️  Warning: $file not found"
             files_exist=false

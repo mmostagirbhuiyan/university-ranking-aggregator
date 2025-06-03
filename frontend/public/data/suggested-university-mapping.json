@@ -6566,6 +6566,11 @@
   },
   {
     "originalName": "Stony Brook University, State University of New York",
+    "source": "usnews",
+    "suggestedStandardizedName": "Stony Brook University, State University of New York"
+  },
+  {
+    "originalName": "Stony Brook University, State University of New York",
     "source": "qs",
     "suggestedStandardizedName": "Stony Brook University, State University of New York"
   },
@@ -15663,11 +15668,6 @@
     "originalName": "Goethe University Frankfurt",
     "source": "usnews",
     "suggestedStandardizedName": "Goethe University Frankfurt"
-  },
-  {
-    "originalName": "(SUNY) Stony Brook",
-    "source": "usnews",
-    "suggestedStandardizedName": "(SUNY) Stony Brook"
   },
   {
     "originalName": "Universite Grenoble Alpes (UGA)",

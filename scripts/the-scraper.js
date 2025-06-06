@@ -1,6 +1,7 @@
 // scripts/the-scraper.js
 const axios = require('axios');
-const fs = require('fs').promises;
+const fs = require('fs');
+const fsp = fs.promises;
 const path = require('path');
 const csv = require('csv-parser'); // Import the csv-parser library
 const { createReadStream } = require('fs'); // Import createReadStream
@@ -18,6 +19,10 @@ const THE_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', T
 // Download the latest THE CSV to the data directory
 async function downloadTHECSV() {
     try {
+        if (fs.existsSync(THE_FILE_PATH) && fs.statSync(THE_FILE_PATH).size > 0) {
+            console.log(`Using existing THE CSV at ${THE_FILE_PATH}`);
+            return;
+        }
         console.log(`Downloading THE CSV from ${THE_CSV_DOWNLOAD_URL}...`);
         const { exec } = require('child_process');
         await new Promise((resolve, reject) => {

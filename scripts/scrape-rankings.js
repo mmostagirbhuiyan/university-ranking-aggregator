@@ -4,6 +4,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const csv = require('csv-parser'); // Import csv-parser
 const { createReadStream } = require('fs'); // Import createReadStream
+const stringSimilarity = require('string-similarity');
 // const XLSX = require('xlsx'); // Removed as generic XLSX reading is removed
 
 // Import individual scraper functions
@@ -39,6 +40,56 @@ const totalSources = Object.keys(sourceWeights).length;
 
 // Map to store the loaded university name mapping: Key is 'originalName@source', Value is 'suggestedStandardizedName'
 let universityStandardizationMap = new Map();
+let usnewsNameMap = new Map();
+let usnewsCleanList = [];
+
+// Map of known aliases that should collapse to a single canonical name
+const aliasMap = new Map([
+    ['purdue university west lafayette campus', 'Purdue University'],
+    ['california institute of technology caltech', 'California Institute of Technology'],
+    ['technik universitat munchen', 'Technical University of Munich']
+]);
+
+function canonicalizeName(name) {
+    if (!name) return '';
+    let cleaned = name.trim().toLowerCase();
+    cleaned = cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    cleaned = cleaned.replace(/^the\s+/, '');
+    cleaned = cleaned.replace(/\s*\([^)]*\)\s*/g, ' ');
+    cleaned = cleaned.replace(/-/g, ' ');
+    cleaned = cleaned.replace(/[.,]/g, '');
+    cleaned = cleaned.replace(/\s+/g, ' ');
+    cleaned = cleaned.trim();
+    const alias = aliasMap.get(cleaned);
+    return alias ? alias.toLowerCase() : cleaned;
+}
+
+async function loadUSNewsNames() {
+    const filePath = path.join(__dirname, '..', 'frontend', 'public', 'data', 'usnews_rankings.csv');
+    return new Promise((resolve, reject) => {
+        const map = new Map();
+        const cleaned = [];
+        createReadStream(filePath)
+            .pipe(csv())
+            .on('data', row => {
+                if (row.University) {
+                    const orig = row.University.trim();
+                    const clean = canonicalizeName(orig);
+                    if (!map.has(clean)) {
+                        map.set(clean, orig);
+                        cleaned.push(clean);
+                    }
+                }
+            })
+            .on('end', () => {
+                usnewsNameMap = map;
+                usnewsCleanList = cleaned;
+                console.log(`Loaded ${map.size} canonical US News names.`);
+                resolve();
+            })
+            .on('error', reject);
+    });
+}
 
 // Function to load the university name mapping from the JSON file
 async function loadUniversityMapping() {
@@ -57,16 +108,35 @@ async function loadUniversityMapping() {
 
 // Modify the existing standardizeUniversityName function to use the loaded map
 function standardizeUniversityName(originalName, source) {
-    // Look up the standardized name in the loaded map using a combined key
-    const key = `${originalName}@${source}`;
-    if (universityStandardizationMap.has(key)) {
-        return universityStandardizationMap.get(key);
-    } else {
-        // If no mapping is found, return the original name
-        // You might want to log this to identify names not covered by the mapping
-        // console.warn(`No standardized name found for "${originalName}" from source "${source}". Using original name.`);
-        return originalName;
+    const cleaned = canonicalizeName(originalName);
+    if (source === 'usnews') {
+        return usnewsNameMap.get(cleaned) || originalName.trim();
     }
+    if (aliasMap.has(cleaned)) {
+        return aliasMap.get(cleaned);
+    }
+    if (usnewsCleanList.length > 0) {
+        const match = stringSimilarity.findBestMatch(cleaned, usnewsCleanList).bestMatch;
+        if (match.rating >= 0.93) {
+            return usnewsNameMap.get(match.target);
+        }
+    }
+
+    let key = `${originalName}@${source}`;
+    if (universityStandardizationMap.has(key)) {
+        const mapped = universityStandardizationMap.get(key);
+        if (mapped && mapped !== originalName) {
+            return mapped;
+        }
+    }
+    key = `${cleaned}@${source}`;
+    if (universityStandardizationMap.has(key)) {
+        const mapped = universityStandardizationMap.get(key);
+        if (mapped && mapped !== cleaned) {
+            return mapped;
+        }
+    }
+    return originalName.trim();
 }
 
 // Basic country standardization to align naming conventions across sources
@@ -91,6 +161,7 @@ function standardizeCountry(country) {
 async function main(limit = 400) {
     // Load the university mapping first
     await loadUniversityMapping();
+    await loadUSNewsNames();
 
     try {
         // --- 1. Read data from each source file using their respective logic ---

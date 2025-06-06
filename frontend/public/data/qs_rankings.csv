@@ -22,7 +22,7 @@ INDEX,rank display,rank display2,institution,location code,location,size,focus,r
 21,21,11,University of Chicago,United States,Americas,L,FC,VH,B,99.1,17,96.4,29,94.2,69,60.8,197,79,244,87,140,85.1,245,99.1,16,46.9,330=,86.2
 22,22,17,Princeton University,United States,Americas,M,CO,VH,B,99.8,10,98.3,19,57,258,100,3,9.6,701+,56.6,264,78.3,354,95.7,48,51.5,312,85.5
 23,23,16,Yale University,United States,Americas,L,FC,VH,B,99.9,9,99.9,7,100,3,38.6,363,91.5,181,63.3,238,93.9,100,98.5,21,92.2,76=,85.2
-24,24,24,Université PSL,France,Europe,L,CO,VH,A,74.4,81,97.6,23,98.1,46,87.6,85,62.3,315,65,230,99.8,3,97.1,33,73.4,197,84.7
+24,24,24,Universite PSL,France,Europe,L,CO,VH,A,74.4,81,97.6,23,98.1,46,87.6,85,62.3,315,65,230,99.8,3,97.1,33,73.4,197,84.7
 25,25,21,University of Toronto,Canada,Americas,XL,FC,VH,A,99.7,11,96.9,27,44.9,344,50.8,257,96.9,132,96.1,90,97.7,29,98.7,19,100,1,84.1
 26,26,36,EPFL,Switzerland,Europe,M,FO,VH,A,84.2,56,67.2,111,91.2,80,93.6,57,100,28,100,14,81.7,291,27.2,440,86.7,114=,83.5
 27,27,22,The University of Edinburgh,United Kingdom,Europe,XL,FC,VH,A,98.3,24,97.2,24,65.5,201,47.7,282,98.7,111,99.8,41,99.5,7,55.9,222,99,15=,83.3
@@ -307,7 +307,7 @@ INDEX,rank display,rank display2,institution,location code,location,size,focus,r
 306,306,336,Aalborg University,Denmark,Europe,L,FC,VH,A,19.9,450,20.8,439,25.5,580,53.2,241,77.3,250,14.9,627,92.1,134,23.3,486,75.6,183,35.7
 307,307,268,"University of California, Irvine",United States,Americas,XL,FC,VH,A,37.5,229,22.3,419,17.3,701+,40.7,344,43.9,401,58.7,252,84.1,260,11.2,701+,36,397,35.5
 308,308,345,Airlangga University,Indonesia,Asia,XL,FC,HI,A,37.1,232,79.1,80,57,259,1.5,701+,58,330,6.7,701+,40.3,701+,18.9,585,16.3,570=,35.3
-309,309,302,Goethe-University Frankfurt am Main,Germany,Europe,XL,FC,VH,A,43.2,196,33.2,282,24.4,600,15.9,621,37.4,432,24.1,489,90.4,166,20.2,560,75,186=,35.2
+309,309,302,Goethe University Frankfurt,Germany,Europe,XL,FC,VH,A,43.2,196,33.2,282,24.4,600,15.9,621,37.4,432,24.1,489,90.4,166,20.2,560,75,186=,35.2
 310,309,362,Universität Innsbruck,Austria,Europe,L,FC,HI,A,20.3,434,7.8,601+,73.1,177,9.3,701+,100,68,100,27,71.5,461,55.8,223,61.6,263=,35.2
 311,311,274,North Carolina State University,United States,Americas,XL,CO,VH,A,26.7,330,25.4,374,9.8,701+,63.4,181,55,338,17,585,78.1,358,21.5,532,35.7,398=,35.1
 312,312,304,Jagiellonian University,Poland,Europe,XL,FO,VH,A,37.8,228,46.4,199,65.1,203,5.5,701+,5.7,701+,15.4,615,88.6,188,51.3,249,35.4,400=,35

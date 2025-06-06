@@ -386,6 +386,11 @@
   },
   {
     "originalName": "ETH Zurich - Swiss Federal Institute of Technology",
+    "source": "usnews",
+    "suggestedStandardizedName": "Swiss Federal Institute of Technology Zurich - ETHZ"
+  },
+  {
+    "originalName": "ETH Zurich - Swiss Federal Institute of Technology",
     "source": "qs",
     "suggestedStandardizedName": "Swiss Federal Institute of Technology Zurich - ETHZ"
   },
@@ -417,6 +422,11 @@
   {
     "originalName": "Washington University in St. Louis",
     "source": "the",
+    "suggestedStandardizedName": "Washington University in St. Louis"
+  },
+  {
+    "originalName": "Washington University in St. Louis",
+    "source": "usnews",
     "suggestedStandardizedName": "Washington University in St. Louis"
   },
   {
@@ -642,6 +652,11 @@
   {
     "originalName": "University of North Carolina at Chapel Hill",
     "source": "the",
+    "suggestedStandardizedName": "University of North Carolina at Chapel Hill"
+  },
+  {
+    "originalName": "University of North Carolina at Chapel Hill",
+    "source": "usnews",
     "suggestedStandardizedName": "University of North Carolina at Chapel Hill"
   },
   {
@@ -2146,6 +2161,11 @@
   },
   {
     "originalName": "Southeast University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Southeast University"
+  },
+  {
+    "originalName": "Southeast University",
     "source": "qs",
     "suggestedStandardizedName": "Southeast University"
   },
@@ -2590,6 +2610,11 @@
     "suggestedStandardizedName": "Icahn School of Medicine at Mount Sinai"
   },
   {
+    "originalName": "Icahn School of Medicine at Mount Sinai",
+    "source": "usnews",
+    "suggestedStandardizedName": "Icahn School of Medicine at Mount Sinai"
+  },
+  {
     "originalName": "Carnegie Mellon University",
     "source": "arwu",
     "suggestedStandardizedName": "Carnegie Mellon University"
@@ -2702,6 +2727,11 @@
   {
     "originalName": "Aix-Marseille University",
     "source": "the",
+    "suggestedStandardizedName": "Aix-Marseille University"
+  },
+  {
+    "originalName": "Aix-Marseille University",
+    "source": "usnews",
     "suggestedStandardizedName": "Aix-Marseille University"
   },
   {
@@ -3025,14 +3055,24 @@
     "suggestedStandardizedName": "University of Gottingen"
   },
   {
-    "originalName": "University of Frankfurt am Main",
+    "originalName": "Goethe University Frankfurt",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Frankfurt am Main"
+    "suggestedStandardizedName": "Goethe University Frankfurt"
   },
   {
-    "originalName": "University of Frankfurt am Main",
+    "originalName": "Goethe University Frankfurt",
     "source": "the",
-    "suggestedStandardizedName": "University of Frankfurt am Main"
+    "suggestedStandardizedName": "Goethe University Frankfurt"
+  },
+  {
+    "originalName": "Goethe University Frankfurt",
+    "source": "usnews",
+    "suggestedStandardizedName": "Goethe University Frankfurt"
+  },
+  {
+    "originalName": "Goethe University Frankfurt",
+    "source": "qs",
+    "suggestedStandardizedName": "Goethe University Frankfurt"
   },
   {
     "originalName": "University of Mainz",
@@ -3242,17 +3282,22 @@
   {
     "originalName": "Norwegian University of Science and Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Norwegian University of Science and Technology"
+    "suggestedStandardizedName": "Norwegian University of Science and Technology (NTNU)"
   },
   {
     "originalName": "Norwegian University of Science and Technology",
     "source": "the",
-    "suggestedStandardizedName": "Norwegian University of Science and Technology"
+    "suggestedStandardizedName": "Norwegian University of Science and Technology (NTNU)"
+  },
+  {
+    "originalName": "Norwegian University of Science and Technology (NTNU)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Norwegian University of Science and Technology (NTNU)"
   },
   {
     "originalName": "Norwegian University of Science And Technology",
     "source": "qs",
-    "suggestedStandardizedName": "Norwegian University of Science and Technology"
+    "suggestedStandardizedName": "Norwegian University of Science and Technology (NTNU)"
   },
   {
     "originalName": "Cardiff University",
@@ -3287,6 +3332,11 @@
   {
     "originalName": "London School of Hygiene & Tropical Medicine",
     "source": "arwu",
+    "suggestedStandardizedName": "London School of Hygiene & Tropical Medicine"
+  },
+  {
+    "originalName": "London School of Hygiene & Tropical Medicine",
+    "source": "usnews",
     "suggestedStandardizedName": "London School of Hygiene & Tropical Medicine"
   },
   {
@@ -3751,6 +3801,11 @@
   },
   {
     "originalName": "Queensland University of Technology (QUT)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Queensland University of Technology (QUT)"
+  },
+  {
+    "originalName": "Queensland University of Technology (QUT)",
     "source": "qs",
     "suggestedStandardizedName": "Queensland University of Technology (QUT)"
   },
@@ -4127,12 +4182,17 @@
   {
     "originalName": "University of Erlangen-Nürnberg",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Erlangen-Nürnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
     "originalName": "University of Erlangen-N�rnberg",
     "source": "the",
-    "suggestedStandardizedName": "University of Erlangen-Nürnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
+  },
+  {
+    "originalName": "University of Erlangen Nuremberg",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
     "originalName": "University of Düsseldorf",
@@ -4996,6 +5056,11 @@
   },
   {
     "originalName": "Texas A&M University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Texas A&M University"
+  },
+  {
+    "originalName": "Texas A&M University",
     "source": "qs",
     "suggestedStandardizedName": "Texas A&M University"
   },
@@ -5266,6 +5331,11 @@
   },
   {
     "originalName": "RMIT University",
+    "source": "usnews",
+    "suggestedStandardizedName": "RMIT University"
+  },
+  {
+    "originalName": "RMIT University",
     "source": "qs",
     "suggestedStandardizedName": "RMIT University"
   },
@@ -5517,32 +5587,37 @@
   {
     "originalName": "Nanjing University of Science and Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Pohang University of Science And Technology (POSTECH)"
+    "suggestedStandardizedName": "Pohang University of Science and Technology (POSTECH)"
   },
   {
     "originalName": "Pohang University of Science and Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Pohang University of Science And Technology (POSTECH)"
+    "suggestedStandardizedName": "Pohang University of Science and Technology (POSTECH)"
   },
   {
     "originalName": "Tianjin University of Science and Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Pohang University of Science And Technology (POSTECH)"
+    "suggestedStandardizedName": "Pohang University of Science and Technology (POSTECH)"
   },
   {
     "originalName": "Pohang University of Science and Technology",
     "source": "the",
-    "suggestedStandardizedName": "Pohang University of Science And Technology (POSTECH)"
+    "suggestedStandardizedName": "Pohang University of Science and Technology (POSTECH)"
+  },
+  {
+    "originalName": "Pohang University of Science and Technology (POSTECH)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Pohang University of Science and Technology (POSTECH)"
   },
   {
     "originalName": "Pohang University of Science And Technology (POSTECH)",
     "source": "qs",
-    "suggestedStandardizedName": "Pohang University of Science And Technology (POSTECH)"
+    "suggestedStandardizedName": "Pohang University of Science and Technology (POSTECH)"
   },
   {
     "originalName": "Nanjing University of Science and Technology",
     "source": "qs",
-    "suggestedStandardizedName": "Pohang University of Science And Technology (POSTECH)"
+    "suggestedStandardizedName": "Pohang University of Science and Technology (POSTECH)"
   },
   {
     "originalName": "Ocean University of China",
@@ -6092,6 +6167,11 @@
   {
     "originalName": "Linkoping University",
     "source": "usnews",
+    "suggestedStandardizedName": "Linkoping University"
+  },
+  {
+    "originalName": "Linköping University",
+    "source": "qs",
     "suggestedStandardizedName": "Linkoping University"
   },
   {
@@ -6810,6 +6890,11 @@
     "suggestedStandardizedName": "Federal University of Rio Grande do Sul"
   },
   {
+    "originalName": "Federal University of Rio Grande do Sul",
+    "source": "usnews",
+    "suggestedStandardizedName": "Federal University of Rio Grande do Sul"
+  },
+  {
     "originalName": "University of Saskatchewan",
     "source": "arwu",
     "suggestedStandardizedName": "University of Saskatchewan"
@@ -7361,6 +7446,11 @@
   },
   {
     "originalName": "University of Malaya",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Malaya"
+  },
+  {
+    "originalName": "University of Málaga",
     "source": "arwu",
     "suggestedStandardizedName": "University of Malaya"
   },
@@ -8442,6 +8532,11 @@
   {
     "originalName": "Eötvös Loránd University",
     "source": "arwu",
+    "suggestedStandardizedName": "Eötvös Loránd University"
+  },
+  {
+    "originalName": "Eotvos Lorand University",
+    "source": "usnews",
     "suggestedStandardizedName": "Eötvös Loránd University"
   },
   {
@@ -10155,6 +10250,11 @@
     "suggestedStandardizedName": "Thomas Jefferson University"
   },
   {
+    "originalName": "Thomas Jefferson University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Thomas Jefferson University"
+  },
+  {
     "originalName": "University of Texas at San Antonio",
     "source": "arwu",
     "suggestedStandardizedName": "University of Texas at San Antonio"
@@ -10277,6 +10377,11 @@
   {
     "originalName": "COMSATS University Islamabad",
     "source": "the",
+    "suggestedStandardizedName": "COMSATS University Islamabad"
+  },
+  {
+    "originalName": "COMSATS University Islamabad",
+    "source": "usnews",
     "suggestedStandardizedName": "COMSATS University Islamabad"
   },
   {
@@ -10491,6 +10596,11 @@
   },
   {
     "originalName": "University of International Business and Economics",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of International Business and Economics"
+  },
+  {
+    "originalName": "University of International Business and Economics",
     "source": "qs",
     "suggestedStandardizedName": "University of International Business and Economics"
   },
@@ -10628,11 +10738,6 @@
     "originalName": "University of Extremadura",
     "source": "arwu",
     "suggestedStandardizedName": "University of Extremadura"
-  },
-  {
-    "originalName": "University of Málaga",
-    "source": "arwu",
-    "suggestedStandardizedName": "University of Málaga"
   },
   {
     "originalName": "University of Rovira i Virgili",
@@ -10932,6 +11037,11 @@
   {
     "originalName": "Koc University",
     "source": "the",
+    "suggestedStandardizedName": "Koc University"
+  },
+  {
+    "originalName": "Koç University",
+    "source": "qs",
     "suggestedStandardizedName": "Koc University"
   },
   {
@@ -14165,6 +14275,11 @@
     "suggestedStandardizedName": "Bogazici University"
   },
   {
+    "originalName": "Bogaziçi University",
+    "source": "qs",
+    "suggestedStandardizedName": "Bogazici University"
+  },
+  {
     "originalName": "Coventry University",
     "source": "the",
     "suggestedStandardizedName": "Coventry University"
@@ -15430,29 +15545,14 @@
     "suggestedStandardizedName": "Siksha O Anusandhan"
   },
   {
-    "originalName": "Washington University (WUSTL)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Washington University (WUSTL)"
-  },
-  {
-    "originalName": "ETH Zurich",
-    "source": "usnews",
-    "suggestedStandardizedName": "ETH Zurich"
-  },
-  {
-    "originalName": "Mount Sinai",
-    "source": "usnews",
-    "suggestedStandardizedName": "Mount Sinai"
-  },
-  {
     "originalName": "Universite Paris Cite",
     "source": "usnews",
     "suggestedStandardizedName": "Universite Paris Cite"
   },
   {
-    "originalName": "Chapel Hill",
-    "source": "usnews",
-    "suggestedStandardizedName": "Chapel Hill"
+    "originalName": "Université Paris Cité",
+    "source": "qs",
+    "suggestedStandardizedName": "Universite Paris Cite"
   },
   {
     "originalName": "KU Leuven",
@@ -15480,9 +15580,9 @@
     "suggestedStandardizedName": "Sorbonne Universite"
   },
   {
-    "originalName": "Sciences, CAS",
+    "originalName": "University of Chinese Academy of Sciences",
     "source": "usnews",
-    "suggestedStandardizedName": "Sciences, CAS"
+    "suggestedStandardizedName": "University of Chinese Academy of Sciences"
   },
   {
     "originalName": "Vrije Universiteit Amsterdam",
@@ -15522,27 +15622,7 @@
   {
     "originalName": "& Technology",
     "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (QUT)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (RMIT)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (NTNU)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
-  },
-  {
-    "originalName": "Technology (POSTECH)",
-    "source": "usnews",
-    "suggestedStandardizedName": "Technology (POSTECH)"
+    "suggestedStandardizedName": "& Technology"
   },
   {
     "originalName": "Ghent University",
@@ -15555,9 +15635,9 @@
     "suggestedStandardizedName": "Ghent University"
   },
   {
-    "originalName": "Medical Center Dallas",
+    "originalName": "UT Southwestern Medical Center",
     "source": "usnews",
-    "suggestedStandardizedName": "Medical Center Dallas"
+    "suggestedStandardizedName": "UT Southwestern Medical Center"
   },
   {
     "originalName": "Universite PSL",
@@ -15565,24 +15645,34 @@
     "suggestedStandardizedName": "Universite PSL"
   },
   {
-    "originalName": "Tropical Medicine",
-    "source": "usnews",
-    "suggestedStandardizedName": "Tropical Medicine"
+    "originalName": "Universite PSL",
+    "source": "qs",
+    "suggestedStandardizedName": "Universite PSL"
   },
   {
     "originalName": "Universidade de Sao Paulo",
     "source": "usnews",
-    "suggestedStandardizedName": "Universidade de Sao Paulo"
+    "suggestedStandardizedName": "Universidade Federal de São Paulo"
   },
   {
     "originalName": "Universidade de São Paulo",
     "source": "qs",
-    "suggestedStandardizedName": "Universidade de Sao Paulo"
+    "suggestedStandardizedName": "Universidade Federal de São Paulo"
   },
   {
-    "originalName": "Sapienza University Rome",
+    "originalName": "Universidade Federal de São Paulo",
+    "source": "qs",
+    "suggestedStandardizedName": "Universidade Federal de São Paulo"
+  },
+  {
+    "originalName": "Sapienza University of Rome",
     "source": "usnews",
-    "suggestedStandardizedName": "Sapienza University Rome"
+    "suggestedStandardizedName": "Sapienza University of Rome"
+  },
+  {
+    "originalName": "Sapienza University of Rome",
+    "source": "qs",
+    "suggestedStandardizedName": "Sapienza University of Rome"
   },
   {
     "originalName": "Medical Campus",
@@ -15600,14 +15690,14 @@
     "suggestedStandardizedName": "University of Gothenburg"
   },
   {
-    "originalName": "M University College",
+    "originalName": "Université de Montréal",
     "source": "usnews",
-    "suggestedStandardizedName": "M University College"
+    "suggestedStandardizedName": "Université de Montréal"
   },
   {
-    "originalName": "Universite de Montreal",
-    "source": "usnews",
-    "suggestedStandardizedName": "Universite de Montreal"
+    "originalName": "Université de Montréal",
+    "source": "qs",
+    "suggestedStandardizedName": "Université de Montréal"
   },
   {
     "originalName": "Maastricht University",
@@ -15618,16 +15708,6 @@
     "originalName": "Maastricht University",
     "source": "qs",
     "suggestedStandardizedName": "Maastricht University"
-  },
-  {
-    "originalName": "Southeast University - China",
-    "source": "usnews",
-    "suggestedStandardizedName": "Southeast University - China"
-  },
-  {
-    "originalName": "Aix-Marseille Universite",
-    "source": "usnews",
-    "suggestedStandardizedName": "Aix-Marseille Universite"
   },
   {
     "originalName": "Technische Universitat Dresden",
@@ -15650,9 +15730,14 @@
     "suggestedStandardizedName": "Université catholique de Louvain (UCLouvain)"
   },
   {
-    "originalName": "of Athens",
+    "originalName": "National and Kapodistrian University of Athens",
     "source": "usnews",
-    "suggestedStandardizedName": "of Athens"
+    "suggestedStandardizedName": "National and Kapodistrian University of Athens"
+  },
+  {
+    "originalName": "National and Kapodistrian University of Athens",
+    "source": "qs",
+    "suggestedStandardizedName": "National and Kapodistrian University of Athens"
   },
   {
     "originalName": "Universite de Montpellier",
@@ -15675,11 +15760,6 @@
     "suggestedStandardizedName": "Universidade Nova de Lisboa"
   },
   {
-    "originalName": "Goethe University Frankfurt",
-    "source": "usnews",
-    "suggestedStandardizedName": "Goethe University Frankfurt"
-  },
-  {
     "originalName": "Universite Grenoble Alpes (UGA)",
     "source": "usnews",
     "suggestedStandardizedName": "Universite Grenoble Alpes (UGA)"
@@ -15690,9 +15770,14 @@
     "suggestedStandardizedName": "Universite Grenoble Alpes (UGA)"
   },
   {
-    "originalName": "Political Science",
+    "originalName": "The London School of Economics and Political Science (LSE)",
     "source": "usnews",
-    "suggestedStandardizedName": "Political Science"
+    "suggestedStandardizedName": "The London School of Economics and Political Science (LSE)"
+  },
+  {
+    "originalName": "The London School of Economics and Political Science (LSE)",
+    "source": "qs",
+    "suggestedStandardizedName": "The London School of Economics and Political Science (LSE)"
   },
   {
     "originalName": "Royal Institute of Technology",
@@ -15743,11 +15828,6 @@
     "originalName": "Universiti Malaya (UM)",
     "source": "qs",
     "suggestedStandardizedName": "Universiti Malaya (UM)"
-  },
-  {
-    "originalName": "University of Erlangen Nuremberg",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
     "originalName": "Yeshiva University",
@@ -15935,19 +16015,24 @@
     "suggestedStandardizedName": "University of Mississippi"
   },
   {
-    "originalName": "de Mexico",
+    "originalName": "Universidad Nacional Autónoma de México (UNAM)",
     "source": "usnews",
-    "suggestedStandardizedName": "de Mexico"
+    "suggestedStandardizedName": "Universidad Nacional Autónoma de México (UNAM)"
   },
   {
-    "originalName": "Grande do Sul",
-    "source": "usnews",
-    "suggestedStandardizedName": "Grande do Sul"
+    "originalName": "Universidad Nacional Autónoma de México (UNAM)",
+    "source": "qs",
+    "suggestedStandardizedName": "Universidad Nacional Autónoma de México (UNAM)"
   },
   {
     "originalName": "Nantes Universite",
     "source": "usnews",
-    "suggestedStandardizedName": "Nantes Universite"
+    "suggestedStandardizedName": "Université de Nantes"
+  },
+  {
+    "originalName": "Université de Nantes",
+    "source": "qs",
+    "suggestedStandardizedName": "Université de Nantes"
   },
   {
     "originalName": "Universidad de Chile",
@@ -15985,16 +16070,6 @@
     "suggestedStandardizedName": "Tampere University"
   },
   {
-    "originalName": "Jefferson University",
-    "source": "usnews",
-    "suggestedStandardizedName": "Jefferson University"
-  },
-  {
-    "originalName": "Economics - China",
-    "source": "usnews",
-    "suggestedStandardizedName": "Economics - China"
-  },
-  {
     "originalName": "Universidade de Coimbra",
     "source": "usnews",
     "suggestedStandardizedName": "Universidade de Coimbra"
@@ -16010,11 +16085,6 @@
     "suggestedStandardizedName": "Université de Rennes 1 (University of Rennes)"
   },
   {
-    "originalName": "Eotvos Lorand University",
-    "source": "usnews",
-    "suggestedStandardizedName": "Eotvos Lorand University"
-  },
-  {
     "originalName": "University of Tsukuba",
     "source": "usnews",
     "suggestedStandardizedName": "University of Tsukuba"
@@ -16035,9 +16105,9 @@
     "suggestedStandardizedName": "Assiut University"
   },
   {
-    "originalName": "University Indianapolis",
+    "originalName": "University of Indianapolis",
     "source": "usnews",
-    "suggestedStandardizedName": "University Indianapolis"
+    "suggestedStandardizedName": "University of Indianapolis"
   },
   {
     "originalName": "Hohai University",
@@ -16075,19 +16145,9 @@
     "suggestedStandardizedName": "Nanyang Technological University, Singapore (NTU)"
   },
   {
-    "originalName": "Université PSL",
-    "source": "qs",
-    "suggestedStandardizedName": "Université PSL"
-  },
-  {
     "originalName": "EPFL",
     "source": "qs",
     "suggestedStandardizedName": "EPFL"
-  },
-  {
-    "originalName": "The London School of Economics and Political Science (LSE)",
-    "source": "qs",
-    "suggestedStandardizedName": "The London School of Economics and Political Science (LSE)"
   },
   {
     "originalName": "Universidad de Buenos Aires (UBA)",
@@ -16125,11 +16185,6 @@
     "suggestedStandardizedName": "Lomonosov Moscow State University"
   },
   {
-    "originalName": "Universidad Nacional Autónoma de México (UNAM)",
-    "source": "qs",
-    "suggestedStandardizedName": "Universidad Nacional Autónoma de México (UNAM)"
-  },
-  {
     "originalName": "Freie Universitaet Berlin",
     "source": "qs",
     "suggestedStandardizedName": "Freie Universitaet Berlin"
@@ -16155,11 +16210,6 @@
     "suggestedStandardizedName": "Humboldt-Universität zu Berlin"
   },
   {
-    "originalName": "Sapienza University of Rome",
-    "source": "qs",
-    "suggestedStandardizedName": "Sapienza University of Rome"
-  },
-  {
     "originalName": "Alma Mater Studiorum - University of Bologna",
     "source": "qs",
     "suggestedStandardizedName": "Alma Mater Studiorum - University of Bologna"
@@ -16173,11 +16223,6 @@
     "originalName": "Technische Universität Berlin (TU Berlin)",
     "source": "qs",
     "suggestedStandardizedName": "Technische Universität Berlin (TU Berlin)"
-  },
-  {
-    "originalName": "Université de Montréal",
-    "source": "qs",
-    "suggestedStandardizedName": "Université de Montréal"
   },
   {
     "originalName": "Al-Farabi Kazakh National University",
@@ -16350,16 +16395,6 @@
     "suggestedStandardizedName": "Xi’an Jiaotong University"
   },
   {
-    "originalName": "Université Paris Cité",
-    "source": "qs",
-    "suggestedStandardizedName": "Université Paris Cité"
-  },
-  {
-    "originalName": "Linköping University",
-    "source": "qs",
-    "suggestedStandardizedName": "Linköping University"
-  },
-  {
     "originalName": "Universidade Federal do Rio de Janeiro",
     "source": "qs",
     "suggestedStandardizedName": "Universidade Federal do Rio de Janeiro"
@@ -16368,11 +16403,6 @@
     "originalName": "Airlangga University",
     "source": "qs",
     "suggestedStandardizedName": "Airlangga University"
-  },
-  {
-    "originalName": "Goethe-University Frankfurt am Main",
-    "source": "qs",
-    "suggestedStandardizedName": "Goethe-University Frankfurt am Main"
   },
   {
     "originalName": "Universität Innsbruck",
@@ -16460,11 +16490,6 @@
     "suggestedStandardizedName": "Università Vita-Salute San Raffaele"
   },
   {
-    "originalName": "National and Kapodistrian University of Athens",
-    "source": "qs",
-    "suggestedStandardizedName": "National and Kapodistrian University of Athens"
-  },
-  {
     "originalName": "Ruhr-Universität Bochum",
     "source": "qs",
     "suggestedStandardizedName": "Ruhr-Universität Bochum"
@@ -16473,11 +16498,6 @@
     "originalName": "Université de Liège",
     "source": "qs",
     "suggestedStandardizedName": "Université de Liège"
-  },
-  {
-    "originalName": "Koç University",
-    "source": "qs",
-    "suggestedStandardizedName": "Koç University"
   },
   {
     "originalName": "Institut National des Sciences Appliquées de Lyon (INSA)",
@@ -16498,11 +16518,6 @@
     "originalName": "HSE University",
     "source": "qs",
     "suggestedStandardizedName": "HSE University"
-  },
-  {
-    "originalName": "Bogaziçi University",
-    "source": "qs",
-    "suggestedStandardizedName": "Bogaziçi University"
   },
   {
     "originalName": "Université Laval",
@@ -17010,11 +17025,6 @@
     "suggestedStandardizedName": "Universidad Panamericana (UP)"
   },
   {
-    "originalName": "Universidade Federal de São Paulo",
-    "source": "qs",
-    "suggestedStandardizedName": "Universidade Federal de São Paulo"
-  },
-  {
     "originalName": "Universidade Federal do Rio Grande Do Sul",
     "source": "qs",
     "suggestedStandardizedName": "Universidade Federal do Rio Grande Do Norte"
@@ -17443,11 +17453,6 @@
     "originalName": "Universita' degli Studi di Ferrara",
     "source": "qs",
     "suggestedStandardizedName": "Universita' degli Studi di Ferrara"
-  },
-  {
-    "originalName": "Université de Nantes",
-    "source": "qs",
-    "suggestedStandardizedName": "Université de Nantes"
   },
   {
     "originalName": "Université de Sherbrooke",

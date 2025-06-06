@@ -23,6 +23,8 @@ function basicCleanName(name) {
     }
     let cleanedName = name.trim();
     cleanedName = cleanedName.toLowerCase();
+    // Remove diacritics to ensure accent-insensitive matching
+    cleanedName = cleanedName.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
     // Explicitly remove "the " at the beginning, case-insensitive
     cleanedName = cleanedName.replace(/^the\s+/, '');

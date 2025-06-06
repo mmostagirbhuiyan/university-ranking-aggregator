@@ -738,19 +738,16 @@ class USNewsPolishedExtractor:
     def _clean_and_standardize_data(self, universities):
         """Final cleaning and standardization of extracted data"""
         cleaned = []
-        seen_names = set()
         
         for uni in universities:
             # Clean university name
             name = uni['University'].strip()
             
             # Skip invalid entries
-            if (not name or len(name) < 3 or 
-                name.lower() in ['read more', 'view more', 'details', 'unknown university'] or
-                name in seen_names):
+            if (not name or len(name) < 3 or
+                name.lower() in ['read more', 'view more', 'details', 'unknown university']):
                 continue
-            
-            seen_names.add(name)
+
             
             # Validate rank
             try:

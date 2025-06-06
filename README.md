@@ -26,8 +26,8 @@ Make sure you have Node.js and npm installed.
 
 To update the aggregated rankings:
 
-1. Obtain updated ranking data files (e.g., CSV or similar formats for QS, THE, ARWU, US News).
-2. Place the updated files in the `frontend/public/data/` directory, ensuring they are named appropriately (e.g., `qs_rankings.xlsx`, `the_rankings.csv`, `arwu_rankings.csv`, `usnews_rankings.csv`). Note the specific file extensions used by the current scripts.
+1. The scrapers for QS, THE and ARWU now automatically download the latest CSV files from [universityrankings.ch](https://www.universityrankings.ch) whenever you run the aggregation script. You only need to manually supply the US News CSV if you wish to include that source.
+2. If you do need to replace any files manually, drop them in `frontend/public/data/` using the same filenames (`qs_rankings.csv`, `the_rankings.csv`, `arwu_rankings.csv`, `usnews_rankings.csv`).
 
 3. **Generate University Name Mapping (Data Sanitation)**
    Before aggregating, run the matching script to generate or update the university name mapping. This script uses fuzzy matching to identify variations of the same university name across different sources and suggests a standardized name.

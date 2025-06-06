@@ -1,18 +1,40 @@
 // scripts/the-scraper.js
-// const axios = require('axios'); // Removed axios dependency
-const fs = require('fs').promises; // Import the file system module
-// const cheerio = require('cheerio'); // Removed cheerio dependency
+const axios = require('axios');
+const fs = require('fs').promises;
 const path = require('path');
 const csv = require('csv-parser'); // Import the csv-parser library
 const { createReadStream } = require('fs'); // Import createReadStream
 const readline = require('readline'); // Import readline for line-by-line reading
 
-// Updated URL to fetch JSON data directly
-// const THE_RANKINGS_URL = 'https://www.timeshighereducation.com/sites/default/files/the_data_rankings/world_university_rankings_2025_0__ba2fbd3409733a83fb62c3ee4219487c.json'; // Removed URL
+// URL to download the latest THE CSV directly from universityrankings.ch
+// Update the year in the URL when a new ranking becomes available
+const THE_CSV_DOWNLOAD_URL =
+  'https://www.universityrankings.ch/results/Times/2025?mode=csv';
 
 // Define the path for the local CSV file
 const THE_CSV_FILE = 'the_rankings.csv';
 const THE_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', THE_CSV_FILE);
+
+// Download the latest THE CSV to the data directory
+async function downloadTHECSV() {
+    try {
+        console.log(`Downloading THE CSV from ${THE_CSV_DOWNLOAD_URL}...`);
+        const { exec } = require('child_process');
+        await new Promise((resolve, reject) => {
+            exec(`curl -L -o '${THE_FILE_PATH}' '${THE_CSV_DOWNLOAD_URL}'`, (err) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            });
+        });
+        console.log(`Saved THE CSV to ${THE_FILE_PATH}`);
+    } catch (error) {
+        console.error(`Failed to download THE CSV: ${error.message}`);
+        throw error;
+    }
+}
 
 /**
  * Reads the Times Higher Education World University Rankings from a local CSV file using csv-parser.
@@ -22,6 +44,8 @@ async function scrapeTHERankings() {
     const results = [];
 
     try {
+        // Fetch the latest CSV before reading
+        await downloadTHECSV();
         console.log(`Reading THE rankings from local CSV file ${THE_FILE_PATH}...`);
 
         await new Promise((resolve, reject) => {

@@ -46,7 +46,8 @@ let usnewsCleanList = [];
 // Map of known aliases that should collapse to a single canonical name
 const aliasMap = new Map([
     ['purdue university west lafayette campus', 'Purdue University'],
-    ['california institute of technology caltech', 'California Institute of Technology']
+    ['california institute of technology caltech', 'California Institute of Technology'],
+    ['technik universitat munchen', 'Technical University of Munich']
 ]);
 
 function canonicalizeName(name) {
@@ -121,7 +122,7 @@ function standardizeUniversityName(originalName, source) {
     }
     if (usnewsCleanList.length > 0) {
         const match = stringSimilarity.findBestMatch(cleaned, usnewsCleanList).bestMatch;
-        if (match.rating >= 0.8) {
+        if (match.rating >= 0.93) {
             return usnewsNameMap.get(match.target);
         }
     }
@@ -140,7 +141,7 @@ function standardizeUniversityName(originalName, source) {
             return mapped;
         }
     }
-    return cleaned;
+    return originalName.trim();
 }
 
 // Basic country standardization to align naming conventions across sources

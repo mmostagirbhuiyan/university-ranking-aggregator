@@ -115,6 +115,17 @@ function aggregateRankings(universitiesData, sourceWeights, sourceMaxRanks, tota
         university.aggregatedRank = index + 1;
     });
 
+    // Calculate country-specific ranks based on the global ordering
+    const countryCounters = {};
+    aggregatedResults.forEach(university => {
+        const country = university.country || 'Unknown';
+        if (!countryCounters[country]) {
+            countryCounters[country] = 0;
+        }
+        countryCounters[country]++;
+        university.countryRank = countryCounters[country];
+    });
+
     return aggregatedResults;
 }
 

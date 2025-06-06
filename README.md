@@ -2,6 +2,8 @@
 
 This project aggregates university rankings from multiple sources (QS, THE, ARWU, US News) using a Borda Count with Penalized Absence method.
 
+Each university entry in the aggregated data also includes a simple country specific rank. This `countryRank` is determined by counting how many universities from the same country appear above it in the aggregated results. It is meant only as a quick reference and is not an authoritative national ranking.
+
 [![Deploy to GitHub Pages](https://github.com/mmostagirbhuiyan/university-ranking-aggregator/actions/workflows/deploy.yml/badge.svg)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator/actions/workflows/deploy.yml)
 
 ## Setup

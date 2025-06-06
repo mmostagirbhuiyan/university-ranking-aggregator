@@ -72,9 +72,10 @@ async function scrapeARWURankings(limit) {
                     // Use the exact header names to access data
                     const rank = parseInt(row['# World Rank'], 10);
                     const name = row[' Institution'] ? row[' Institution'].trim() : '';
+                    const country = row[' Country'] ? row[' Country'].trim() : '';
 
                     if (name && !isNaN(rank)) {
-                        rankings.push({ name, rank });
+                        rankings.push({ name, rank, country });
                     }
                 })
                 .on('end', () => {

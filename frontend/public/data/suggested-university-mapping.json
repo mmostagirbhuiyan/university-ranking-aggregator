@@ -4131,11 +4131,6 @@
   },
   {
     "originalName": "Polytechnic University of Milan",
-    "source": "usnews",
-    "suggestedStandardizedName": "Polytechnic University of Milan"
-  },
-  {
-    "originalName": "Polytechnic University of Milan",
     "source": "qs",
     "suggestedStandardizedName": "Polytechnic University of Milan"
   },
@@ -4257,11 +4252,6 @@
   {
     "originalName": "Osaka University",
     "source": "the",
-    "suggestedStandardizedName": "Osaka University"
-  },
-  {
-    "originalName": "Osaka University",
-    "source": "usnews",
     "suggestedStandardizedName": "Osaka University"
   },
   {
@@ -4602,11 +4592,6 @@
   {
     "originalName": "Colorado State University",
     "source": "the",
-    "suggestedStandardizedName": "Colorado State University"
-  },
-  {
-    "originalName": "Colorado State University",
-    "source": "usnews",
     "suggestedStandardizedName": "Colorado State University"
   },
   {
@@ -5516,11 +5501,6 @@
   },
   {
     "originalName": "Complutense University of Madrid",
-    "source": "usnews",
-    "suggestedStandardizedName": "Complutense University of Madrid"
-  },
-  {
-    "originalName": "Complutense University of Madrid",
     "source": "qs",
     "suggestedStandardizedName": "Complutense University of Madrid"
   },
@@ -6167,11 +6147,6 @@
   {
     "originalName": "Dartmouth College",
     "source": "the",
-    "suggestedStandardizedName": "Dartmouth College"
-  },
-  {
-    "originalName": "Dartmouth College",
-    "source": "usnews",
     "suggestedStandardizedName": "Dartmouth College"
   },
   {
@@ -10017,11 +9992,6 @@
   {
     "originalName": "Al Azhar University",
     "source": "the",
-    "suggestedStandardizedName": "Al Azhar University"
-  },
-  {
-    "originalName": "Al Azhar University",
-    "source": "usnews",
     "suggestedStandardizedName": "Al Azhar University"
   },
   {
@@ -14978,11 +14948,6 @@
     "originalName": "Durham University",
     "source": "usnews",
     "suggestedStandardizedName": "Durham University"
-  },
-  {
-    "originalName": "Universite de Strasbourg",
-    "source": "usnews",
-    "suggestedStandardizedName": "Universite de Strasbourg"
   },
   {
     "originalName": "Indian Institute of Technology - Bombay",

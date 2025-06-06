@@ -49,6 +49,7 @@ class USNewsPolishedExtractor:
         self.max_entries = max_entries
         self.debug = debug
         self.universities = []
+        self.collected = {}
         
         # US News Global Rankings URL
         self.base_url = "https://www.usnews.com/education/best-global-universities/rankings"
@@ -184,11 +185,11 @@ class USNewsPolishedExtractor:
         # Wait for content to load
         self._wait_for_content()
         
-        # Scroll and load more content
-        loaded_count = self._scroll_and_load_content(max_wait_time)
-        
-        logging.info(f"Finished loading. Total entries visible: {loaded_count}")
-        return loaded_count
+        # Scroll, load, and collect university entries progressively
+        self.universities = self._scroll_and_collect_universities(max_wait_time)
+
+        logging.info(f"Finished loading. Collected entries: {len(self.universities)}")
+        return len(self.universities)
 
     def _handle_cookie_banner(self):
         """Handle cookie consent banner if present"""
@@ -267,44 +268,66 @@ class USNewsPolishedExtractor:
         
         logging.warning("No specific content selectors found - proceeding anyway")
 
-    def _scroll_and_load_content(self, max_wait_time):
-        """Scroll down and click 'Load More' buttons to load all content"""
+    def _scroll_and_collect_universities(self, max_wait_time):
+        """Scroll, click to load more, and collect university entries as they appear"""
         start_time = time.time()
         last_count = 0
-        same_count_iterations = 0
-        
+        same_iterations = 0
+
         while time.time() - start_time < max_wait_time:
+            self._collect_visible_entries()
+
+            if len(self.collected) >= self.max_entries:
+                logging.info(f"Collected {len(self.collected)} entries (target reached)")
+                break
+
             # Scroll to bottom
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)
-            
+
             # Try to click "Load More" button
-            load_more_clicked = self._click_load_more_button()
-            
-            if load_more_clicked:
+            if self._click_load_more_button():
                 time.sleep(3)
-            
-            # Count current entries
-            current_count = self._count_university_entries()
-            logging.info(f"Currently loaded universities: {current_count}")
-            
-            # Check stopping conditions
-            if current_count >= self.max_entries:
-                logging.info(f"Reached target of {self.max_entries} entries")
-                break
-                
-            if current_count == last_count:
-                same_count_iterations += 1
-                if same_count_iterations >= 5:
-                    logging.info("No more content loading - stopping")
+
+            if len(self.collected) == last_count:
+                same_iterations += 1
+                if same_iterations >= 5:
+                    logging.info("No more content appearing - stopping")
                     break
             else:
-                same_count_iterations = 0
-                
-            last_count = current_count
+                same_iterations = 0
+
+            last_count = len(self.collected)
             time.sleep(2)
-        
-        return self._count_university_entries()
+
+        # Final collection after loop
+        self._collect_visible_entries()
+        return list(self.collected.values())
+
+    def _collect_visible_entries(self):
+        """Collect university entries currently visible on the page"""
+        selectors = [
+            "li[class*='item-list']",
+            "li[class*='ListItemStyled']",
+            "[data-testid='ranking-item']",
+            ".RankingItem",
+            ".ranking-item",
+            "div[class*='ranking-item']"
+        ]
+
+        elements = []
+        for selector in selectors:
+            try:
+                elements.extend(self.driver.find_elements(By.CSS_SELECTOR, selector))
+            except Exception:
+                continue
+
+        elements = list(dict.fromkeys(elements))
+
+        for item in elements:
+            data = self._parse_usnews_list_item(item, len(self.collected) + 1)
+            if data and data['University'] not in self.collected:
+                self.collected[data['University']] = data
 
     def _click_load_more_button(self):
         """Try to find and click the 'Load More' button"""
@@ -799,17 +822,14 @@ class USNewsPolishedExtractor:
         try:
             self.setup_driver()
             loaded_count = self.load_all_universities(max_wait_time)
-            
+
             if loaded_count == 0:
-                logging.error("No university entries found")
+                logging.error("No university entries collected")
                 return False
-            
-            universities = self.extract_university_data()
-            
-            if not universities:
-                logging.error("Failed to extract university data")
-                return False
-            
+
+            # Data was collected during scrolling; just clean and save
+            self.universities = self._clean_and_standardize_data(self.universities)
+
             success = self.save_to_csv(output_csv)
             return success
             

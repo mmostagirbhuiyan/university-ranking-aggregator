@@ -4,12 +4,22 @@ name: Update University Rankings
 on:
   # Manual trigger
   workflow_dispatch:
-  
-  # Trigger when data files are updated
+
+  # Trigger on pushes to data or script files
   push:
     paths:
       - 'frontend/public/data/*.xlsx'
       - 'frontend/public/data/*.csv'
+      - 'scripts/**'
+      - '.github/workflows/update-rankings.yml'
+
+  # Run the workflow for pull requests that modify relevant files
+  pull_request:
+    paths:
+      - 'frontend/public/data/*.xlsx'
+      - 'frontend/public/data/*.csv'
+      - 'scripts/**'
+      - '.github/workflows/update-rankings.yml'
 
 jobs:
   update-rankings:
@@ -93,9 +103,10 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action Bot"
         
-        # Add the generated/updated files
+        # Add the generated/updated files, including downloaded datasets
         git add frontend/public/data/aggregated-rankings.json
         git add frontend/public/data/suggested-university-mapping.json
+        git add frontend/public/data/*.csv
         
         # Check if there are changes to commit
         if git diff --staged --quiet; then
@@ -106,6 +117,7 @@ jobs:
           
           git commit -m "🤖 Auto-update university rankings
           📊 Updated aggregated rankings with ${uni_count} universities
+          📥 Updated source datasets
           🔄 Refreshed university name mappings
           ⏰ Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
           This update will trigger automatic deployment."

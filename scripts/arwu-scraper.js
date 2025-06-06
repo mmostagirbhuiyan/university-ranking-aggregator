@@ -1,9 +1,13 @@
 // Academic Ranking of World Universities (ARWU) scraper 
 const axios = require('axios');
-const fs = require('fs'); // Import the file system module
-const cheerio = require('cheerio');
-const csv = require('csv-parser'); // Import the csv-parser library
+const fs = require('fs');
+const csv = require('csv-parser');
 const path = require('path');
+
+// URL to download the latest ARWU CSV directly from universityrankings.ch
+// Note: if this URL changes in the future, update the constant accordingly.
+const ARWU_CSV_DOWNLOAD_URL =
+  'https://www.universityrankings.ch/results/Shanghai/2024?mode=csv';
 
 // Updated URL to universityrankings.ch - This is no longer used for fetching, but kept for reference
 // Updated URL to universityrankings.ch
@@ -16,6 +20,27 @@ const ARWU_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', 
 // Define the path for the local HTML file
 const LOCAL_ARWU_DATA_PATH_HTML = 'Shanghai Ranking 2024 - Results _ UniversityRankings.ch.html';
 
+// Download the latest ARWU CSV and save it to the data directory
+async function downloadARWUCSV() {
+    try {
+        console.log(`Downloading ARWU CSV from ${ARWU_CSV_DOWNLOAD_URL}...`);
+        const { exec } = require('child_process');
+        await new Promise((resolve, reject) => {
+            exec(`curl -L -o '${ARWU_FILE_PATH}' '${ARWU_CSV_DOWNLOAD_URL}'`, (err, stdout, stderr) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            });
+        });
+        console.log(`Saved ARWU CSV to ${ARWU_FILE_PATH}`);
+    } catch (error) {
+        console.error(`Failed to download ARWU CSV: ${error.message}`);
+        throw error;
+    }
+}
+
 /**
  * Scrapes the Academic Ranking of World Universities (ARWU/Shanghai Rankings) from universityrankings.ch.
  * This version reads from a local CSV file.
@@ -26,6 +51,8 @@ async function scrapeARWURankings(limit) {
     const rankings = [];
 
     try {
+        // Always attempt to download the latest data before parsing
+        await downloadARWUCSV();
         console.log(`Reading ARWU rankings from local CSV file ${ARWU_FILE_PATH}...`);
 
         // --- Start of parsing logic with csv-parser ---

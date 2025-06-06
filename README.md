@@ -2,6 +2,8 @@
 
 This project aggregates university rankings from multiple sources (QS, THE, ARWU, US News) using a Borda Count with Penalized Absence method.
 
+[![Deploy to GitHub Pages](https://github.com/mmostagirbhuiyan/university-ranking-aggregator/actions/workflows/deploy.yml/badge.svg)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator/actions/workflows/deploy.yml)
+
 ## Setup
 
 Make sure you have Node.js and npm installed.

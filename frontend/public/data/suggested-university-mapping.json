@@ -151,6 +151,11 @@
   },
   {
     "originalName": "California Institute of Technology - Caltech",
+    "source": "usnews",
+    "suggestedStandardizedName": "California Institute of Technology - Caltech"
+  },
+  {
+    "originalName": "California Institute of Technology - Caltech",
     "source": "qs",
     "suggestedStandardizedName": "California Institute of Technology - Caltech"
   },
@@ -16013,11 +16018,6 @@
     "originalName": "Siksha O Anusandhan",
     "source": "the",
     "suggestedStandardizedName": "Siksha O Anusandhan"
-  },
-  {
-    "originalName": "California Institute of Technology",
-    "source": "usnews",
-    "suggestedStandardizedName": "California Institute of Technology"
   },
   {
     "originalName": "Universite Paris Cite",

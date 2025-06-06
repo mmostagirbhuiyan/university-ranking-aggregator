@@ -99,6 +99,7 @@ function aggregateRankings(universitiesData, sourceWeights, sourceMaxRanks, tota
         const finalScore = calculateAggregatedScore(university, sourceWeights, finalSourceMaxRanks, totalSources);
         return {
             name: university.name,
+            country: university.country,
             aggregatedScore: finalScore,
             // Potentially add other relevant info like original ranks, appearances, etc.
             originalRankings: university.rankings, // Keeping original ranks for context

@@ -76,11 +76,13 @@ async function scrapeTHERankings() {
                     }
 
                     const name = row['Institution'] ? row['Institution'].trim() : '';
+                    const country = row['Country'] ? row['Country'].trim() : '';
 
                     if (name && !isNaN(rank)) {
                         results.push({
                             name: name,        // Use 'name' property as expected by scrape-rankings.js
                             rank: rank,        // Include the parsed rank
+                            country: country,
                             source: 'the'
                         });
                     }

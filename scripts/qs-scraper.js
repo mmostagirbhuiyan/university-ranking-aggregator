@@ -44,8 +44,9 @@ function parseQSCSV(filePath) {
       .on('data', (row) => {
         const rank = parseInt(row['# World Rank'], 10);
         const name = row[' Institution'];
+        const country = row[' Country'];
         if (name && !isNaN(rank)) {
-          results.push({ name: name.trim(), rank });
+          results.push({ name: name.trim(), rank, country: country.trim() });
         }
       })
       .on('end', () => resolve(results))

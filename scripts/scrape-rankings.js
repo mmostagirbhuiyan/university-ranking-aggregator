@@ -69,6 +69,19 @@ function standardizeUniversityName(originalName, source) {
     }
 }
 
+// Basic country standardization to align naming conventions across sources
+function standardizeCountry(country) {
+    if (!country) return '';
+    const map = {
+        'USA': 'United States',
+        'United States': 'United States',
+        'UK': 'United Kingdom',
+        'United Kingdom': 'United Kingdom',
+        'S. Korea': 'South Korea',
+    };
+    return map[country.trim()] || country.trim();
+}
+
 // Removed generic file reading functions (readJsonRankings, readCsvRankings, readXlsxRankings)
 
 /**
@@ -88,7 +101,7 @@ async function main(limit = 400) {
          const qsRankings = qsRankingsRaw.map(uni => {
              if (uni.name && typeof uni.rank === 'number' && !isNaN(uni.rank)) { // Ensure rank is a valid number
                   const standardizedName = standardizeUniversityName(uni.name, 'qs');
-                  return { name: standardizedName, rank: Math.floor(uni.rank) }; // Ensure rank is integer
+                  return { name: standardizedName, rank: Math.floor(uni.rank), country: standardizeCountry(uni.country) }; // Ensure rank is integer
              } else {
                  console.warn('Skipping QS entry due to missing or invalid data:', uni);
                  return null; // Skip invalid entries
@@ -117,7 +130,7 @@ async function main(limit = 400) {
 
              // Ensure name exists and rank is a valid number from the scraper's output
              if (uni.name && typeof uni.name === 'string' && typeof uni.rank === 'number' && !isNaN(uni.rank)) { // Ensure name is a valid string and rank is a valid number
-                  return { name: standardizedName, rank: uni.rank }; // Use the rank directly from the scraper's output
+                  return { name: standardizedName, rank: uni.rank, country: standardizeCountry(uni.country) }; // Use the rank directly from the scraper's output
              } else {
                  console.warn('Skipping THE entry due to missing data or invalid rank format:', uni);
                  return null; // Skip invalid entries
@@ -145,7 +158,7 @@ async function main(limit = 400) {
              if (uni.name && typeof uni.name === 'string' && typeof uni.rank === 'number' && !isNaN(uni.rank)) { // Ensure name is a valid string and rank is a valid number
                   const standardizedName = standardizeUniversityName(uni.name, 'arwu');
                   // Ensure rank is an integer, although the scraper's parseInt should handle this
-                  return { name: standardizedName, rank: Math.floor(uni.rank) }; 
+                  return { name: standardizedName, rank: Math.floor(uni.rank), country: standardizeCountry(uni.country) };
              } else {
                  // Keep the warning for skipped entries
                  console.warn('Skipping ARWU entry due to missing data or invalid rank format:', uni);
@@ -169,7 +182,7 @@ async function main(limit = 400) {
                     if (data.University && data.Rank) {
                          // Apply standardization here
                         const standardizedName = standardizeUniversityName(data.University, 'usnews');
-                        results.push({ name: standardizedName, rank: parseInt(data.Rank, 10) });
+                        results.push({ name: standardizedName, rank: parseInt(data.Rank, 10), country: standardizeCountry(data.Country) });
                     }
                 })
                 .on('end', () => {
@@ -195,7 +208,10 @@ async function main(limit = 400) {
             rankings.forEach(uni => {
                 const name = uni.name; // Name is already standardized at this point
                 if (!universitiesData[name]) {
-                    universitiesData[name] = { name, rankings: {} };
+                    universitiesData[name] = { name, country: uni.country, rankings: {} };
+                }
+                if (!universitiesData[name].country && uni.country) {
+                    universitiesData[name].country = uni.country;
                 }
                 universitiesData[name].rankings[sourceKey] = { rank: uni.rank };
             });

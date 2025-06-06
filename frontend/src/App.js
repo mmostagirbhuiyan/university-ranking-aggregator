@@ -10,6 +10,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const universitiesPerPage = 50;
   const [showMethodology, setShowMethodology] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState('');
 
   useEffect(() => {
     const loadRankings = async () => {
@@ -31,12 +32,21 @@ function App() {
     loadRankings();
   }, []);
 
+  const uniqueCountries = useMemo(() => {
+    const setCountries = new Set(universities.map(u => u.country).filter(Boolean));
+    return Array.from(setCountries).sort();
+  }, [universities]);
+
   const filteredAndSortedUniversities = useMemo(() => {
     const normalize = str => str.toLowerCase().replace(/\s+/g, '');
     const term = normalize(searchTerm.trim());
-    let filtered = term
-      ? universities.filter(uni => normalize(uni.name).includes(term))
-      : universities;
+    let filtered = universities;
+    if (selectedCountry) {
+      filtered = filtered.filter(uni => uni.country === selectedCountry);
+    }
+    if (term) {
+      filtered = filtered.filter(uni => normalize(uni.name).includes(term));
+    }
 
     return filtered.sort((a, b) => {
       if (sortBy === 'name') return a.name.localeCompare(b.name);
@@ -50,7 +60,7 @@ function App() {
       }
       return 0;
     });
-  }, [universities, searchTerm, sortBy]);
+  }, [universities, searchTerm, sortBy, selectedCountry]);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredAndSortedUniversities.length / universitiesPerPage);
@@ -78,10 +88,10 @@ function App() {
   };
   const paginationWindow = getPaginationWindow();
 
-  // Reset to page 1 when search or sort changes
+  // Reset to page 1 when search, sort, or country filter changes
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, sortBy]);
+  }, [searchTerm, sortBy, selectedCountry]);
 
   const getRankingBadgeColor = (rank) => {
     if (rank <= 3) return 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white';
@@ -164,7 +174,7 @@ function App() {
           {/* Search and Filter Section */}
           <div className="max-w-4xl mx-auto mb-12">
             <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <div className="relative">
                   <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
                   <input
@@ -191,6 +201,22 @@ function App() {
                     <option value="usnews" className="bg-gray-800">US News Ranking</option>
                     <option value="name" className="bg-gray-800">Name (A-Z)</option>
                     <option value="appearances" className="bg-gray-800">Appearances</option>
+                  </select>
+                </div>
+
+                <div className="relative">
+                  <Globe className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+                  <select
+                    value={selectedCountry}
+                    onChange={(e) => setSelectedCountry(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
+                  >
+                    <option value="" className="bg-gray-800">All Countries</option>
+                    {uniqueCountries.map((c) => (
+                      <option key={c} value={c} className="bg-gray-800">
+                        {c}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -249,6 +275,10 @@ function App() {
                           <div className="flex items-center gap-1">
                             <Award className="w-4 h-4" />
                             <span>Best: #{getBestRanking(university.originalRankings)}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Globe className="w-4 h-4" />
+                            <span>{university.country}</span>
                           </div>
                         </div>
                       </div>

@@ -10,6 +10,7 @@ const { createReadStream } = require('fs'); // Import createReadStream
 const { scrapeQSRankings } = require('./qs-scraper'); // Assuming this now reads from file
 const { scrapeTHERankings } = require('./the-scraper'); // Assuming this now reads from file
 const { scrapeARWURankings } = require('./arwu-scraper'); // Assuming this now reads from file
+const { downloadUSNewsCSV } = require('./usnews-scraper');
 
 // Import aggregation logic
 const { aggregateRankings } = require('./aggregation');
@@ -154,8 +155,10 @@ async function main(limit = 400) {
          }).filter(uni => uni !== null).sort((a, b) => a.rank - b.rank);
          console.log(`Processed ${arwuRankings.length} universities from ARWU.`);
 
+        console.log('Fetching US News rankings...');
+        // Download the latest US News CSV via the helper script
+        await downloadUSNewsCSV(limit);
         console.log('Reading US News rankings from file...');
-        // Keep existing logic for US News CSV as it was manually provided
         const usnewsRankings = await new Promise((resolve, reject) => {
             const results = [];
             createReadStream(path.join(__dirname, '..', 'frontend', 'public', 'data', 'usnews_rankings.csv'))

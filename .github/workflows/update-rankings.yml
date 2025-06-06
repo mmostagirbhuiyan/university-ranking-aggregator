@@ -13,14 +13,6 @@ on:
       - 'scripts/**'
       - '.github/workflows/update-rankings.yml'
 
-  # Run the workflow for pull requests that modify relevant files
-  pull_request:
-    paths:
-      - 'frontend/public/data/*.xlsx'
-      - 'frontend/public/data/*.csv'
-      - 'scripts/**'
-      - '.github/workflows/update-rankings.yml'
-
 jobs:
   update-rankings:
     runs-on: ubuntu-latest

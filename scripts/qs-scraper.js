@@ -12,6 +12,10 @@ const QS_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', QS
 // Download the latest QS CSV to the data directory
 async function downloadQSCSV() {
   try {
+    if (fs.existsSync(QS_FILE_PATH) && fs.statSync(QS_FILE_PATH).size > 0) {
+      console.log(`Using existing QS CSV at ${QS_FILE_PATH}`);
+      return;
+    }
     console.log(`Downloading QS CSV from ${QS_CSV_DOWNLOAD_URL}...`);
     const { exec } = require('child_process');
     await new Promise((resolve, reject) => {

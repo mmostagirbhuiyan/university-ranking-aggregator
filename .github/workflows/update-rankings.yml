@@ -40,7 +40,18 @@ jobs:
     - name: Install Python dependencies
       run: pip install -r requirements.txt
 
+    - name: Check US News changes
+      id: check_usnews
+      run: |
+        diff_files=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.sha }} | grep -E '^scripts/usnews_direct_extractor.py|^frontend/public/data/usnews_rankings.csv' || true)
+        if [ -n "$diff_files" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+
     - name: Fetch US News rankings
+      if: github.event_name == 'workflow_dispatch' || steps.check_usnews.outputs.changed == 'true'
       run: python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
     
     - name: Install dependencies

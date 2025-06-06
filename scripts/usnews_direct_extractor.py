@@ -358,16 +358,23 @@ class USNewsPolishedExtractor:
             self._extract_via_ranking_items,
             self._extract_via_university_links
         ]
-        
+
         for strategy in strategies:
             try:
                 extracted_data = strategy()
-                if extracted_data and len(extracted_data) > 10:
+                logging.info(f"{strategy.__name__} extracted {len(extracted_data) if extracted_data else 0} entries")
+
+                if extracted_data and len(extracted_data) > len(self.universities):
                     self.universities = extracted_data
-                    logging.info(f"Successfully extracted {len(self.universities)} universities using {strategy.__name__}")
-                    break
-                else:
-                    logging.info(f"{strategy.__name__} extracted {len(extracted_data) if extracted_data else 0} entries - trying next strategy")
+                    if len(self.universities) >= self.max_entries:
+                        logging.info(
+                            f"Using {strategy.__name__} with {len(self.universities)} entries (reached desired amount)"
+                        )
+                        break
+                    else:
+                        logging.info(
+                            f"{strategy.__name__} provided partial results - continuing with other strategies"
+                        )
             except Exception as e:
                 logging.error(f"Strategy {strategy.__name__} failed: {e}")
                 continue
@@ -385,10 +392,25 @@ class USNewsPolishedExtractor:
         """Extract based on the actual US News HTML structure"""
         universities = []
         
-        # Look for list items with US News structure
-        list_items = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='item-list']")
-        
-        logging.info(f"Found {len(list_items)} list items with US News structure")
+        # Look for elements that represent ranking items
+        selectors = [
+            "li[class*='item-list']",
+            "li[class*='ListItemStyled']",
+            "[data-testid='ranking-item']",
+            ".RankingItem",
+            ".ranking-item",
+            "div[class*='ranking-item']"
+        ]
+
+        list_items = []
+        for selector in selectors:
+            elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
+            list_items.extend(elements)
+
+        # Deduplicate elements
+        list_items = list(dict.fromkeys(list_items))
+
+        logging.info(f"Found {len(list_items)} potential ranking items")
         
         for i, item in enumerate(list_items):
             try:

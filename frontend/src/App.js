@@ -280,6 +280,10 @@ function App() {
                             <Globe className="w-4 h-4" />
                             <span>{university.country}</span>
                           </div>
+                          <div className="flex items-center gap-1">
+                            <TrendingUp className="w-4 h-4" />
+                            <span>#{university.countryRank}</span>
+                          </div>
                         </div>
                       </div>
                       <button
@@ -367,7 +371,7 @@ function App() {
                           Performance Metrics
                         </h4>
                         
-                        <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                           <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
                             <div className="text-2xl font-bold text-yellow-400 mb-1">
                               {university.aggregatedScore.toFixed(2)}
@@ -379,6 +383,12 @@ function App() {
                               {university.appearances}
                             </div>
                             <div className="text-xs text-purple-200">Rankings Featured</div>
+                          </div>
+                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
+                            <div className="text-2xl font-bold text-blue-400 mb-1">
+                              #{university.countryRank}
+                            </div>
+                            <div className="text-xs text-purple-200">Country Rank</div>
                           </div>
                         </div>
                         

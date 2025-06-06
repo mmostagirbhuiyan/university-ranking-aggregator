@@ -268,71 +268,82 @@ class USNewsPolishedExtractor:
         logging.warning("No specific content selectors found - proceeding anyway")
 
     def _scroll_and_load_content(self, max_wait_time):
-        """Scroll down and click 'Load More' buttons to load all content"""
+        """
+        Scroll and click 'Load More' until the button is truly gone.
+        This version IGNORES all item counts for controlling the loop.
+        """
         start_time = time.time()
-        last_count = 0
-        same_count_iterations = 0
+        patience_counter = 0
+        MAX_PATIENCE = 3 # Will try 3 times before giving up
+
+        logging.info("Starting final loading strategy: Clicking 'Load More' until it disappears.")
         
         while time.time() - start_time < max_wait_time:
-            # Scroll to bottom
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)
-            
-            # Try to click "Load More" button
+
             load_more_clicked = self._click_load_more_button()
             
             if load_more_clicked:
-                time.sleep(3)
-            
-            # Count current entries
-            current_count = self._count_university_entries()
-            logging.info(f"Currently loaded universities: {current_count}")
-            
-            # Check stopping conditions
-            if current_count >= self.max_entries:
-                logging.info(f"Reached target of {self.max_entries} entries")
-                break
-                
-            if current_count == last_count:
-                same_count_iterations += 1
-                if same_count_iterations >= 5:
-                    logging.info("No more content loading - stopping")
-                    break
+                patience_counter = 0 # Reset patience on a successful click
+                logging.info("Waiting 5 seconds for new content to render...")
+                time.sleep(5)
             else:
-                same_count_iterations = 0
-                
-            last_count = current_count
-            time.sleep(2)
+                patience_counter += 1
+                logging.warning(f"Could not find a clickable 'Load More' button. Patience attempt {patience_counter}/{MAX_PATIENCE}.")
+                if patience_counter >= MAX_PATIENCE:
+                    logging.info("Reached max patience. Assuming all content is loaded.")
+                    break # Exit the loop
+                time.sleep(3)
+
+        # The item count check has been completely removed to prevent premature stops.
         
+        logging.info("Finished loading phase.")
         return self._count_university_entries()
 
     def _click_load_more_button(self):
-        """Try to find and click the 'Load More' button"""
-        # Text-based search for load more buttons
-        try:
-            buttons = self.driver.find_elements(By.TAG_NAME, "button")
-            for button in buttons:
-                button_text = button.text.lower()
-                if any(text in button_text for text in ["load more", "show more", "view more"]):
-                    if button.is_displayed() and button.is_enabled():
-                        self.driver.execute_script("arguments[0].click();", button)
-                        logging.info(f"Clicked 'Load More' button: {button.text}")
-                        return True
-        except Exception:
-            pass
+        """Find and click the 'Load More' button using a robust method."""
+        # Broaden the search to include loading states, based on previous logs.
+        possible_texts = ["load more", "show more", "view more", "loading"]
         
-        return False
+        try:
+            # Give the page a moment to render the button after a scroll
+            time.sleep(1)
+            buttons = self.driver.find_elements(By.TAG_NAME, "button")
+            
+            for button in buttons:
+                try:
+                    button_text = button.text.lower()
+                    # Check if the button is visible and contains one of our keywords
+                    if button.is_displayed() and any(text in button_text for text in possible_texts):
+                        # Use a robust JavaScript click that can handle most obscured elements
+                        self.driver.execute_script("arguments[0].scrollIntoView(true);", button)
+                        time.sleep(0.5) # Brief pause after scrolling to it
+                        self.driver.execute_script("arguments[0].click();", button)
+                        
+                        logging.info(f"Successfully clicked button with text: '{button.text}'")
+                        return True
+                except Exception:
+                    # This specific button might be stale or non-interactable, continue to the next
+                    continue
+            
+            # If we loop through all buttons and none are successfully clicked, we fail for this attempt
+            return False
+            
+        except Exception as e:
+            logging.error(f"A critical error occurred while searching for the 'Load More' button: {e}")
+            return False
 
-    def _count_university_entries(self):
-        """Count the number of university entries currently visible"""
+    def _count_university_entries(self, use_link_selector=True):
+        """Count the number of university entries currently visible."""
         selectors = [
-            "li[class*='item-list'][class*='ListItemStyled']",
+            "li[class*='item-list']",
             "[data-testid='ranking-item']",
-            "[data-testid*='university']",
-            ".RankingItem",
-            ".ranking-item",
-            "a[href*='/education/best-global-universities/']"
+            ".RankingItem"
         ]
+        # The link selector often gives an inflated count, so we make it optional
+        if use_link_selector:
+            selectors.append("a[href*='/education/best-global-universities/']")
         
         max_count = 0
         for selector in selectors:
@@ -348,101 +359,83 @@ class USNewsPolishedExtractor:
         return max_count
 
     def extract_university_data(self):
-        """Extract university data and clean it to match desired format"""
-        logging.info("Starting data extraction from page")
+        """
+        Extracts university data, now with a check to prevent parsing the same
+        university multiple times from duplicate links.
+        """
+        logging.info("Starting data extraction with hardened 'bottom-up' strategy.")
         self.universities = []
-        
-        # Try different extraction strategies
-        strategies = [
-            self._extract_via_usnews_list_structure,
-            self._extract_via_ranking_items,
-            self._extract_via_university_links
-        ]
-        
-        for strategy in strategies:
-            try:
-                extracted_data = strategy()
-                if extracted_data and len(extracted_data) > 10:
-                    self.universities = extracted_data
-                    logging.info(f"Successfully extracted {len(self.universities)} universities using {strategy.__name__}")
-                    break
-                else:
-                    logging.info(f"{strategy.__name__} extracted {len(extracted_data) if extracted_data else 0} entries - trying next strategy")
-            except Exception as e:
-                logging.error(f"Strategy {strategy.__name__} failed: {e}")
-                continue
-        
-        if not self.universities:
-            logging.error("All extraction strategies failed")
-            return []
-        
-        # Clean and standardize the data
-        self.universities = self._clean_and_standardize_data(self.universities)
-        
-        return self.universities
 
-    def _extract_via_usnews_list_structure(self):
-        """Extract based on the actual US News HTML structure"""
-        universities = []
-        
-        # Look for list items with US News structure
-        list_items = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='item-list']")
-        
-        logging.info(f"Found {len(list_items)} list items with US News structure")
-        
-        for i, item in enumerate(list_items):
-            try:
-                university_data = self._parse_usnews_list_item(item, i + 1)
-                if university_data:
-                    universities.append(university_data)
-                    if self.debug:
-                        logging.debug(f"Extracted: {university_data}")
-            except Exception as e:
-                logging.debug(f"Failed to parse list item {i}: {e}")
-                continue
-        
-        return universities
-
-    def _parse_usnews_list_item(self, item, fallback_rank):
-        """Parse a single US News list item and clean the data"""
         try:
-            item_text = item.text.strip()
-            if not item_text:
-                return None
-            
-            # Extract rank - look for #number pattern
-            rank = fallback_rank
-            rank_match = re.search(r'#(\d+)', item_text)
-            if rank_match:
-                rank = int(rank_match.group(1))
-            
-            # Find university name from links
-            name = "Unknown University"
-            university_links = item.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
-            
-            for link in university_links:
-                link_text = link.text.strip()
-                if (link_text and 
-                    len(link_text) > 3 and 
-                    not link_text.lower() in ['read more', 'view more', 'details'] and
-                    not re.match(r'^\d+$', link_text)):
-                    name = link_text
-                    break
-            
-            # Extract and clean country/location
-            country = self._extract_and_clean_country(item_text, name)
-            
-            return {
-                'Rank': rank,
-                'University': name,
-                'Country': country,
-                'Score': 'N/A',
-                'Enrollment': 'N/A'
-            }
-            
+            links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
+            total_links = len(links)
+            logging.info(f"Found {total_links} potential university links to process. Parsing may take several minutes...")
         except Exception as e:
-            logging.debug(f"Failed to parse US News list item: {e}")
-            return None
+            logging.error(f"Fatal error: Could not find any university links. Aborting. Error: {e}")
+            return []
+
+        ancestor_queries = ["./ancestor::li", "./ancestor::div[contains(@class, 'ranking-item')]"]
+        universities = []
+        generic_keywords = ['rankings', 'methodology', 'education', 'news', 'view']
+        
+        # NEW: A set to track names we've already processed in this run.
+        parsed_names = set()
+
+        for i, link in enumerate(links):
+            if i % 50 == 0 and i > 0:
+                progress_percent = (i / total_links) * 100
+                print(f"  -> Parsing progress: {i}/{total_links} links checked ({len(universities)} universities found)", end='\r')
+            
+            try:
+                if not link.is_displayed():
+                    continue
+
+                name = link.text.strip()
+
+                # OPTIMIZATION: If we've already successfully parsed this university, skip the duplicate link.
+                if name in parsed_names:
+                    continue
+
+                if not name or len(name) < 4 or any(keyword in name.lower() for keyword in generic_keywords):
+                    continue
+                    
+                item_container = None
+                for query in ancestor_queries:
+                    try:
+                        item_container = link.find_element(By.XPATH, query)
+                        if item_container: break
+                    except NoSuchElementException: continue
+                
+                if not item_container: continue
+                
+                container_text = item_container.text
+
+                if '#' not in container_text:
+                    if self.debug: logging.debug(f"Discarding '{name}': no rank symbol.")
+                    continue
+
+                fallback_rank = i + 1
+                rank_match = re.search(r'#\s*(\d+)', container_text)
+                rank = int(rank_match.group(1)) if rank_match else fallback_rank
+
+                country = self._extract_and_clean_country(container_text, name)
+
+                universities.append({
+                    'Rank': rank, 'University': name, 'Country': country,
+                    'Score': 'N/A', 'Enrollment': 'N/A'
+                })
+                
+                # Add the successfully parsed name to our set.
+                parsed_names.add(name)
+
+            except Exception as e:
+                if self.debug: logging.warning(f"Could not parse item for link text: '{link.text}'. Error: {e}")
+                continue
+
+        print()
+        logging.info(f"Successfully parsed {len(universities)} unique universities from {total_links} links.")
+        self.universities = self._clean_and_standardize_data(universities)
+        return self.universities
 
     def _extract_and_clean_country(self, item_text, university_name):
         """Extract and clean country information from item text"""
@@ -569,156 +562,47 @@ class USNewsPolishedExtractor:
         
         return cleaned
 
-    def _extract_via_ranking_items(self):
-        """Fallback strategy: Extract via ranking item elements"""
-        universities = []
-        
-        item_selectors = [
-            "[data-testid='ranking-item']",
-            ".RankingItem",
-            ".ranking-item",
-            "[class*='ranking'][class*='item']"
-        ]
-        
-        for selector in item_selectors:
-            items = self.driver.find_elements(By.CSS_SELECTOR, selector)
-            if len(items) > 10:
-                logging.info(f"Using selector: {selector} (found {len(items)} items)")
-                
-                for i, item in enumerate(items):
-                    try:
-                        university_data = self._parse_ranking_item_clean(item, i + 1)
-                        if university_data:
-                            universities.append(university_data)
-                    except Exception as e:
-                        logging.debug(f"Failed to parse item {i}: {e}")
-                        continue
-                
-                break
-        
-        return universities
-
-    def _parse_ranking_item_clean(self, item, fallback_rank):
-        """Parse ranking item with clean output format"""
-        try:
-            item_text = item.text
-            
-            # Extract rank
-            rank = fallback_rank
-            rank_match = re.search(r'#(\d+)', item_text)
-            if rank_match:
-                rank = int(rank_match.group(1))
-            
-            # Extract university name
-            name = "Unknown University"
-            name_selectors = ["h3 a", "h2 a", "h1 a", "a[href*='/education/best-global-universities/']"]
-            
-            for selector in name_selectors:
-                name_elements = item.find_elements(By.CSS_SELECTOR, selector)
-                for name_elem in name_elements:
-                    name_text = name_elem.text.strip()
-                    if (name_text and len(name_text) > 3 and 
-                        not name_text.lower() in ['read more', 'view more', 'details']):
-                        name = name_text
-                        break
-                if name != "Unknown University":
-                    break
-            
-            # Clean country extraction
-            country = self._extract_and_clean_country(item_text, name)
-            
-            return {
-                'Rank': rank,
-                'University': name,
-                'Country': country,
-                'Score': 'N/A',
-                'Enrollment': 'N/A'
-            }
-            
-        except Exception as e:
-            logging.debug(f"Failed to parse ranking item: {e}")
-            return None
-
-    def _extract_via_university_links(self):
-        """Fallback strategy: Extract via university links"""
-        universities = []
-        
-        links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
-        
-        for i, link in enumerate(links):
-            try:
-                name = link.text.strip()
-                if (not name or len(name) < 3 or 
-                    name.lower() in ['read more', 'view more', 'details']):
-                    continue
-                
-                # Try to find parent container
-                parent = None
-                try:
-                    parent = link.find_element(By.XPATH, "./ancestor::li[contains(@class, 'item-list')]")
-                except:
-                    try:
-                        parent = link.find_element(By.XPATH, "./ancestor::*[contains(@class, 'item') or contains(@class, 'ranking')]")
-                    except:
-                        continue
-                
-                if not parent:
-                    continue
-                
-                parent_text = parent.text
-                
-                # Extract rank
-                rank = i + 1
-                rank_match = re.search(r'#(\d+)', parent_text)
-                if rank_match:
-                    rank = int(rank_match.group(1))
-                
-                # Clean country extraction
-                country = self._extract_and_clean_country(parent_text, name)
-                
-                universities.append({
-                    'Rank': rank,
-                    'University': name,
-                    'Country': country,
-                    'Score': 'N/A',
-                    'Enrollment': 'N/A'
-                })
-                
-            except Exception as e:
-                logging.debug(f"Failed to parse link {i}: {e}")
-                continue
-        
-        return universities
-
     def _clean_and_standardize_data(self, universities):
-        """Final cleaning and standardization of extracted data"""
+        """Final cleaning and standardization of extracted data with enhanced logging."""
         cleaned = []
         seen_names = set()
+        discard_count = 0
         
         for uni in universities:
             # Clean university name
             name = uni['University'].strip()
             
             # Skip invalid entries
-            if (not name or len(name) < 3 or 
-                name.lower() in ['read more', 'view more', 'details', 'unknown university'] or
-                name in seen_names):
+            if not name or len(name) < 3 or name.lower() in ['read more', 'view more', 'details', 'unknown university']:
+                if self.debug:
+                    logging.debug(f"Discarding entry due to invalid name: {uni}")
+                discard_count += 1
                 continue
-            
+
+            if name in seen_names:
+                if self.debug:
+                    logging.debug(f"Discarding entry due to duplicate name: {uni}")
+                discard_count += 1
+                continue
+
             seen_names.add(name)
             
             # Validate rank
             try:
                 rank = int(uni['Rank'])
-                if rank <= 0 or rank > 2000:
+                if rank <= 0 or rank > 2500: # Increased max rank just in case
+                    if self.debug:
+                        logging.debug(f"Discarding entry due to out-of-range rank: {uni}")
+                    discard_count += 1
                     continue
             except (ValueError, TypeError):
+                if self.debug:
+                    logging.debug(f"Discarding entry due to invalid or missing rank: {uni}")
+                discard_count += 1
                 continue
             
             # Standardize country field
             country = uni.get('Country', 'N/A').strip() or 'N/A'
-            if country == 'N/A' or len(country) < 2:
-                country = 'N/A'
             
             cleaned.append({
                 'Rank': rank,
@@ -728,36 +612,41 @@ class USNewsPolishedExtractor:
                 'Enrollment': 'N/A'
             })
         
-        # Sort by rank and remove duplicate ranks
+        if discard_count > 0:
+            logging.info(f"Discarded {discard_count} entries during the cleaning process.")
+
+        # Sort by rank to ensure order
         cleaned.sort(key=lambda x: x['Rank'])
         
-        # Remove duplicate ranks (keep first occurrence)
-        seen_ranks = set()
-        final_cleaned = []
-        for uni in cleaned:
-            if uni['Rank'] not in seen_ranks:
-                seen_ranks.add(uni['Rank'])
-                final_cleaned.append(uni)
-        
-        return final_cleaned
+        return cleaned
 
     def save_to_csv(self, output_file="../frontend/public/data/usnews_rankings.csv"):
-        """Save cleaned data to CSV file"""
+        """Save cleaned data to CSV file, applying the max_entries limit."""
         if not self.universities:
             logging.error("No university data to save")
             return False
         
-        df = pd.DataFrame(self.universities)
+        # --- THIS IS THE NEW LOGIC ---
+        # If a max_entries limit is set, trim the full list before saving.
+        # The list is already sorted by rank from the cleaning step.
+        limited_universities = self.universities
+        if self.max_entries > 0 and len(self.universities) > self.max_entries:
+            logging.info(f"Applying max_entries limit: Trimming full list from {len(self.universities)} down to {self.max_entries} universities.")
+            limited_universities = self.universities[:self.max_entries]
+        # --- END OF NEW LOGIC ---
+
+        df = pd.DataFrame(limited_universities)
         df.to_csv(output_file, index=False)
         
-        logging.info(f"Saved {len(self.universities)} universities to {output_file}")
+        logging.info(f"Saved {len(df)} universities to {output_file}")
         
-        # Print summary
+        # Print summary using the final, possibly limited, data
         print(f"\n=== EXTRACTION SUMMARY ===")
-        print(f"Total universities extracted: {len(self.universities)}")
-        print(f"Rank range: {df['Rank'].min()} - {df['Rank'].max()}")
-        print(f"Countries represented: {df['Country'].nunique()}")
-        print(f"Universities with identified countries: {len(df[df['Country'] != 'N/A'])}")
+        print(f"Total universities saved: {len(df)}")
+        if not df.empty:
+            print(f"Rank range: {df['Rank'].min()} - {df['Rank'].max()}")
+            print(f"Countries represented: {df['Country'].nunique()}")
+            print(f"Universities with identified countries: {len(df[df['Country'] != 'N/A'])}")
         print(f"Output file: {output_file}")
         
         # Show first few entries
@@ -799,10 +688,10 @@ class USNewsPolishedExtractor:
 
 def main():
     parser = argparse.ArgumentParser(description='Extract US News Global University Rankings directly to CSV')
-    parser.add_argument('-o', '--output', default='usnews_rankings.csv', help='Output CSV file')
+    parser.add_argument('-o', '--output', default='../frontend/public/data/usnews_rankings.csv', help='Output CSV file')
     parser.add_argument('-b', '--browser', choices=['chrome', 'firefox'], default='chrome', help='Browser to use')
     parser.add_argument('--no-headless', action='store_true', help='Run browser in visible mode')
-    parser.add_argument('-n', '--max-entries', type=int, default=500, help='Maximum entries to extract')
+    parser.add_argument('-n', '--max-entries', type=int, default=1000, help='Maximum entries to extract')
     parser.add_argument('-t', '--timeout', type=int, default=300, help='Maximum wait time in seconds')
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
     

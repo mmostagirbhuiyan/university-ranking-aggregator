@@ -1071,6 +1071,11 @@
   },
   {
     "originalName": "University of Illinois at Urbana-Champaign",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Illinois at Urbana-Champaign"
+  },
+  {
+    "originalName": "University of Illinois at Urbana-Champaign",
     "source": "qs",
     "suggestedStandardizedName": "University of Illinois at Urbana-Champaign"
   },

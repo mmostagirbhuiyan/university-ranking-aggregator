@@ -26,23 +26,23 @@ Rank,University,Country,Score,Enrollment
 27,Nanyang Technological University,Singapore,N/A,N/A
 27,University of Melbourne,Australia,N/A,N/A
 29,University of Sydney,Australia,N/A,N/A
-30,Washington University (WUSTL),United States,N/A,N/A
+30,Washington University in St. Louis,United States,N/A,N/A
 31,Peking University,China,N/A,N/A
 32,New York University,United States,N/A,N/A
-33,ETH Zurich,Switzerland,N/A,N/A
+33,ETH Zurich - Swiss Federal Institute of Technology,Switzerland,N/A,N/A
 33,University of Amsterdam,Netherlands,N/A,N/A
 35,Monash University,Australia,N/A,N/A
 36,King's College London,United Kingdom,N/A,N/A
 38,University of Edinburgh,United Kingdom,N/A,N/A
 39,University of British Columbia,Canada,N/A,N/A
-40,Mount Sinai,United States,N/A,N/A
+40,Icahn School of Medicine at Mount Sinai,United States,N/A,N/A
 41,University of Queensland,Australia,N/A,N/A
 42,Chinese University of Hong Kong,Hong Kong,N/A,N/A
 43,Universite Paris Cite,France,N/A,N/A
 44,University of Copenhagen,Denmark,N/A,N/A
 44,University of Hong Kong,Hong Kong,N/A,N/A
 46,Utrecht University,Netherlands,N/A,N/A
-47,Chapel Hill,United States,N/A,N/A
+47,University of North Carolina at Chapel Hill,United States,N/A,N/A
 48,Humboldt University of Berlin,Germany,N/A,N/A
 48,KU Leuven,Belgium,N/A,N/A
 50,University of Pittsburgh,United States,N/A,N/A
@@ -62,7 +62,7 @@ Rank,University,Country,Score,Enrollment
 66,Free University of Berlin,Germany,N/A,N/A
 67,Hong Kong Polytechnic University,Hong Kong,N/A,N/A
 67,University of Manchester,United Kingdom,N/A,N/A
-69,"Sciences, CAS",China,N/A,N/A
+69,University of Chinese Academy of Sciences,China,N/A,N/A
 70,Erasmus University Rotterdam,Netherlands,N/A,N/A
 70,Georgia Institute of Technology,United States,N/A,N/A
 73,Boston University,United States,N/A,N/A
@@ -98,7 +98,7 @@ Rank,University,Country,Score,Enrollment
 106,University of Florida,United States,N/A,N/A
 108,Wuhan University,China,N/A,N/A
 109,Ghent University,Belgium,N/A,N/A
-109,Medical Center Dallas,United States,N/A,N/A
+109,UT Southwestern Medical Center,United States,N/A,N/A
 111,University of Bern,Switzerland,N/A,N/A
 112,Universite PSL,France,N/A,N/A
 113,University of Helsinki,Finland,N/A,N/A
@@ -108,7 +108,7 @@ Rank,University,Country,Score,Enrollment
 117,Radboud University Nijmegen,Netherlands,N/A,N/A
 119,Hunan University,China,N/A,N/A
 119,University of Geneva,Switzerland,N/A,N/A
-121,Tropical Medicine,United Kingdom,N/A,N/A
+121,London School of Hygiene & Tropical Medicine,United Kingdom,N/A,N/A
 122,University of Exeter,United Kingdom,N/A,N/A
 123,Michigan State University,United States,N/A,N/A
 123,University of Southampton,United Kingdom,N/A,N/A
@@ -126,7 +126,7 @@ Rank,University,Country,Score,Enrollment
 137,Baylor College of Medicine,United States,N/A,N/A
 137,University of Liverpool,United Kingdom,N/A,N/A
 137,Weizmann Institute of Science,Israel,N/A,N/A
-140,Sapienza University Rome,Italy,N/A,N/A
+140,Sapienza University of Rome,Italy,N/A,N/A
 141,University of Leeds,United Kingdom,N/A,N/A
 142,King Saud University,Saudi Arabia,N/A,N/A
 142,Medical Campus,United States,N/A,N/A
@@ -151,10 +151,10 @@ Rank,University,Country,Score,Enrollment
 168,Central South University,China,N/A,N/A
 168,Kyoto University,Japan,N/A,N/A
 168,University of Basel,Switzerland,N/A,N/A
-171,M University College,United States,N/A,N/A
+171,Texas A&M University,United States,N/A,N/A
 172,University of Gottingen,Germany,N/A,N/A
 172,University of Warwick,United Kingdom,N/A,N/A
-174,Universite de Montreal,Canada,N/A,N/A
+174,Université de Montréal,Canada,N/A,N/A
 175,University of Lausanne,Switzerland,N/A,N/A
 177,Deakin University,Australia,N/A,N/A
 177,Tel Aviv University,Israel,N/A,N/A
@@ -162,9 +162,9 @@ Rank,University,Country,Score,Enrollment
 179,Beijing Institute of Technology,China,N/A,N/A
 179,Maastricht University,Netherlands,N/A,N/A
 179,'an Jiaotong University,China,N/A,N/A
-183,Southeast University - China,China,N/A,N/A
+183,Southeast University,China,N/A,N/A
 184,Cardiff University,United Kingdom,N/A,N/A
-184,Technology (QUT),Australia,N/A,N/A
+184,Queensland University of Technology (QUT),Australia,N/A,N/A
 184,Technical University of Denmark,Denmark,N/A,N/A
 187,Delft University of Technology,Netherlands,N/A,N/A
 187,Shenzhen University,China,N/A,N/A
@@ -173,10 +173,10 @@ Rank,University,Country,Score,Enrollment
 192,Macquarie University,Australia,N/A,N/A
 192,University of Waterloo,Canada,N/A,N/A
 194,University of Leicester,United Kingdom,N/A,N/A
-195,Technology (RMIT),Australia,N/A,N/A
+195,RMIT University,Australia,N/A,N/A
 195,Tianjin University,China,N/A,N/A
 198,Xiamen University,China,N/A,N/A
-199,Aix-Marseille Universite,France,N/A,N/A
+199,Aix-Marseille University,France,N/A,N/A
 199,University of Rochester,United States,N/A,N/A
 201,Technische Universitat Dresden,Germany,N/A,N/A
 201,Universite Catholique Louvain,Belgium,N/A,N/A
@@ -192,7 +192,7 @@ Rank,University,Country,Score,Enrollment
 210,University of Wurzburg,Germany,N/A,N/A
 213,University of Antwerp,Belgium,N/A,N/A
 213,Zhengzhou University,China,N/A,N/A
-215,of Athens,Greece,N/A,N/A
+215,National and Kapodistrian University of Athens,Greece,N/A,N/A
 215,University of Vienna,Austria,N/A,N/A
 217,Sichuan University,China,N/A,N/A
 218,RWTH Aachen University,Germany,N/A,N/A
@@ -216,7 +216,7 @@ Rank,University,Country,Score,Enrollment
 237,China Agricultural University,China,N/A,N/A
 237,Universite Grenoble Alpes (UGA),France,N/A,N/A
 239,Griffith University,Australia,N/A,N/A
-239,Political Science,United Kingdom,N/A,N/A
+239,The London School of Economics and Political Science (LSE),United Kingdom,N/A,N/A
 241,Sejong University,South Korea,N/A,N/A
 241,University of Cologne,Germany,N/A,N/A
 241,University of Miami,United States,N/A,N/A
@@ -242,7 +242,7 @@ Rank,University,Country,Score,Enrollment
 264,Hebrew University of Jerusalem,Israel,N/A,N/A
 264,Queens University Belfast,United Kingdom,N/A,N/A
 264,University of Witwatersrand,South Africa,N/A,N/A
-267,Technology (NTNU),Norway,N/A,N/A
+267,Norwegian University of Science and Technology (NTNU),Norway,N/A,N/A
 267,University of Illinois Chicago,United States,N/A,N/A
 269,Pompeu Fabra University,Spain,N/A,N/A
 269,Center at San Antonio,United States,N/A,N/A
@@ -264,7 +264,7 @@ Rank,University,Country,Score,Enrollment
 285,University of Otago,New Zealand,N/A,N/A
 285,University of Tasmania,Australia,N/A,N/A
 285,Yeshiva University,United States,N/A,N/A
-289,(CUI),Pakistan,N/A,N/A
+289,COMSATS University Islamabad,Pakistan,N/A,N/A
 289,Karlsruhe Institute of Technology,Germany,N/A,N/A
 289,University of Maryland Baltimore,United States,N/A,N/A
 292,Dalian University of Technology,China,N/A,N/A
@@ -349,7 +349,7 @@ Rank,University,Country,Score,Enrollment
 381,Quaid I Azam University,Pakistan,N/A,N/A
 381,University of Liege,Belgium,N/A,N/A
 381,Technology Beijing,China,N/A,N/A
-385,Technology (POSTECH),South Korea,N/A,N/A
+385,Pohang University of Science and Technology (POSTECH),South Korea,N/A,N/A
 385,University of Navarra,Spain,N/A,N/A
 385,University of Victoria,Canada,N/A,N/A
 389,Ruhr University Bochum,Germany,N/A,N/A
@@ -390,12 +390,12 @@ Rank,University,Country,Score,Enrollment
 428,Drexel University,United States,N/A,N/A
 428,University of Delaware,United States,N/A,N/A
 428,University of Mississippi,United States,N/A,N/A
-432,de Mexico,Mexico,N/A,N/A
+432,Universidad Nacional Autónoma de México (UNAM),Mexico,N/A,N/A
 432,University of Bath,United Kingdom,N/A,N/A
 432,University of Central Florida,United States,N/A,N/A
 432,University of Strathclyde,United Kingdom,N/A,N/A
 436,Prince Sultan University,Jordan,N/A,N/A
-436,Grande do Sul,Brazil,N/A,N/A
+436,Federal University of Rio Grande do Sul,Brazil,N/A,N/A
 438,Nantes Universite,France,N/A,N/A
 439,Hokkaido University,Japan,N/A,N/A
 439,Laval University,Canada,N/A,N/A
@@ -427,8 +427,8 @@ Rank,University,Country,Score,Enrollment
 471,Guangzhou University,China,N/A,N/A
 471,Hong Kong Baptist University,Hong Kong,N/A,N/A
 471,Tampere University,Finland,N/A,N/A
-474,Jefferson University,United States,N/A,N/A
-474,Economics - China,China,N/A,N/A
+474,Thomas Jefferson University,United States,N/A,N/A
+474,University of International Business and Economics,China,N/A,N/A
 474,Universidade de Coimbra,Portugal,N/A,N/A
 477,Nanjing Forestry University,China,N/A,N/A
 477,University of Hawaii Manoa,United States,N/A,N/A
@@ -450,7 +450,7 @@ Rank,University,Country,Score,Enrollment
 497,Jiangnan University,China,N/A,N/A
 497,University of Ljubljana,Slovenia,N/A,N/A
 497,University of Nebraska Lincoln,United States,N/A,N/A
-501,University Indianapolis,United States,N/A,N/A
+501,University of Indianapolis,United States,N/A,N/A
 503,George Mason University,United States,N/A,N/A
 503,Hohai University,China,N/A,N/A
 503,Ocean University of China,China,N/A,N/A

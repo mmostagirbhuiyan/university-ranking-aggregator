@@ -1861,6 +1861,11 @@
   },
   {
     "originalName": "Purdue University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Purdue University"
+  },
+  {
+    "originalName": "Purdue University",
     "source": "qs",
     "suggestedStandardizedName": "Purdue University"
   },

@@ -23,10 +23,14 @@ const LOCAL_ARWU_DATA_PATH_HTML = 'Shanghai Ranking 2024 - Results _ UniversityR
 // Download the latest ARWU CSV and save it to the data directory
 async function downloadARWUCSV() {
     try {
+        if (fs.existsSync(ARWU_FILE_PATH) && fs.statSync(ARWU_FILE_PATH).size > 0) {
+            console.log(`Using existing ARWU CSV at ${ARWU_FILE_PATH}`);
+            return;
+        }
         console.log(`Downloading ARWU CSV from ${ARWU_CSV_DOWNLOAD_URL}...`);
         const { exec } = require('child_process');
         await new Promise((resolve, reject) => {
-            exec(`curl -L -o '${ARWU_FILE_PATH}' '${ARWU_CSV_DOWNLOAD_URL}'`, (err, stdout, stderr) => {
+            exec(`curl -L -o '${ARWU_FILE_PATH}' '${ARWU_CSV_DOWNLOAD_URL}'`, (err) => {
                 if (err) {
                     reject(err);
                 } else {

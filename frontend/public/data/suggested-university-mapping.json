@@ -285,11 +285,6 @@
     "suggestedStandardizedName": "University of California - Los Angeles"
   },
   {
-    "originalName": "University of California Los Angeles",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of California - Los Angeles"
-  },
-  {
     "originalName": "University of California - Los Angeles",
     "source": "qs",
     "suggestedStandardizedName": "University of California - Los Angeles"
@@ -1431,6 +1426,11 @@
   },
   {
     "originalName": "Hebrew University of Jerusalem",
+    "source": "usnews",
+    "suggestedStandardizedName": "Hebrew University of Jerusalem"
+  },
+  {
+    "originalName": "Hebrew University of Jerusalem",
     "source": "qs",
     "suggestedStandardizedName": "Hebrew University of Jerusalem"
   },
@@ -1721,6 +1721,11 @@
   },
   {
     "originalName": "Sichuan University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Sichuan University"
+  },
+  {
+    "originalName": "Sichuan University",
     "source": "qs",
     "suggestedStandardizedName": "Sichuan University"
   },
@@ -1825,6 +1830,11 @@
     "suggestedStandardizedName": "Universit� Libre de Bruxelles"
   },
   {
+    "originalName": "Universite Libre de Bruxelles",
+    "source": "usnews",
+    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+  },
+  {
     "originalName": "Universit� Libre de Bruxelles",
     "source": "qs",
     "suggestedStandardizedName": "Universit� Libre de Bruxelles"
@@ -1910,6 +1920,11 @@
     "suggestedStandardizedName": "University of Bergen"
   },
   {
+    "originalName": "University of Bergen",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Bergen"
+  },
+  {
     "originalName": "University of Bern",
     "source": "qs",
     "suggestedStandardizedName": "University of Bergen"
@@ -1927,6 +1942,11 @@
   {
     "originalName": "University of Lausanne",
     "source": "the",
+    "suggestedStandardizedName": "University of Lausanne"
+  },
+  {
+    "originalName": "University of Lausanne",
+    "source": "usnews",
     "suggestedStandardizedName": "University of Lausanne"
   },
   {
@@ -2526,6 +2546,11 @@
   },
   {
     "originalName": "Rice University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Rice University"
+  },
+  {
+    "originalName": "Rice University",
     "source": "qs",
     "suggestedStandardizedName": "Rice University"
   },
@@ -2691,6 +2716,11 @@
   },
   {
     "originalName": "Beijing Normal University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Beijing Normal University"
+  },
+  {
+    "originalName": "Beijing Normal University",
     "source": "qs",
     "suggestedStandardizedName": "Beijing Normal University"
   },
@@ -2706,6 +2736,11 @@
   },
   {
     "originalName": "Beihang University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Beihang University"
+  },
+  {
+    "originalName": "Beihang University",
     "source": "qs",
     "suggestedStandardizedName": "Beihang University"
   },
@@ -2721,6 +2756,11 @@
   },
   {
     "originalName": "Chongqing University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Chongqing University"
+  },
+  {
+    "originalName": "Chongqing University",
     "source": "qs",
     "suggestedStandardizedName": "Chongqing University"
   },
@@ -2756,6 +2796,11 @@
   },
   {
     "originalName": "Nankai University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Nankai University"
+  },
+  {
+    "originalName": "Nankai University",
     "source": "qs",
     "suggestedStandardizedName": "Nankai University"
   },
@@ -2801,6 +2846,11 @@
   },
   {
     "originalName": "Xiamen University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Xiamen University"
+  },
+  {
+    "originalName": "Xiamen University",
     "source": "qs",
     "suggestedStandardizedName": "Xiamen University"
   },
@@ -2837,6 +2887,11 @@
   {
     "originalName": "University of G�ttingen",
     "source": "the",
+    "suggestedStandardizedName": "University of G�ttingen"
+  },
+  {
+    "originalName": "University of Gottingen",
+    "source": "usnews",
     "suggestedStandardizedName": "University of G�ttingen"
   },
   {
@@ -2897,6 +2952,11 @@
   {
     "originalName": "University of M�nster",
     "source": "the",
+    "suggestedStandardizedName": "University of M�nster"
+  },
+  {
+    "originalName": "University of Munster",
+    "source": "usnews",
     "suggestedStandardizedName": "University of M�nster"
   },
   {
@@ -3011,6 +3071,11 @@
   },
   {
     "originalName": "Delft University of Technology",
+    "source": "usnews",
+    "suggestedStandardizedName": "Delft University of Technology"
+  },
+  {
+    "originalName": "Delft University of Technology",
     "source": "qs",
     "suggestedStandardizedName": "Delft University of Technology"
   },
@@ -3047,17 +3112,22 @@
   {
     "originalName": "Norwegian University of Science and Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Norwegian University of Science and Technology"
+    "suggestedStandardizedName": "Norwegian University of Science & Technology (NTNU)"
   },
   {
     "originalName": "Norwegian University of Science and Technology",
     "source": "the",
-    "suggestedStandardizedName": "Norwegian University of Science and Technology"
+    "suggestedStandardizedName": "Norwegian University of Science & Technology (NTNU)"
+  },
+  {
+    "originalName": "Norwegian University of Science & Technology (NTNU)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Norwegian University of Science & Technology (NTNU)"
   },
   {
     "originalName": "Norwegian University of Science and Technology",
     "source": "qs",
-    "suggestedStandardizedName": "Norwegian University of Science and Technology"
+    "suggestedStandardizedName": "Norwegian University of Science & Technology (NTNU)"
   },
   {
     "originalName": "Cardiff University",
@@ -3067,6 +3137,11 @@
   {
     "originalName": "Cardiff University",
     "source": "the",
+    "suggestedStandardizedName": "Cardiff University"
+  },
+  {
+    "originalName": "Cardiff University",
+    "source": "usnews",
     "suggestedStandardizedName": "Cardiff University"
   },
   {
@@ -3347,17 +3422,22 @@
   {
     "originalName": "Sungkyunkwan University",
     "source": "arwu",
-    "suggestedStandardizedName": "Sungkyunkwan University"
+    "suggestedStandardizedName": "Sungkyunkwan University (SKKU)"
   },
   {
     "originalName": "Sungkyunkwan University",
     "source": "the",
-    "suggestedStandardizedName": "Sungkyunkwan University"
+    "suggestedStandardizedName": "Sungkyunkwan University (SKKU)"
+  },
+  {
+    "originalName": "Sungkyunkwan University (SKKU)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Sungkyunkwan University (SKKU)"
   },
   {
     "originalName": "Sungkyunkwan University",
     "source": "qs",
-    "suggestedStandardizedName": "Sungkyunkwan University"
+    "suggestedStandardizedName": "Sungkyunkwan University (SKKU)"
   },
   {
     "originalName": "Soochow University",
@@ -3407,6 +3487,11 @@
   {
     "originalName": "Medical University of Vienna",
     "source": "the",
+    "suggestedStandardizedName": "Medical University of Vienna"
+  },
+  {
+    "originalName": "Medical University of Vienna",
+    "source": "usnews",
     "suggestedStandardizedName": "Medical University of Vienna"
   },
   {
@@ -3447,6 +3532,11 @@
   {
     "originalName": "Deakin University",
     "source": "the",
+    "suggestedStandardizedName": "Deakin University"
+  },
+  {
+    "originalName": "Deakin University",
+    "source": "usnews",
     "suggestedStandardizedName": "Deakin University"
   },
   {
@@ -3462,6 +3552,11 @@
   {
     "originalName": "Griffith University",
     "source": "the",
+    "suggestedStandardizedName": "Griffith University"
+  },
+  {
+    "originalName": "Griffith University",
+    "source": "usnews",
     "suggestedStandardizedName": "Griffith University"
   },
   {
@@ -3477,6 +3572,11 @@
   {
     "originalName": "Macquarie University",
     "source": "the",
+    "suggestedStandardizedName": "Macquarie University"
+  },
+  {
+    "originalName": "Macquarie University",
+    "source": "usnews",
     "suggestedStandardizedName": "Macquarie University"
   },
   {
@@ -3626,12 +3726,22 @@
   },
   {
     "originalName": "China Agricultural University",
+    "source": "usnews",
+    "suggestedStandardizedName": "South China Agricultural University"
+  },
+  {
+    "originalName": "China Agricultural University",
     "source": "qs",
     "suggestedStandardizedName": "South China Agricultural University"
   },
   {
     "originalName": "China University of Geosciences Wuhan",
     "source": "arwu",
+    "suggestedStandardizedName": "China University of Geosciences Wuhan"
+  },
+  {
+    "originalName": "China University of Geosciences",
+    "source": "usnews",
     "suggestedStandardizedName": "China University of Geosciences Wuhan"
   },
   {
@@ -3647,6 +3757,11 @@
   {
     "originalName": "Dalian University of Technology",
     "source": "the",
+    "suggestedStandardizedName": "Dalian University of Technology"
+  },
+  {
+    "originalName": "Dalian University of Technology",
+    "source": "usnews",
     "suggestedStandardizedName": "Dalian University of Technology"
   },
   {
@@ -4016,6 +4131,11 @@
   },
   {
     "originalName": "Polytechnic University of Milan",
+    "source": "usnews",
+    "suggestedStandardizedName": "Polytechnic University of Milan"
+  },
+  {
+    "originalName": "Polytechnic University of Milan",
     "source": "qs",
     "suggestedStandardizedName": "Polytechnic University of Milan"
   },
@@ -4141,6 +4261,11 @@
   },
   {
     "originalName": "Osaka University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Osaka University"
+  },
+  {
+    "originalName": "Osaka University",
     "source": "qs",
     "suggestedStandardizedName": "Osaka University"
   },
@@ -4201,6 +4326,11 @@
   },
   {
     "originalName": "Korea University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Korea University"
+  },
+  {
+    "originalName": "Korea University",
     "source": "qs",
     "suggestedStandardizedName": "Korea University"
   },
@@ -4212,6 +4342,11 @@
   {
     "originalName": "Yonsei University",
     "source": "the",
+    "suggestedStandardizedName": "Yonsei University"
+  },
+  {
+    "originalName": "Yonsei University",
+    "source": "usnews",
     "suggestedStandardizedName": "Yonsei University"
   },
   {
@@ -4471,6 +4606,11 @@
   },
   {
     "originalName": "Colorado State University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Colorado State University"
+  },
+  {
+    "originalName": "Colorado State University",
     "source": "qs",
     "suggestedStandardizedName": "Colorado State University"
   },
@@ -4562,6 +4702,11 @@
   {
     "originalName": "North Carolina State University",
     "source": "the",
+    "suggestedStandardizedName": "North Carolina State University"
+  },
+  {
+    "originalName": "North Carolina State University",
+    "source": "usnews",
     "suggestedStandardizedName": "North Carolina State University"
   },
   {
@@ -4731,6 +4876,11 @@
   },
   {
     "originalName": "RWTH Aachen University",
+    "source": "usnews",
+    "suggestedStandardizedName": "RWTH Aachen University"
+  },
+  {
+    "originalName": "RWTH Aachen University",
     "source": "qs",
     "suggestedStandardizedName": "RWTH Aachen University"
   },
@@ -4851,6 +5001,11 @@
   },
   {
     "originalName": "La Trobe University",
+    "source": "usnews",
+    "suggestedStandardizedName": "La Trobe University"
+  },
+  {
+    "originalName": "La Trobe University",
     "source": "qs",
     "suggestedStandardizedName": "La Trobe University"
   },
@@ -4911,6 +5066,11 @@
   },
   {
     "originalName": "University of Wollongong",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Wollongong"
+  },
+  {
+    "originalName": "University of Wollongong",
     "source": "qs",
     "suggestedStandardizedName": "University of Wollongong"
   },
@@ -4922,6 +5082,11 @@
   {
     "originalName": "University of Antwerp",
     "source": "the",
+    "suggestedStandardizedName": "University of Antwerp"
+  },
+  {
+    "originalName": "University of Antwerp",
+    "source": "usnews",
     "suggestedStandardizedName": "University of Antwerp"
   },
   {
@@ -5171,6 +5336,11 @@
   },
   {
     "originalName": "Charles University Prague",
+    "source": "usnews",
+    "suggestedStandardizedName": "Charles University Prague"
+  },
+  {
+    "originalName": "Charles University Prague",
     "source": "qs",
     "suggestedStandardizedName": "Charles University Prague"
   },
@@ -5200,6 +5370,11 @@
     "suggestedStandardizedName": "University of Duisburg-Essen"
   },
   {
+    "originalName": "University of Duisburg Essen",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Duisburg-Essen"
+  },
+  {
     "originalName": "University of Duisburg-Essen",
     "source": "qs",
     "suggestedStandardizedName": "University of Duisburg-Essen"
@@ -5301,6 +5476,11 @@
   },
   {
     "originalName": "Cairo University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Cairo University"
+  },
+  {
+    "originalName": "Cairo University",
     "source": "qs",
     "suggestedStandardizedName": "Cairo University"
   },
@@ -5316,6 +5496,11 @@
   },
   {
     "originalName": "Autonomous University of Madrid",
+    "source": "usnews",
+    "suggestedStandardizedName": "Autonomous University of Madrid"
+  },
+  {
+    "originalName": "Autonomous University of Madrid",
     "source": "qs",
     "suggestedStandardizedName": "Autonomous University of Madrid"
   },
@@ -5327,6 +5512,11 @@
   {
     "originalName": "Complutense University of Madrid",
     "source": "the",
+    "suggestedStandardizedName": "Complutense University of Madrid"
+  },
+  {
+    "originalName": "Complutense University of Madrid",
+    "source": "usnews",
     "suggestedStandardizedName": "Complutense University of Madrid"
   },
   {
@@ -5666,6 +5856,11 @@
   },
   {
     "originalName": "Lancaster University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Lancaster University"
+  },
+  {
+    "originalName": "Lancaster University",
     "source": "qs",
     "suggestedStandardizedName": "Lancaster University"
   },
@@ -5677,6 +5872,11 @@
   {
     "originalName": "University of Leicester",
     "source": "the",
+    "suggestedStandardizedName": "University of Leicester"
+  },
+  {
+    "originalName": "University of Leicester",
+    "source": "usnews",
     "suggestedStandardizedName": "University of Leicester"
   },
   {
@@ -5787,6 +5987,11 @@
   {
     "originalName": "Florida State University",
     "source": "the",
+    "suggestedStandardizedName": "Florida State University"
+  },
+  {
+    "originalName": "Florida State University",
+    "source": "usnews",
     "suggestedStandardizedName": "Florida State University"
   },
   {
@@ -5966,6 +6171,11 @@
   },
   {
     "originalName": "Dartmouth College",
+    "source": "usnews",
+    "suggestedStandardizedName": "Dartmouth College"
+  },
+  {
+    "originalName": "Dartmouth College",
     "source": "qs",
     "suggestedStandardizedName": "Dartmouth College"
   },
@@ -5987,6 +6197,11 @@
   {
     "originalName": "University of Cincinnati",
     "source": "arwu",
+    "suggestedStandardizedName": "University of Cincinnati"
+  },
+  {
+    "originalName": "University of Cincinnati",
+    "source": "usnews",
     "suggestedStandardizedName": "University of Cincinnati"
   },
   {
@@ -6441,6 +6656,11 @@
   },
   {
     "originalName": "Aalborg University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Aalborg University"
+  },
+  {
+    "originalName": "Aalborg University",
     "source": "qs",
     "suggestedStandardizedName": "Aalborg University"
   },
@@ -6915,6 +7135,11 @@
     "suggestedStandardizedName": "China Medical University - Taiwan"
   },
   {
+    "originalName": "China Medical University Taiwan",
+    "source": "usnews",
+    "suggestedStandardizedName": "China Medical University - Taiwan"
+  },
+  {
     "originalName": "National Cheng Kung University",
     "source": "arwu",
     "suggestedStandardizedName": "National Cheng Kung University"
@@ -7241,6 +7466,11 @@
   },
   {
     "originalName": "Aalto University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Aalto University"
+  },
+  {
+    "originalName": "Aalto University",
     "source": "qs",
     "suggestedStandardizedName": "Aalto University"
   },
@@ -7297,6 +7527,11 @@
   {
     "originalName": "Vita-Salute San Raffaele University",
     "source": "the",
+    "suggestedStandardizedName": "Vita-Salute San Raffaele University"
+  },
+  {
+    "originalName": "Vita-Salute San Raffaele University",
+    "source": "usnews",
     "suggestedStandardizedName": "Vita-Salute San Raffaele University"
   },
   {
@@ -7896,6 +8131,11 @@
   },
   {
     "originalName": "Sejong University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Sejong University"
+  },
+  {
+    "originalName": "Sejong University",
     "source": "qs",
     "suggestedStandardizedName": "Sejong University"
   },
@@ -8147,6 +8387,11 @@
   {
     "originalName": "Georgetown University",
     "source": "the",
+    "suggestedStandardizedName": "Georgetown University"
+  },
+  {
+    "originalName": "Georgetown University",
+    "source": "usnews",
     "suggestedStandardizedName": "Georgetown University"
   },
   {
@@ -8521,6 +8766,11 @@
   },
   {
     "originalName": "University of Southern Queensland",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Southern Queensland"
+  },
+  {
+    "originalName": "University of Southern Queensland",
     "source": "qs",
     "suggestedStandardizedName": "University of Southern Queensland"
   },
@@ -8702,6 +8952,11 @@
   {
     "originalName": "University of Tartu",
     "source": "the",
+    "suggestedStandardizedName": "University of Tartu"
+  },
+  {
+    "originalName": "University of Tartu",
+    "source": "usnews",
     "suggestedStandardizedName": "University of Tartu"
   },
   {
@@ -9452,17 +9707,22 @@
   {
     "originalName": "COMSATS University Islamabad",
     "source": "arwu",
-    "suggestedStandardizedName": "COMSATS University Islamabad"
+    "suggestedStandardizedName": "COMSATS University Islamabad (CUI)"
   },
   {
     "originalName": "COMSATS University Islamabad",
     "source": "the",
-    "suggestedStandardizedName": "COMSATS University Islamabad"
+    "suggestedStandardizedName": "COMSATS University Islamabad (CUI)"
+  },
+  {
+    "originalName": "COMSATS University Islamabad (CUI)",
+    "source": "usnews",
+    "suggestedStandardizedName": "COMSATS University Islamabad (CUI)"
   },
   {
     "originalName": "COMSATS University Islamabad",
     "source": "qs",
-    "suggestedStandardizedName": "COMSATS University Islamabad"
+    "suggestedStandardizedName": "COMSATS University Islamabad (CUI)"
   },
   {
     "originalName": "Humanitas University",
@@ -9532,6 +9792,11 @@
   {
     "originalName": "University of Sharjah",
     "source": "the",
+    "suggestedStandardizedName": "University of Sharjah"
+  },
+  {
+    "originalName": "University of Sharjah",
+    "source": "usnews",
     "suggestedStandardizedName": "University of Sharjah"
   },
   {
@@ -9752,6 +10017,11 @@
   {
     "originalName": "Al Azhar University",
     "source": "the",
+    "suggestedStandardizedName": "Al Azhar University"
+  },
+  {
+    "originalName": "Al Azhar University",
+    "source": "usnews",
     "suggestedStandardizedName": "Al Azhar University"
   },
   {
@@ -14555,6 +14825,11 @@
     "suggestedStandardizedName": "Siksha O Anusandhan"
   },
   {
+    "originalName": "Best Global Universities Rankings",
+    "source": "usnews",
+    "suggestedStandardizedName": "Best Global Universities Rankings"
+  },
+  {
     "originalName": "California Institute of Technology",
     "source": "usnews",
     "suggestedStandardizedName": "California Institute of Technology"
@@ -14630,9 +14905,84 @@
     "suggestedStandardizedName": "Purdue University West Lafayette Campus"
   },
   {
-    "originalName": "Best Global Universities Rankings",
+    "originalName": "Texas A&M University College Station",
     "source": "usnews",
-    "suggestedStandardizedName": "Best Global Universities Rankings"
+    "suggestedStandardizedName": "Texas A&M University College Station"
+  },
+  {
+    "originalName": "Universite de Montreal",
+    "source": "usnews",
+    "suggestedStandardizedName": "Universite de Montreal"
+  },
+  {
+    "originalName": "Arizona State University-Tempe",
+    "source": "usnews",
+    "suggestedStandardizedName": "Arizona State University-Tempe"
+  },
+  {
+    "originalName": "Southeast University - China",
+    "source": "usnews",
+    "suggestedStandardizedName": "Southeast University - China"
+  },
+  {
+    "originalName": "Royal Melbourne Institute of Technology (RMIT)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Royal Melbourne Institute of Technology (RMIT)"
+  },
+  {
+    "originalName": "Eberhard Karls University of Tubingen",
+    "source": "usnews",
+    "suggestedStandardizedName": "Eberhard Karls University of Tubingen"
+  },
+  {
+    "originalName": "Aix-Marseille Universite",
+    "source": "usnews",
+    "suggestedStandardizedName": "Aix-Marseille Universite"
+  },
+  {
+    "originalName": "Technische Universitat Dresden",
+    "source": "usnews",
+    "suggestedStandardizedName": "Technische Universitat Dresden"
+  },
+  {
+    "originalName": "National & Kapodistrian University of Athens",
+    "source": "usnews",
+    "suggestedStandardizedName": "National & Kapodistrian University of Athens"
+  },
+  {
+    "originalName": "Universidade de Lisboa",
+    "source": "usnews",
+    "suggestedStandardizedName": "Universidade de Lisboa"
+  },
+  {
+    "originalName": "Johannes Gutenberg University of Mainz",
+    "source": "usnews",
+    "suggestedStandardizedName": "Johannes Gutenberg University of Mainz"
+  },
+  {
+    "originalName": "Royal Institute of Technology",
+    "source": "usnews",
+    "suggestedStandardizedName": "Royal Institute of Technology"
+  },
+  {
+    "originalName": "Pompeu Fabra University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Pompeu Fabra University"
+  },
+  {
+    "originalName": "Universite de Bordeaux",
+    "source": "usnews",
+    "suggestedStandardizedName": "Universite de Bordeaux"
+  },
+  {
+    "originalName": "Durham University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Durham University"
+  },
+  {
+    "originalName": "Universite de Strasbourg",
+    "source": "usnews",
+    "suggestedStandardizedName": "Universite de Strasbourg"
   },
   {
     "originalName": "Indian Institute of Technology - Bombay",

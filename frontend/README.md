@@ -55,7 +55,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is configured as a Progressive Web App. Running `npm run build`
+will generate a service worker that precaches the production assets so the site
+can be installed on mobile devices and work offline. For more background on
+CRA's PWA support see the [Create React App PWA documentation](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app).
 
 ### Advanced Configuration
 

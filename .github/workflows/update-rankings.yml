@@ -30,6 +30,18 @@ jobs:
       with:
         node-version: '20.x'
         cache: 'npm'
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+        cache: 'pip'
+
+    - name: Install Python dependencies
+      run: pip install -r requirements.txt
+
+    - name: Fetch US News rankings
+      run: python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
     
     - name: Install dependencies
       run: npm install

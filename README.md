@@ -26,11 +26,21 @@ Make sure you have Node.js and npm installed.
    # Note: Puppeteer might require additional system dependencies depending on your OS.
    ```
 
+4. Install Python requirements for the US News scraper:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 ## Updating Ranking Data and Regenerating Aggregated Data
 
 To update the aggregated rankings:
 
-1. The scrapers for QS, THE and ARWU now automatically download the latest CSV files from [universityrankings.ch](https://www.universityrankings.ch) whenever you run the aggregation script. You only need to manually supply the US News CSV if you wish to include that source.
+1. The scrapers for QS, THE and ARWU automatically download the latest CSV files from [universityrankings.ch](https://www.universityrankings.ch). The US News rankings can now be fetched directly using the provided Python scraper:
+
+   ```bash
+   python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
+   ```
 2. If you do need to replace any files manually, drop them in `frontend/public/data/` using the same filenames (`qs_rankings.csv`, `the_rankings.csv`, `arwu_rankings.csv`, `usnews_rankings.csv`).
 
 3. **Generate University Name Mapping (Data Sanitation)**

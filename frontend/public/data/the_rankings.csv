@@ -1,5 +1,5 @@
 # University Ranking Results - www.universityrankings.ch
-# Ranking: Times
+# Ranking: 
 # Year: 2025
 #
    #    World Rank   ,  Institution   ,  Country   ,   
@@ -9,7 +9,7 @@
     4  ,   Princeton University   ,USA   
     5  ,   University of Cambridge   ,UK   
     6  ,   Stanford University   ,USA   
-    7  ,   California Institute of Technology (Caltech)   ,USA   
+    7  ,   California Institute of Technology - Caltech   ,USA   
     8  ,   University of California - Berkeley   ,USA   
     9  ,   Imperial College London   ,UK   
     10  ,   Yale University   ,USA   
@@ -28,7 +28,7 @@
     22  ,   University of Michigan - Ann Arbor   ,USA   
     24  ,   Carnegie Mellon University   ,USA   
     25  ,   University of Washington   ,USA   
-    26  ,   Technical University of Munich   ,Germany   
+    26  ,   Technical University of München   ,Germany   
     27  ,   Duke University   ,USA   
     28  ,   The University of Tokyo   ,Japan   
     29  ,   University of Edinburgh   ,UK   
@@ -40,7 +40,7 @@
     35  ,   University of Hong Kong   ,Hong Kong   
     36  ,   Fudan University   ,China   
     36  ,   King's College London   ,UK   
-    38  ,   University of Munich   ,Germany   
+    38  ,   University of München   ,Germany   
     39  ,   University of Melbourne   ,Australia   
     40  ,   Georgia Institute of Technology   ,USA   
     41  ,   University of British Columbia   ,Canada   
@@ -66,7 +66,7 @@
     61  ,   University of Sydney   ,Australia   
     62  ,   Seoul National University   ,South Korea   
     62  ,   University of California - Davis   ,USA   
-    64  ,   Universitï¿½ Paris-Saclay   ,France   
+    64  ,   Université Paris-Saclay   ,France   
     65  ,   Nanjing University   ,China   
     66  ,   Hong Kong University of Science and Technology   ,Hong Kong   
     67  ,   Wageningen University & Research Center   ,Netherlands   
@@ -96,13 +96,13 @@
     90  ,   Vanderbilt University   ,USA   
     92  ,   RWTH Aachen University   ,Germany   
     93  ,   University of Birmingham   ,UK   
-    93  ,   Charitï¿½ - University Medicine Berlin   ,Germany   
+    93  ,   Charité - University Medicine Berlin   ,Germany   
     95  ,   Lund University   ,Sweden   
     95  ,   KTH - Royal Institute of Technology   ,Sweden   
     97  ,   University of Copenhagen   ,Denmark   
     98  ,   University of Sheffield   ,UK   
     98  ,   Emory University   ,USA   
-    100  ,   University of Tï¿½bingen   ,Germany   
+    100  ,   University of Tübingen   ,Germany   
     100  ,   Pennsylvania State University   ,USA   
     102  ,   Yonsei University   ,South Korea   
     102  ,   Sungkyunkwan University   ,South Korea   
@@ -123,7 +123,7 @@
     116  ,   University of Oslo   ,Norway   
     116  ,   Ohio State University   ,USA   
     120  ,   Tohoku University   ,Japan   
-    121  ,   University of Gï¿½ttingen   ,Germany   
+    121  ,   University of Göttingen   ,Germany   
     122  ,   Michigan State University   ,USA   
     123  ,   University of Leeds   ,UK   
     124  ,   Technical University of Denmark   ,Denmark   
@@ -166,7 +166,7 @@
     160  ,   University of Liverpool   ,UK   
     162  ,   Osaka University   ,Japan   
     163  ,   University of Waterloo   ,Canada   
-    163  ,   University of Wï¿½rzburg   ,Germany   
+    163  ,   University of Würzburg   ,Germany   
     163  ,   University of Virginia   ,USA   
     166  ,   Huazhong University of Science and Technology   ,China   
     166  ,   Karlsruhe Institute of Technology   ,Germany   
@@ -186,11 +186,11 @@
     180  ,   University of Twente   ,Netherlands   
     180  ,   University of Cape Town   ,South Africa   
     183  ,   Southern University of Science and Technology   ,China   
-    183  ,   Paris Citï¿½ University   ,France   
+    183  ,   Paris Cité University   ,France   
     185  ,   University of Rome - La Sapienza   ,Italy   
     185  ,   Eindhoven University of Technology   ,Netherlands   
     185  ,   University of St. Andrews   ,UK   
-    188  ,   University of Mï¿½nster   ,Germany   
+    188  ,   University of Münster   ,Germany   
     189  ,   Korea University   ,South Korea   
     189  ,   Indiana University at Bloomington   ,USA   
     191  ,   Abu Dhabi University   ,United Arab Emirates   
@@ -210,7 +210,7 @@
     201-250  ,   Deakin University   ,Australia   
     201-250  ,   Queensland University of Technology   ,Australia   
     201-250  ,   University of Wollongong   ,Australia   
-    201-250  ,   Universitï¿½ Libre de Bruxelles   ,Belgium   
+    201-250  ,   Université Libre de Bruxelles   ,Belgium   
     201-250  ,   Vrije Universiteit Brussel   ,Belgium   
     201-250  ,   University of Calgary   ,Canada   
     201-250  ,   Western University   ,Canada   
@@ -219,9 +219,9 @@
     201-250  ,   Sichuan University   ,China   
     201-250  ,   Tianjin University   ,China   
     201-250  ,   Xi'an Jiaotong University   ,China   
-    201-250  ,   University of Erlangen-Nï¿½rnberg   ,Germany   
+    201-250  ,   University of Erlangen-Nürnberg   ,Germany   
     201-250  ,   University of Jena   ,Germany   
-    201-250  ,   Goethe University Frankfurt   ,Germany   
+    201-250  ,   University of Frankfurt am Main   ,Germany   
     201-250  ,   University of Potsdam   ,Germany   
     201-250  ,   University College Dublin   ,Ireland   
     201-250  ,   Tel Aviv University   ,Israel   
@@ -234,7 +234,7 @@
     201-250  ,   University of Technology - Petronas   ,Malaysia   
     201-250  ,   University of Qatar   ,Qatar   
     201-250  ,   Chalmers University of Technology   ,Sweden   
-    201-250  ,   Gï¿½teborg University   ,Sweden   
+    201-250  ,   Göteborg University   ,Sweden   
     201-250  ,   Linkoping University   ,Sweden   
     201-250  ,   Cardiff University   ,UK   
     201-250  ,   Queen's University Belfast   ,UK   
@@ -261,13 +261,13 @@
     251-300  ,   Swinburne University of Technology   ,Australia   
     251-300  ,   University of Newcastle - Australia   ,Australia   
     251-300  ,   University of Tasmania   ,Australia   
-    251-300  ,   University of Liï¿½ge   ,Belgium   
+    251-300  ,   University of Liège   ,Belgium   
     251-300  ,   Laval University   ,Canada   
     251-300  ,   Beihang University   ,China   
     251-300  ,   East China Normal University   ,China   
     251-300  ,   South China University of Technology   ,China   
     251-300  ,   University of Duisburg-Essen   ,Germany   
-    251-300  ,   University of Dï¿½sseldorf   ,Germany   
+    251-300  ,   University of Düsseldorf   ,Germany   
     251-300  ,   University of Mainz   ,Germany   
     251-300  ,   Technical University of Darmstadt   ,Germany   
     251-300  ,   University of Konstanz   ,Germany   
@@ -277,7 +277,7 @@
     251-300  ,   University of Navarra   ,Spain   
     251-300  ,   Lappeenranta University of Technology   ,Finland   
     251-300  ,   University of Oulu   ,Finland   
-    251-300  ,   Ecole Normale Supï¿½rieure de Lyon   ,France   
+    251-300  ,   Ecole Normale Supérieure de Lyon   ,France   
     251-300  ,   Hong Kong Baptist University   ,Hong Kong   
     251-300  ,   Semmelweis University   ,Hungary   
     251-300  ,   Royal College of Surgeons   ,Ireland   
@@ -350,7 +350,7 @@
     301-350  ,   University of Colorado at Denver   ,USA   
     301-350  ,   University of Connecticut   ,USA   
     301-350  ,   Florida State University   ,USA   
-    301-350  ,   Rutgers Universityâ€“New Brunswick   ,USA   
+    301-350  ,   Rutgers - The State University of New Jersey   ,USA   
     301-350  ,   Oregon Health and Science University   ,USA   
     301-350  ,   University of Tennessee - Knoxville   ,USA   
     301-350  ,   King Khalid University   ,Saudi Arabia   
@@ -493,7 +493,7 @@
     401-500  ,   Gwangju Institute of Science and Technology   ,South Korea   
     401-500  ,   University of Johannesburg   ,South Africa   
     401-500  ,   Missouri University of Science and Technology   ,USA   
-    401-500  ,   Federal University of Toulouse Midi-Pyrï¿½nï¿½es   ,France   
+    401-500  ,   Federal University of Toulouse Midi-Pyrénées   ,France   
     401-500  ,   Asia University   ,Taiwan   
     401-500  ,   Sunway University   ,Malaysia   
     401-500  ,   Federation University Australia   ,Australia   
@@ -587,7 +587,7 @@
     501-600  ,   Royal Veterinary College    ,UK   
     501-600  ,   Anglia Ruskin University   ,UK   
     501-600  ,   Soochow University   ,China   
-    501-600  ,   ï¿½rebro University   ,Sweden   
+    501-600  ,   Örebro University   ,Sweden   
     501-600  ,   Hamburg University of Technology   ,Germany   
     501-600  ,   Babol Noshirvani University of Technology   ,Iran   
     501-600  ,   Imam Abdulrahman Bin Faisal University   ,Saudi Arabia   
@@ -644,7 +644,7 @@
     601-800  ,   University of Rovira i Virgili   ,Spain   
     601-800  ,   Ecole Centrale de Lyon   ,France   
     601-800  ,   Ecole Nationale des Travaux Publics de l'Etat   ,France   
-    601-800  ,   Institut National des Sciences Appliquï¿½es de Lyon   ,France   
+    601-800  ,   Institut National des Sciences Appliquées de Lyon   ,France   
     601-800  ,   Sciences Po - Paris   ,France   
     601-800  ,   University of Rennes I   ,France   
     601-800  ,   University of Nantes   ,France   
@@ -703,7 +703,7 @@
     601-800  ,   St. Petersburg State Mining Institute (Technical University)   ,Russia   
     601-800  ,   Imam Muhammad Ibn Saud Islamic University   ,Saudi Arabia   
     601-800  ,   King Faisal University   ,Saudi Arabia   
-    601-800  ,   Jï¿½nkï¿½ping University College   ,Sweden   
+    601-800  ,   Jönköping University College   ,Sweden   
     601-800  ,   Chulalongkorn University   ,Thailand   
     601-800  ,   Mahidol University   ,Thailand   
     601-800  ,   Bilkent University   ,Turkey   
@@ -762,14 +762,14 @@
     601-800  ,   Alfaisal University   ,Saudi Arabia   
     601-800  ,   Cyprus University of Technology   ,Cyprus   
     601-800  ,   ISCTE-University Institute of Lisbon   ,Portugal   
-    601-800  ,   Universite de Lille   ,France   
+    601-800  ,   University of Lille   ,France   
     601-800  ,   Amity University   ,India   
     601-800  ,   University of Lincoln (England)   ,UK   
     601-800  ,   London South Bank University   ,UK   
     601-800  ,   University of the West Scotland   ,UK   
     601-800  ,   Gachon University   ,South Korea   
-    601-800  ,   University of Cï¿½te d'Azur   ,France   
-    601-800  ,   ï¿½cole des Mines de Saint-ï¿½tienne   ,France   
+    601-800  ,   University of Côte d'Azur   ,France   
+    601-800  ,   École des Mines de Saint-Étienne   ,France   
     601-800  ,   University of Insubria   ,Italy   
     601-800  ,   Open University of Catalonia   ,Spain   
     601-800  ,   COMSATS University Islamabad   ,Pakistan   
@@ -787,7 +787,7 @@
     601-800  ,   Prince Sattam Bin Abdulaziz University   ,Saudi Arabia   
     601-800  ,   Qassim University   ,Saudi Arabia   
     601-800  ,   Sultan Idris Education University   ,Malaysia   
-    601-800  ,   ï¿½buda University   ,Hungary   
+    601-800  ,   Óbuda University   ,Hungary   
     601-800  ,   Tashkent Institute Irrigation and Agricultural Mechanization Engineers   ,Uzbekistan   
     601-800  ,   Symbiosis International University   ,India   
     601-800  ,   Al-Ahliyya Amman University   ,Jordan   
@@ -834,10 +834,10 @@
     801-1000  ,   Cairo University   ,Egypt   
     801-1000  ,   University Carlos III de Madrid   ,Spain   
     801-1000  ,   University Pablo de Olavide   ,Spain   
-    801-1000  ,   University of Alcalï¿½ de Henares   ,Spain   
+    801-1000  ,   University of Alcalá de Henares   ,Spain   
     801-1000  ,   University of Castilla-La Mancha   ,Spain   
-    801-1000  ,   University of Cï¿½rdoba   ,Spain   
-    801-1000  ,   University of Jaï¿½n   ,Spain   
+    801-1000  ,   University of Córdoba   ,Spain   
+    801-1000  ,   University of Jaén   ,Spain   
     801-1000  ,   University of Salamanca   ,Spain   
     801-1000  ,   University of Seville   ,Spain   
     801-1000  ,   University of Vigo   ,Spain   
@@ -847,15 +847,15 @@
     801-1000  ,   University of Vic   ,Spain   
     801-1000  ,   University of the Balearic Islands   ,Spain   
     801-1000  ,   University of the South Pacific   ,Fiji   
-    801-1000  ,   Arts et Mï¿½tiers   ,France   
+    801-1000  ,   Arts et Métiers   ,France   
     801-1000  ,   National Veterinary School of Alfort   ,France   
-    801-1000  ,   University Panthï¿½on-Sorbonne (Paris I)   ,France   
+    801-1000  ,   University Panthéon-Sorbonne (Paris I)   ,France   
     801-1000  ,   University of Western Brittany   ,France   
     801-1000  ,   University Savoie Mont Blanc   ,France   
     801-1000  ,   University of Cape Coast   ,Ghana   
     801-1000  ,   Aristotle University of Thessaloniki   ,Greece   
     801-1000  ,   National Technical University of Athens   ,Greece   
-    801-1000  ,   Eï¿½tvï¿½s Lorand University   ,Hungary   
+    801-1000  ,   Eötvös Lorand University   ,Hungary   
     801-1000  ,   University of Debrecen    ,Hungary   
     801-1000  ,   University of Indonesia   ,Indonesia   
     801-1000  ,   Alagappa University   ,India   
@@ -882,7 +882,7 @@
     801-1000  ,   Shiraz University of Medical Sciences   ,Iran   
     801-1000  ,   Urmia University   ,Iran   
     801-1000  ,   Zahedan University of Medical Sciences   ,Iran   
-    801-1000  ,   Reykjavï¿½k University   ,Iceland   
+    801-1000  ,   Reykjavík University   ,Iceland   
     801-1000  ,   University of Campania Luigi Vanvitelli   ,Italy   
     801-1000  ,   Roma Tre University   ,Italy   
     801-1000  ,   University of Camerino   ,Italy   

@@ -51,7 +51,12 @@ const aliasMap = new Map([
     ['technical university of munchen', 'Technical University of Munich'],
     ['technical university of mnchen', 'Technical University of Munich'],
     ['university of munchen', 'University of Munich'],
-    ['university of mnchen', 'University of Munich']
+    ['university of mnchen', 'University of Munich'],
+    // Map common campus or location variants to their primary names
+    ['university of michigan ann arbor', 'University of Michigan'],
+    ['university of michigan - ann arbor', 'University of Michigan'],
+    ['newcastle university newcastle upon tyne', 'Newcastle University'],
+    ['swiss federal institute of technology zurich', 'ETH Zurich']
 ]);
 
 function canonicalizeName(name) {
@@ -60,7 +65,9 @@ function canonicalizeName(name) {
     // Normalize to NFD and strip diacritics to avoid mismatched accents
     cleaned = cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     // Remove unknown replacement characters that often appear from bad encoding
-    cleaned = cleaned.replace(/\uFFFD/g, '');
+    cleaned = cleaned.replace(/\uFFFD/g, '');8
+    // Standardize various dash characters to a simple hyphen
+    cleaned = cleaned.replace(/[–—−]/g, '-');
     // Remove parenthetical notes
     cleaned = cleaned.replace(/\s*\([^)]*\)\s*$/, '');
     // Remove trailing short tokens like "- MIT" or "- Caltech"

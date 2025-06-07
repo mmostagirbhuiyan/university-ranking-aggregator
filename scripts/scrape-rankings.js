@@ -45,6 +45,7 @@ let usnewsCleanList = [];
 
 // Map of known aliases that should collapse to a single canonical name
 const aliasMap = new Map([
+    // Common aliases and campus variations mapped to US News naming
     ['purdue university west lafayette campus', 'Purdue University'],
     ['california institute of technology caltech', 'California Institute of Technology'],
     ['technik universitat munchen', 'Technical University of Munich'],
@@ -52,11 +53,11 @@ const aliasMap = new Map([
     ['technical university of mnchen', 'Technical University of Munich'],
     ['university of munchen', 'University of Munich'],
     ['university of mnchen', 'University of Munich'],
-    // Map common campus or location variants to their primary names
     ['university of michigan ann arbor', 'University of Michigan'],
-    ['university of michigan - ann arbor', 'University of Michigan'],
     ['newcastle university newcastle upon tyne', 'Newcastle University'],
     ['swiss federal institute of technology zurich', 'ETH Zurich'],
+    ['swiss federal institute of technology zurich ethz', 'ETH Zurich'],
+    ['swiss federal institute of technology lausanne', 'Ecole Polytechnique Federale de Lausanne'],
     ['swiss federal institute of technology lausanne epfl', 'Ecole Polytechnique Federale de Lausanne'],
     ['university of new south wales', 'University of New South Wales Sydney'],
     ['psl research university paris', 'Universite PSL'],
@@ -68,14 +69,29 @@ const aliasMap = new Map([
     ['catholic university of leuven', 'KU Leuven'],
     ['sorbonne university', 'Sorbonne Universite'],
     ['university of texas at austin', 'University of Texas Austin'],
-    ['university of illinois at urbana-champaign', 'University of Illinois Urbana-Champaign'],
+    ['university of illinois at urbana champaign', 'University of Illinois Urbana-Champaign'],
     ['universite paris saclay', 'Universite Paris Saclay'],
-    ['kth - royal institute of technology', 'Royal Institute of Technology'],
+    ['universit paris saclay', 'Universite Paris Saclay'],
+    ['kth royal institute of technology', 'Royal Institute of Technology'],
     ['university of washington', 'University of Washington Seattle'],
     ['university of heidelberg', 'Ruprecht Karls University Heidelberg'],
     ['university of durham', 'Durham University'],
     ['university of sao paulo', 'Universidade de Sao Paulo'],
     ['pontifical catholic university of chile', 'Pontificia Universidad Catolica de Chile'],
+    ['paris cite university', 'Universite Paris Cite'],
+    ['paris cit university', 'Universite Paris Cite'],
+    ['universite paris cite', 'Universite Paris Cite'],
+    ['moscow state university', 'Lomonosov Moscow State University'],
+    ['national autonomous university of mexico', 'Universidad Nacional Autonoma de Mexico'],
+    ['pohang university of science and technology', 'Pohang University of Science & Technology (POSTECH)'],
+    ['university of north carolina at chapel hill', 'University of North Carolina Chapel Hill'],
+    ['university of colorado at boulder', 'University of Colorado Boulder'],
+    ['university of maryland at college park', 'University of Maryland College Park'],
+    ['university of texas southwestern medical center at dallas', 'University of Texas Southwestern Medical Center Dallas'],
+    ['university of science and technology of china', 'University of Science & Technology of China, CAS'],
+    ['karolinska institute', 'Karolinska Institutet'],
+    ['wageningen university & research center', 'Wageningen University & Research'],
+    ['university of leiden', 'Leiden University'],
     // Resolve discrepancies around Washington University in St. Louis
     ['washington university in st louis', 'Washington University (WUSTL)'],
     ['washington university st louis', 'Washington University (WUSTL)'],
@@ -88,7 +104,9 @@ function canonicalizeName(name) {
     // Normalize to NFD and strip diacritics to avoid mismatched accents
     cleaned = cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     // Remove unknown replacement characters that often appear from bad encoding
-    cleaned = cleaned.replace(/\uFFFD/g, '');8
+    cleaned = cleaned.replace(/\uFFFD/g, '');
+    // Drop stray question marks or unrecognized punctuation
+    cleaned = cleaned.replace(/[?]/g, '');
     // Standardize various dash characters to a simple hyphen
     cleaned = cleaned.replace(/[–—−]/g, '-');
     // Remove parenthetical notes

@@ -124,6 +124,12 @@ function App() {
     return Math.sqrt(variance);
   };
 
+  const getAverageRanking = (originalRankings) => {
+    const ranks = Object.values(originalRankings).map(r => r.rank);
+    const avg = ranks.reduce((a, b) => a + b, 0) / ranks.length;
+    return avg;
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center">
@@ -338,6 +344,10 @@ function App() {
                                  getRankingConsistency(university.originalRankings) < 5 ? 'High' :
                                  getRankingConsistency(university.originalRankings) < 10 ? 'Medium' : 'Variable'}
                               </span>
+                            </div>
+                            <div className="flex justify-between items-center mt-2">
+                              <span className="text-purple-200">Average Rank</span>
+                              <span className="text-yellow-300 font-bold">#{getAverageRanking(university.originalRankings).toFixed(1)}</span>
                             </div>
                           </div>
                           

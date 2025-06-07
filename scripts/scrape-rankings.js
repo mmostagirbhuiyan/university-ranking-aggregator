@@ -56,7 +56,11 @@ const aliasMap = new Map([
     ['university of michigan ann arbor', 'University of Michigan'],
     ['university of michigan - ann arbor', 'University of Michigan'],
     ['newcastle university newcastle upon tyne', 'Newcastle University'],
-    ['swiss federal institute of technology zurich', 'ETH Zurich']
+    ['swiss federal institute of technology zurich', 'ETH Zurich'],
+    // Resolve discrepancies around Washington University in St. Louis
+    ['washington university in st louis', 'Washington University (WUSTL)'],
+    ['washington university st louis', 'Washington University (WUSTL)'],
+    ['washington university', 'Washington University (WUSTL)']
 ]);
 
 function canonicalizeName(name) {

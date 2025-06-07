@@ -57,6 +57,25 @@ const aliasMap = new Map([
     ['university of michigan - ann arbor', 'University of Michigan'],
     ['newcastle university newcastle upon tyne', 'Newcastle University'],
     ['swiss federal institute of technology zurich', 'ETH Zurich'],
+    ['swiss federal institute of technology lausanne epfl', 'Ecole Polytechnique Federale de Lausanne'],
+    ['university of new south wales', 'University of New South Wales Sydney'],
+    ['psl research university paris', 'Universite PSL'],
+    ['hong kong university of science and technology', 'Hong Kong University of Science & Technology'],
+    ['the university of tokyo', 'University of Tokyo'],
+    ['london school of economics', 'London School Economics & Political Science'],
+    ['korea advanced institute of science and technology', 'Korea Advanced Institute of Science & Technology (KAIST)'],
+    ['university of malaya', 'Universiti Malaya'],
+    ['catholic university of leuven', 'KU Leuven'],
+    ['sorbonne university', 'Sorbonne Universite'],
+    ['university of texas at austin', 'University of Texas Austin'],
+    ['university of illinois at urbana-champaign', 'University of Illinois Urbana-Champaign'],
+    ['universite paris saclay', 'Universite Paris Saclay'],
+    ['kth - royal institute of technology', 'Royal Institute of Technology'],
+    ['university of washington', 'University of Washington Seattle'],
+    ['university of heidelberg', 'Ruprecht Karls University Heidelberg'],
+    ['university of durham', 'Durham University'],
+    ['university of sao paulo', 'Universidade de Sao Paulo'],
+    ['pontifical catholic university of chile', 'Pontificia Universidad Catolica de Chile'],
     // Resolve discrepancies around Washington University in St. Louis
     ['washington university in st louis', 'Washington University (WUSTL)'],
     ['washington university st louis', 'Washington University (WUSTL)'],
@@ -74,8 +93,8 @@ function canonicalizeName(name) {
     cleaned = cleaned.replace(/[–—−]/g, '-');
     // Remove parenthetical notes
     cleaned = cleaned.replace(/\s*\([^)]*\)\s*$/, '');
-    // Remove trailing short tokens like "- MIT" or "- Caltech"
-    cleaned = cleaned.replace(/\s*-\s*[A-Za-z.&]{1,10}$/, '');
+    // Remove trailing short tokens like "- MIT" while keeping campus names
+    cleaned = cleaned.replace(/\s*-\s*[A-Za-z.&]{1,5}$/, '');
     // Remove campus designations at the end
     cleaned = cleaned.replace(/\s*-?\s*(?:main|city|west|east|north|south)?\s*\w*\s*campus$/i, '');
     cleaned = cleaned.replace(/\s*-\s*/g, ' ');

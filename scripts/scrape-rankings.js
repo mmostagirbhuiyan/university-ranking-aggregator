@@ -65,7 +65,7 @@ function canonicalizeName(name) {
     // Normalize to NFD and strip diacritics to avoid mismatched accents
     cleaned = cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     // Remove unknown replacement characters that often appear from bad encoding
-    cleaned = cleaned.replace(/\uFFFD/g, '');
+    cleaned = cleaned.replace(/\uFFFD/g, '');8
     // Standardize various dash characters to a simple hyphen
     cleaned = cleaned.replace(/[–—−]/g, '-');
     // Remove parenthetical notes

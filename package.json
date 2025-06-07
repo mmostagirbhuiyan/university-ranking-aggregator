@@ -4,7 +4,8 @@
   "description": "A web application to aggregate university rankings from multiple sources.",
   "main": "scripts/scrape-rankings.js",
   "scripts": {
-    "start": "node scripts/matchUniversities.js && node scripts/aggregateRankings.js"
+    "start": "node scripts/matchUniversities.js && node scripts/aggregateRankings.js",
+    "test": "jest"
   },
   "keywords": [
     "university",
@@ -27,5 +28,8 @@
     "puppeteer": "^22.6.5",
     "string-similarity": "^4.0.4",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2"
   }
 }

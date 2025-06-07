@@ -81,4 +81,11 @@ To view the aggregated rankings in the web browser:
    npm start
    ```
 
-   This will open the application in your default web browser (usually at `http://localhost:3000`). The frontend reads the data from `frontend/src/data/aggregated-rankings.json`. 
+   This will open the application in your default web browser (usually at `http://localhost:3000`). The frontend reads the data from `frontend/src/data/aggregated-rankings.json`.
+## Advanced Metrics
+
+When viewing details for a university, the frontend shows additional insights:
+
+- **Best/Worst Ranking** – extremes across ranking sources.
+- **Consistency** – variation (standard deviation) across sources.
+- **Average Rank** – mean position among the individual rankings.

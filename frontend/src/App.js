@@ -125,9 +125,9 @@ function App() {
   };
 
   const getAverageRanking = (originalRankings) => {
-    const ranks = Object.values(originalRankings).map(r => r.rank);
+    const ranks = Object.values(originalRankings).map((r) => r.rank);
     const avg = ranks.reduce((a, b) => a + b, 0) / ranks.length;
-    return avg;
+    return Math.round(avg);
   };
 
   if (isLoading) {
@@ -338,16 +338,16 @@ function App() {
                               <span className="text-orange-400 font-bold">#{getWorstRanking(university.originalRankings)}</span>
                             </div>
                             <div className="flex justify-between items-center">
+                              <span className="text-purple-200">Average Rank</span>
+                              <span className="text-yellow-300 font-bold">#{getAverageRanking(university.originalRankings)}</span>
+                            </div>
+                            <div className="flex justify-between items-center mt-2">
                               <span className="text-purple-200">Consistency</span>
                               <span className="text-blue-400 font-bold">
                                 {getRankingConsistency(university.originalRankings) < 2 ? 'Very High' :
                                  getRankingConsistency(university.originalRankings) < 5 ? 'High' :
                                  getRankingConsistency(university.originalRankings) < 10 ? 'Medium' : 'Variable'}
                               </span>
-                            </div>
-                            <div className="flex justify-between items-center mt-2">
-                              <span className="text-purple-200">Average Rank</span>
-                              <span className="text-yellow-300 font-bold">#{getAverageRanking(university.originalRankings).toFixed(1)}</span>
                             </div>
                           </div>
                           
@@ -381,7 +381,7 @@ function App() {
                           Performance Metrics
                         </h4>
                         
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                           <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
                             <div className="text-2xl font-bold text-yellow-400 mb-1">
                               {university.aggregatedScore.toFixed(2)}
@@ -399,6 +399,12 @@ function App() {
                               #{university.countryRank}
                             </div>
                             <div className="text-xs text-purple-200">Country Rank</div>
+                          </div>
+                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
+                            <div className="text-2xl font-bold text-yellow-300 mb-1">
+                              #{getAverageRanking(university.originalRankings)}
+                            </div>
+                            <div className="text-xs text-purple-200">Avg Rank</div>
                           </div>
                         </div>
                         

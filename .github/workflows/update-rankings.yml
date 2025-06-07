@@ -5,8 +5,8 @@ on:
   # Manual trigger
   workflow_dispatch:
 
-  # Trigger on pushes to data or script files
-  push:
+  # Run when a pull request modifies data or scripts
+  pull_request:
     paths:
       - 'frontend/public/data/*.xlsx'
       - 'frontend/public/data/*.csv'

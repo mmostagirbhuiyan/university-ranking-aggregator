@@ -89,3 +89,17 @@ When viewing details for a university, the frontend shows additional insights:
 - **Best/Worst Ranking** – extremes across ranking sources.
 - **Consistency** – variation (standard deviation) across sources.
 - **Average Rank** – mean position among the individual rankings.
+
+## Developer Workflow
+
+To verify the ranking aggregation logic or frontend components you can run the provided test suites.
+
+```bash
+# Run Node based tests for the aggregation scripts
+npm test
+
+# Run React tests
+cd frontend && npm test
+```
+
+The GitHub Actions workflow for updating rankings now only runs on pull requests or manual triggers to avoid duplicate executions when merging to the `main` branch.
